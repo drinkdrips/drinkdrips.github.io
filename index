@@ -1,0 +1,289 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>DrinkDrips - Utility Token</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+      header {
+            background-color: #d605ed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            width: 350px; /* Ajuste o tamanho do logotipo conforme necessário */
+        }
+      
+        .contact-method img {
+            width: 20px; /* Ajuste o tamanho do logotipo conforme necessário */
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff9900; /* Cor ao passar o mouse */
+        }
+        footer {
+            background-color: #d605ed;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+      
+        /* Adicione isso ao seu CSS para rolagem suave */
+        html {
+            scroll-behavior: smooth;
+        }
+      
+        body {
+            background-color: #f8f9fa;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .container {
+            position: relative;
+            background-color: #ffffff;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding: 20px;
+            padding-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #d605ed;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+        h2 {
+            color: #000;
+            font-size: 20px;
+            font-weight: bold;
+        }
+      h3 {
+            color: #000;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        li {
+              color: #555;
+              font-size: 16px;
+          }
+        
+        #github-link {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        #github-link:hover {
+            text-decoration: underline;
+            color: #ff9900; /* Cor ao passar o mouse */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .animated {
+            animation: fadeIn 1.5s ease-in;
+        }
+      
+      /* Estilos para o container de formas de contato */
+        .contact-method {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #DAF7A6;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        p a {
+            text-decoration: none;
+            color: #000BFF;
+            transition: color 0.3s;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+            color: #ff9900; /* Cor ao passar o mouse */
+
+        }
+    .back-to-top {
+    position: absolute;
+    right: 1px;
+    bottom: 1px;
+    text-decoration: none;
+    background-color: #086108;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+
+      .back-to-top:hover {
+          background-color: #ff9900; /* Cor ao passar o mouse */
+      }
+
+      
+    </style>
+</head>
+<body>
+  <header>
+        <!-- Logotipo -->
+        <div class="logo">
+            <img src="https://lh3.googleusercontent.com/pw/ABLVV84qJEElazjgElui7SXmvgmepzspI16Twg3Ona5mexM-VqSOq2heJc5byNMpIt5kc1RMQepDeekDMdmRnZ6bHnLGwXuIucEvWawKr544OaAkh0JEUnIvywUY9ERvOvWxgIFNHgWRNGerIyTh_lR6pJFr=w800-h150-s-no-gm?authuser=2" alt="Drinkdrips">
+        </div>
+        
+        <!-- Menu de Navegação -->
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+            </ul>
+        </nav>
+    </header>
+  
+    <div class="container animated">
+        <h1 style="text-align: center;">Bem vindos!</h1>
+        <p>DrinkDrips é um utility token inovador que visa transformar a experiência de eventos, bares, baladas e shows. Nosso objetivo é criar um ecossistema onde os clientes são recompensados por sua lealdade e participação.</p>
+        <i class="fa fa-smile-o" aria-hidden="true"></i>
+    </div>
+
+    <div id="sobre" class="container animated">
+    <h1 style="text-align: center;">O Que Fazemos</h1> <!-- Título centralizado -->
+     
+      <h2><i class="fa fa-bitcoin"></i> Drinktrocacia <i class="fa fa-smile-o" aria-hidden="true"></i></h2>
+      
+    <p>Através do nosso token, oferecemos uma plataforma de recompensas que beneficia tanto os clientes quanto os proprietários de estabelecimentos. Os clientes ganham tokens ao frequentar eventos, bares, baladas e shows, que podem ser trocados por descontos, ingressos gratuitos e outras recompensas exclusivas.</p>
+        
+    <h2><i class="fa fa-cogs"></i> Como Funciona</h2>
+    <ul>
+            <li>Ganhe Tokens: Os clientes ganham tokens DrinkDrips ao fazer compras em estabelecimentos parceiros ou ao participar de eventos.</li>
+            <li>Acumule Tokens: Os tokens são acumulados na carteira digital do cliente.</li>
+            <li>Resgate Recompensas: Os tokens acumulados podem ser trocados por uma variedade de recompensas, incluindo descontos, ingressos gratuitos e experiências exclusivas.</li>
+            
+    </ul>
+        
+    <h2><i class="fa fa-cubes"></i> Por que escolher aDrinkDrips</h2>
+    <ul>
+            <li>Incentivo à Lealdade: Nossa plataforma incentiva a lealdade do cliente, recompensando-os por frequentar seus lugares favoritos.</li>
+            <li>Experiências Exclusivas: Oferecemos recompensas exclusivas que melhoram a experiência do cliente.</li>
+            <li>Fácil de Usar: Nossa plataforma é fácil de usar, tornando a acumulação e o resgate de recompensas um processo simples e direto.</li>
+            
+    </ul>
+      <p>Junte-se a nós na jornada para revolucionar a indústria de eventos com a DrinkDrips! </p>
+      <a class="back-to-top" href="#top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+    </div>
+    <div id="tokenomics" class="container animated">
+    <h1 style="text-align: center;">Tokenomics</h1><br>
+    <h2>Distribuição dos 51 milhões de tokens DrinkDrips mintados:</h2>
+      <p>Entendendo a distribuição dos tokens</p>
+    <ul>
+            <li>Vendas Públicas (20%): 10,2 milhões de tokens serão disponibilizados para venda pública. Isso permitirá que uma ampla gama de pessoas participe e tenha uma participação no DrinkDrips</li>
+            <li>Reserva da Equipe (20%): 10,2 milhões de tokens serão reservados para a equipe do DrinkDrips. Isso servirá como incentivo para a equipe continuar desenvolvendo e mantendo a plataforma.</li>
+            <li>Parceiros e Consultores (15%): 7,65 milhões de tokens serão alocados para parceiros estratégicos e consultores que ajudarão a crescer e desenvolver a plataforma DrinkDrips.</li>
+            <li>Programa de Recompensas (25%): 12,75 milhões de tokens serão reservados para o programa de recompensas. Estes serão distribuídos aos usuários à medida que participam de eventos e fazem compras em estabelecimentos parceiros.</li>
+            <li>Reserva para Desenvolvimento (20%): 10,2 milhões de tokens serão reservados para futuros desenvolvimentos e melhorias na plataforma DrinkDrips.</li>
+    </ul>
+
+    <p>Lembre-se de que esta é apenas uma proposta inicial e pode ser ajustada conforme necessário para atender às necessidades da comunidade DrinkDrips e garantir o sucesso a longo prazo do token.</p>
+    
+      <a class="back-to-top" href="#top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+</div>
+
+<div id="roadmap" class="container animated">
+    <h1 style="text-align: center;">Roadmap</h1>
+    <h3>1º Trimestre de 2024</h3>
+    <ul>
+        <li>Pré-lançamento: Anúncio oficial do token DrinkDrips e detalhes do projeto.</li>
+        <li>Desenvolvimento da Plataforma: Início do desenvolvimento da plataforma de recompensas DrinkDrips.</li>
+    </ul>
+    <h3>2º Trimestre de 2024</h3>
+    <ul>
+        <li>Venda Pública de Tokens: Início da venda pública de tokens.</li>
+        <li>Parcerias Estratégicas: Estabelecimento de parcerias com bares, baladas, shows e eventos.</li>
+    </ul>
+    <h3>3º Trimestre de 2024</h3>
+    <ul>
+        <li>Lançamento da Plataforma: Lançamento oficial da plataforma de recompensas DrinkDrips.</li>
+        <li>Distribuição de Tokens: Início da distribuição de tokens para os usuários através do programa de recompensas.</li>
+    </ul>
+    <h3>4º Trimestre de 2024</h3>
+    <ul>
+        <li>Expansão de Parcerias: Expansão das parcerias com mais estabelecimentos.</li>
+        <li>Melhorias na Plataforma: Implementação de melhorias na plataforma com base no feedback dos usuários.</li>
+    </ul>
+    <h3>1º Trimestre de 2025</h3>
+    <ul>
+        <li>Campanhas de Marketing: Início de campanhas de marketing para aumentar a visibilidade do token DrinkDrips.</li>
+        <li>Desenvolvimento de Novas Funcionalidades: Início do desenvolvimento de novas funcionalidades para a plataforma.</li>
+    </ul>
+    <h3>2º Trimestre de 2025</h3>
+    <ul>
+        <li>Lançamento de Novas Funcionalidades: Lançamento de novas funcionalidades na plataforma DrinkDrips.</li>
+        <li>Expansão Geográfica: Início da expansão para outras cidades e países.</li>
+    </ul>
+    <h3>3º Trimestre de 2025</h3>
+    <ul>
+        <li>Consolidação do Mercado: Consolidação da presença do token DrinkDrips no mercado de eventos.</li>
+        <li>Planejamento de Futuras Iniciativas: Início do planejamento de futuras iniciativas e melhorias para a plataforma.</li>
+    </ul>
+    <h3>4º Trimestre de 2025</h3>
+    <ul>
+        <li>Revisão e Planejamento: Revisão do progresso até agora e planejamento para o próximo ano.</li>
+    </ul>
+  <a class="back-to-top" href="#top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+</div>
+    
+  <div class="container animated">
+    <h1>🎉Venha conhecer o DrinkDrips! 🎉</h1>
+    <p>Estamos revolucionando a maneira como você aproveita seus eventos, bares, baladas e shows favoritos. Com o nosso token DrinkDrips, cada momento de diversão se transforma em uma oportunidade para ganhar recompensas!</p>
+
+<p>Imagine poder ganhar descontos, ingressos gratuitos e experiências exclusivas apenas por frequentar seus lugares favoritos. Isso é possível com o DrinkDrips!</p>
+
+<p>Então, o que você está esperando? Junte-se a nós nesta jornada emocionante e comece a aproveitar seus momentos de diversão de uma maneira totalmente nova. Vamos juntos transformar cada brinde em uma celebração com o DrinkDrips! 🥂</p>
+    
+       <a class="back-to-top" href="#top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+</div>
+
+<!-- Rodapé -->
+    <footer>
+        <h6>&copy; 2023 DrinkDrips. Todos os direitos reservados.</h6>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
