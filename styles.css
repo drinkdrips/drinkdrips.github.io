@@ -60,6 +60,7 @@ body {
   margin: 0;
   background-color: #1f2020 !important;
   color: #F9F6EF !important;
+  overflow: auto; /* ou overflow: scroll; */
 }
 .myHero, nav, main {
   max-width: 75ch;
@@ -247,8 +248,7 @@ footer {
   border-radius: 10px;
   border: 1px solid #ffd60a;
   max-height: 80vh; /* Defina uma altura máxima conforme necessário */
-  overflow-y: auto; /* Adicione uma barra de rolagem vertical quando o conteúdo exceder a altura máxima */
-}
+  }
 
 
 
