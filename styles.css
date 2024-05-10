@@ -244,21 +244,6 @@ footer {
   background-color: #403d39;
 }
 
-.containerRoadmap {
-  max-width: 1320px;
-  min-height: 0;
-  height: auto !important;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #ffd60a;
-  max-height: 100vh; /* Defina uma altura máxima conforme necessário */
-  }
-
-
-
-
 nav {
     flex-grow: 1; /* Ocupa todo o espaço disponível */
 }
@@ -343,10 +328,15 @@ nav a:hover {
     color: #e0aaff; /* Cor ao passar o mouse */
 }
 
-/* Abaixo a estilização do roadmap */
+
+
+/* Daqui para baixo é apenas a estilização do roadmap */
+
+
+
 #infographic .roadmapCircle {
    width: 320px;
-   height: 320px;
+
    border-radius: 50%;
    border: 7px double;
    display: flex;
