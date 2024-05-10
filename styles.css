@@ -245,14 +245,13 @@ footer {
 }
 
 .containerRoadmap {
-  width: auto;
+  max-width: 1320px;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid #ffd60a;
-  background-color: #403d39;
-}
+  }
 
 nav {
     flex-grow: 1; /* Ocupa todo o espaço disponível */
