@@ -207,7 +207,7 @@ nav:after {
 }
 
 .logoRodape img {
-    width: 250px; /* Ajuste o tamanho do logotipo conforme necessário */
+    width: 150px; /* Ajuste o tamanho do logotipo conforme necessário */
 }
 
 footer {
@@ -216,7 +216,7 @@ footer {
     padding: 20px;
     text-align: center;
     color: #fff;
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;  
