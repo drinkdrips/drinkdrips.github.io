@@ -245,12 +245,12 @@ footer {
 }
 
 .containerRoadmap {
-  max-width: 900px;
+  width: auto;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #bc69f2;
+  border: 1px solid #ffd60a;
   background-color: #403d39;
 }
 
