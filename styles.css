@@ -107,7 +107,7 @@ nav {
 .myHero {
   min-height: 60vh;
   background-image:
-    url("https://lh3.googleusercontent.com/pw/AP1GczMVqvqi3dkm6o_AGHLZeX41cfgcdGHU-M7FV6-mvDI0kknkNoKToCmNwpcjsQofkyu7tAQpySuGgL6WzRqrFUoBZBgCN-kotIuC5WV7wL7tX1R0RemmPlWgSsK1X91iduYUQghmFjztOPKIK7eKPg=w1648-h927-s-no-gm?authuser=1");
+    url("https://lh3.googleusercontent.com/pw/AP1GczPYBu_sgsFmmj8AIRKOG6ZL06yEPdLaZ5c4iuo_XmFmuaf1Ya5VkyS0_gnvisgQUSfSBOh24UEsHm30UMLQgQoDo83OkeDl3Y2FpdHRgmzOJWjvDIhRLvHIkxTiStfKCaTFyKoetP7PLCtw_8GeBA=w1648-h927-s-no-gm?authuser=1");
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: 100% 50%;
@@ -207,7 +207,7 @@ nav:after {
 }
 
 .logoRodape img {
-    width: 150px; /* Ajuste o tamanho do logotipo conforme necessário */
+    width: 250px; /* Ajuste o tamanho do logotipo conforme necessário */
 }
 
 footer {
