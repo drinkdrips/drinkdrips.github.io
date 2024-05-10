@@ -347,6 +347,7 @@ nav a:hover {
    position: absolute;
    left: 50%;
    margin: 40px 0;
+   background-color: var(--bgColor);
 }
 #infographic section:nth-child(odd) .roadmapCircle {
    transform: translateX(-100%);
