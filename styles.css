@@ -60,6 +60,7 @@ body {
   margin: 0;
   background-color: #1f2020 !important;
   color: #F9F6EF !important;
+  height: auto !important;
   overflow: auto; /* ou overflow: scroll; */
 }
 .myHero, nav, main {
@@ -242,12 +243,13 @@ footer {
 .containerRoadmap {
   max-width: 1320px;
   min-height: 0;
+  height: auto !important;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid #ffd60a;
-  max-height: 80vh; /* Defina uma altura máxima conforme necessário */
+  max-height: 100vh; /* Defina uma altura máxima conforme necessário */
   }
 
 
