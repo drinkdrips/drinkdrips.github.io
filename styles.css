@@ -336,7 +336,7 @@ nav a:hover {
 
 #infographic .roadmapCircle {
    width: 320px;
-
+   height: 320px;
    border-radius: 50%;
    border: 7px double;
    display: flex;
