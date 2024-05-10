@@ -241,6 +241,7 @@ footer {
 .containerRoadmap {
   max-width: 1320px;
   height: auto !important;
+  min-height: 0 !important;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 20px;
