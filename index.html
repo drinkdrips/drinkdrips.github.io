@@ -367,10 +367,8 @@ Celebração do sucesso do projeto e da jornada até a Lua, sem perder de vista 
                   }
               
                   // Obter instância do contrato do token
-                  var contractAddress = 'SEU_ENDERECO_DO_CONTRATO';
-                  var contractABI = [
-                    // Definir o ABI do seu contrato aqui
-                  ];
+                  var contractAddress = 0x9759018e661Ff7B2e0cd2412F70043BcdB9Fb8C3; // Endereço do contrato DRINK
+                  var contractABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"balances","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"}];
                   var contract = new web3.eth.Contract(contractABI, contractAddress);
               
                   // Manipular o envio do formulário
@@ -385,10 +383,10 @@ Celebração do sucesso do projeto e da jornada até a Lua, sem perder de vista 
                     var tokenAddress;
                     var tokenAmount;
                     if (paymentType === 'bnb') {
-                      tokenAddress = 'BNB_TOKEN_ADDRESS'; // Endereço do token BNB
+                      tokenAddress = 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c; // Endereço do token BNB
                       tokenAmount = amount; // Quantidade de BNB
                     } else if (paymentType === 'usdt') {
-                      tokenAddress = 'USDT_TOKEN_ADDRESS'; // Endereço do token USDT
+                      tokenAddress = 0x55d398326f99059fF775485246999027B3197955; // Endereço do token USDT
                       tokenAmount = amount; // Quantidade de USDT
                     }
               
