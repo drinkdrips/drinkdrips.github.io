@@ -45,6 +45,19 @@
     animation-range-end: 100vh;
   }
 }
+
+/* Estilos para dispositivos menores, como celulares */
+@media screen and (max-width: 767px) {
+    /* Ajustes para telas menores */
+    .container {
+        font-size: 14px;
+        display: flex; /* Adicione display: flex; */
+        justify-content: center; /* Centralize horizontalmente */
+        align-items: center; /* Centralize verticalmente */
+    }
+    /* Exemplo de ajustes para outros elementos */
+}
+
 @supports(not(animation-timeline: view())) {
   .notice:after {
     content: ' animation-timeline of scroll and view are currently not supported in your browser.';
