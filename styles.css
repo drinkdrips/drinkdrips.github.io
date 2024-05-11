@@ -1,4 +1,4 @@
-@supports(animation-timeline: view()){
+  @supports(animation-timeline: view()){
   @keyframes fade-out {
     to {
       background-size: 150%;
@@ -225,6 +225,8 @@ footer {
 /* Mantenha as regras existentes que não precisam de alterações */
 
 .container {
+  display: flex;
+  flex-direction: column;
   max-width: 900px;
   margin: 0 auto;
   margin-bottom: 20px;
