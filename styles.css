@@ -240,7 +240,7 @@ footer {
 .container {
   display: flex;
   flex-direction: column;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 20px;
@@ -250,7 +250,7 @@ footer {
 }
 
 .container-form {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 20px;
@@ -260,7 +260,7 @@ footer {
 }
 
 .containerRoadmap {
-  max-width: 1320px;
+  max-width: 1200px;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 20px;
