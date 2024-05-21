@@ -13,12 +13,12 @@
   </head>
 <body>
     <div class="myHero">
-    <h1>Tanke o Token Drink &#x1F680</h1><h1>&#x1F4AD After Memecoin &#127926 &#128520 &#127925</h1>
+    <h1>Tanke o Token Drink &#x1F680</h1><h1>&#x1F4AD After Memecoin</h1>
   </div>
   <nav>
     <div class="myLogo">Drink &#127864</div>
     <ul>
-      <li><a href="#comprar">Comprar</a></li>
+      <li><a href="https://drinkdrips.github.io/app">Acessar App</a></li>
       <li><a href="#drink-info">Sobre</a></li>
       <li><a href="#tokenomics">Tokenomics</a></li>
       <li><a href="#roadmap">Roadmap</a></li>
@@ -28,24 +28,7 @@
 <div class="container" id="comprar">  
   <h2>Mais do que uma memecoin</h2>
   <p>O Token Drink foi projetado como uma homenagem à uma bebida tradicional brasileira, por isso a quantidade total de tokens faz alusão a essa bebida, inserindo-se como uma possível forma de interação em eventos, festas, bares, baladas, afters e outros. Além disso, busca desmistificar a crença de que os tokens memes devem ter um número exorbitante de unidades em circulação. Ao contrário, o Drink desafia essa noção, oferecendo uma quantidade de tokens infinitamente menor do que as memecoins "da moda" oferecem.</p>
-<main>
-<div class="container-form">
-    <h1>Adquira seus Drinks!</h1>
-    <form id="buyForm">
-      <label for="amount">Quantidade:</label><br>
-      <input type="text" id="amount" name="amount" required><br>
-      <label for="walletAddress">Seu Endereço da Carteira:</label><br>
-      <input type="text" id="walletAddress" name="walletAddress" required><br>
-      <label for="paymentType">Tipo de Pagamento:</label><br>
-      <select id="paymentType" name="paymentType" required><br>
-        <option value="bnb">BNB (Criptomoeda)</option>
-        <option value="usdt">USDT (Stablecoin)</option>
-      </select>
-      <button type="submit">Comprar Tokens</button>
-    </form>
-    <div id="status"></div>
-</div>
-</main>
+
 </div>
 <div class="container">
  <!-- Informações sobre o token Drink -->
@@ -340,6 +323,7 @@ Celebração do sucesso do projeto e da jornada até a Lua, sem perder de vista 
             </div>
          </article>
       </section>
+     <p>&#127926 &#128520 &#127925</p>
    </main>
 </div>
 
@@ -351,72 +335,8 @@ Celebração do sucesso do projeto e da jornada até a Lua, sem perder de vista 
     </div>
     <h6>&copy; <span id="year"></span> DrinkDrips. Todos os direitos reservados.</h6>
   </footer>
-
   <!-- Adicione os scripts JavaScript necessários -->
   <script>document.getElementById("year").innerHTML = new Date().getFullYear();</script>.
   <script src="roadmap.js"></script>
-  
-                 <script>
-                // Verificar se o MetaMask está instalado
-                  if (typeof window.ethereum !== 'undefined') {
-                    // Usar o MetaMask provider
-                    window.web3 = new Web3(window.ethereum);
-                    ethereum.enable(); // Pedir permissão ao usuário para acessar a conta
-                  } else {
-                    document.getElementById('status').innerHTML = 'Por favor, instale a MetaMask para continuar.';
-                  }
-              
-                  // Obter instância do contrato do token
-                  var contractAddress = 0x9759018e661Ff7B2e0cd2412F70043BcdB9Fb8C3; // Endereço do contrato DRINK
-                  var contractABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"balances","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"}];
-                  var contract = new web3.eth.Contract(contractABI, contractAddress);
-              
-                  // Manipular o envio do formulário
-                  document.getElementById('buyForm').addEventListener('submit', function(event) {
-                    event.preventDefault();
-              
-                    var amount = document.getElementById('amount').value;
-                    var walletAddress = document.getElementById('walletAddress').value;
-                    var paymentType = document.getElementById('paymentType').value;
-                    
-                    // Determinar o token de pagamento com base na seleção do usuário
-                    var tokenAddress;
-                    var tokenAmount;
-                    if (paymentType === 'bnb') {
-                      tokenAddress = 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c; // Endereço do token BNB
-                      tokenAmount = amount; // Quantidade de BNB
-                    } else if (paymentType === 'usdt') {
-                      tokenAddress = 0x55d398326f99059fF775485246999027B3197955; // Endereço do token USDT
-                      tokenAmount = amount; // Quantidade de USDT
-                    }
-              
-                    // Chamar a função de compra do contrato do token
-                    contract.methods.buyTokens(tokenAddress, tokenAmount).send({ from: walletAddress })
-                    .on('transactionHash', function(hash) {
-                      document.getElementById('status').innerHTML = 'Transação enviada: ' + hash;
-                    })
-                    .on('confirmation', function(confirmationNumber, receipt) {
-                      document.getElementById('status').innerHTML = 'Transação confirmada';
-                      // Você pode adicionar mais ações aqui, como atualizar o saldo do usuário, etc.
-                    })
-                    .on('error', function(error, receipt) {
-                      document.getElementById('status').innerHTML = 'Erro ao enviar transação: ' + error.message;
-                    });
-                  });
-              
-                  // Adiciona este trecho para solicitar a conexão manualmente quando o botão é clicado
-                  document.getElementById('connectMetaMaskButton').addEventListener('click', async () => {
-                    try {
-                      await ethereum.request({ method: 'eth_requestAccounts' });
-                      console.log('Conexão estabelecida com a MetaMask.');
-                      // Adicione aqui qualquer ação adicional que você deseja realizar após a conexão bem-sucedida
-                    } catch (error) {
-                      console.error('Falha ao conectar com a MetaMask:', error);
-                    }
-                  });
-              
-                  // Adiciona o ano atual ao rodapé
-                  document.getElementById("year").innerHTML = new Date().getFullYear();
-                </script>
 </body>
 </html>
