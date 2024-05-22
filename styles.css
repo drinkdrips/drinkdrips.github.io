@@ -68,7 +68,7 @@
 
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nanum Gothic Coding', monospace;
   font-size: 1rem;
   margin: 0;
   background-color: #1f2020 !important;
@@ -81,12 +81,14 @@ body {
   margin: 0 auto;
   padding-inline: 1em;
 }
-h1, h2, h3 {
+h1, h2, h3{
   font-family: "Honk", system-ui;
   text-wrap: balance;
   line-height: .8;
 }
+
 p {
+  font-family: 'Nanum Gothic Coding', monospace;
   text-wrap: pretty;
   line-height: 1.5;
 }
