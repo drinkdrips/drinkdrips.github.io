@@ -81,11 +81,18 @@ body {
   margin: 0 auto;
   padding-inline: 1em;
 }
-h1, h2, h3{
+h1 {
   font-family: "Honk", system-ui;
   text-wrap: balance;
   line-height: .8;
 }
+h2, h3{
+  font-family: "Titan One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px !important;
+}
+
 
 p {
   font-family: 'Nanum Gothic Coding', monospace;
@@ -198,8 +205,9 @@ nav:after {
   background: linear-gradient(in hsl longer hue 90deg, #f66 0 0);
 }
 .myLogo {
+  font-family: "Titan One", sans-serif;
   font-weight: 900;
-  font-size: 10cqi;
+  font-size: 5cqi;
   background: //fallback
       linear-gradient(45deg,
           hsl(0, 100%, 70%),
