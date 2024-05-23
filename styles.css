@@ -255,8 +255,9 @@ footer {
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #ffd60a;
-  background-color: #403d39;
+  border: 0px solid #ffd60a;
+  background-color: #393b3a;
+  padding: 50px !important;
 }
 
 .containerRoadmap {
