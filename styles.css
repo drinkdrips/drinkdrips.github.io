@@ -6,6 +6,10 @@
     margin: 20px;
     color: #F9F6EF !important;
   }
+
+.roadmap-card {
+    background-color: #FF5733; /* Cor de fundo específica para este card */
+}
   
 
   @supports(animation-timeline: view()){
