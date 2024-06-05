@@ -9,6 +9,11 @@
 
 .roadmap-card {
     background-color: #1f2020; /* Cor de fundo específica para este card */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    color: #F9F6EF !important;
 }
   
 
