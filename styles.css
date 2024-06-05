@@ -1,3 +1,13 @@
+  .card {
+    background: linear-gradient(to bottom, #1f2020, #bc69f2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    color: #F9F6EF !important;
+  }
+  
+
   @supports(animation-timeline: view()){
   @keyframes fade-out {
     to {
@@ -68,6 +78,7 @@
 
 
 body {
+  /*background: linear-gradient(to bottom, #1f2020, #bc69f2);*/
   font-family: 'Nanum Gothic Coding', monospace;
   font-size: 1rem;
   margin: 0;
@@ -80,6 +91,7 @@ body {
   max-width: 75ch;
   margin: 0 auto;
   padding-inline: 1em;
+  z-index: 1000; /* Para garantir que o menu fique sobre os outros elementos */
 }
 h1 {
   font-family: "Honk", system-ui;
@@ -250,24 +262,16 @@ footer {
 .container {
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
   border: 0px solid #ffd60a;
   background-color: #393b3a;
-  padding: 50px !important;
+  padding: 5px !important;
 }
 
-.containerRoadmap {
-  max-width: 1320px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #ffd60a;
-  }
 
 nav {
     flex-grow: 1; /* Ocupa todo o espaço disponível */
@@ -356,7 +360,6 @@ nav a:hover {
 
 
 /* Daqui para baixo é apenas a estilização do roadmap */
-
 
 
 #infographic .roadmapCircle {
