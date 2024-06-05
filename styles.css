@@ -254,7 +254,7 @@ nav:after {
 }
 
 footer {
-    background: linear-gradient(to bottom, #1f2020, #bc69f2); /* Define o degradê de preto para lilás */
+    /*background: linear-gradient(to bottom, #1f2020, #bc69f2); /* Define o degradê de preto para lilás */
     margin-top: 20px;
     padding: 20px;
     text-align: center;
