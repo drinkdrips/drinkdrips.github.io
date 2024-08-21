@@ -1,3 +1,14 @@
+  function toggleModal(modalId) {
+    var modal = document.getElementById(modalId);
+    if (modal.style.display === "block") {
+      modal.style.display = "none";
+    } else {
+      modal.style.display = "block";
+    }
+  }
+
+
+
 const iconBoxes = document.querySelectorAll(".menu-item");
 const closeBtns = document.querySelectorAll(".close-btn");
 const body = document.querySelector("body");
