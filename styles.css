@@ -3,7 +3,7 @@ html,
 body {
   height: 100%;
   margin: 0; /* Garantir que não haja margem padrão */
-  overflow: hidden; /* Impede rolagem global */
+  /* overflow: hidden;  Impede rolagem global */
 }
 
 body {
