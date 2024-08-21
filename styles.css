@@ -1,483 +1,328 @@
-  .content-card {
-    background: linear-gradient(to bottom, #1f2020, #bc69f2);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px;
-    color: #F9F6EF !important;
-  }
-
-.roadmap-card {
-    background-color: #212529 !important; /* Cor de fundo específica para este card */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px;
-  }
-  
-
-  @supports(animation-timeline: view()){
-  @keyframes fade-out {
-    to {
-      background-size: 150%;
-      opacity: 0 !important;
-    }
-  }
-  @keyframes zoom-out {
-    to {
-      font-size: 2rem;
-      padding-left: .1em;
-    }
-  }
-  @keyframes appear {
-    to {
-      opacity: 1;
-    }
-  }
-  @keyframes max-out {
-    to {
-      max-width: 100%;
-    }
-  }
-  .myHero {
-    animation: fade-out linear both;
-    animation-timeline: view();
-    animation-range: exit -100px;
-  }
-  nav {
-    animation: max-out linear both;
-    animation-timeline: view();
-    animation-range-start: 80vh;
-    animation-range-end: 100vh;
-  }
-  nav:after {
-    animation: appear linear both;
-    animation-timeline: view();
-    animation-range-start: 60vh;
-    animation-range-end: 100vh;
-  }
-  .myLogo {
-    animation: zoom-out linear both;
-    animation-timeline: view();
-    animation-range-start: 10vh;
-    animation-range-end: 100vh;
-  }
+/* Base */
+html,
+body {
+  height: 100%;
+  margin: 0; /* Garantir que não haja margem padrão */
+  overflow: hidden; /* Impede rolagem global */
 }
-
-/* Estilos para dispositivos menores, como celulares */
-@media screen and (max-width: 767px) {
-    /* Ajustes para telas menores */
-    .container {
-        font-size: 14px;
-        display: flex; /* Adicione display: flex; */
-        justify-content: center; /* Centralize horizontalmente */
-        align-items: center; /* Centralize verticalmente */
-    }
-    /* Exemplo de ajustes para outros elementos */
-}
-
-@supports(not(animation-timeline: view())) {
-  .notice:after {
-    content: ' animation-timeline of scroll and view are currently not supported in your browser.';
-  }
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..700&display=swap');
-
 
 body {
-  /*background: linear-gradient(to bottom, #1f2020, #bc69f2);*/
-  font-family: 'Nanum Gothic Coding', monospace;
-  font-size: 1rem;
-  margin: 0;
-  background-color: #1f2020 !important;
-  color: #F9F6EF !important;
-  height: auto !important;
-  overflow: auto; /* ou overflow: scroll; */
-}
-.myHero, nav, main {
-  max-width: 75ch;
-  margin: 0 auto;
-  padding-inline: 1em;
-  z-index: 1000; /* Para garantir que o menu fique sobre os outros elementos */
-}
-h1 {
-  font-family: "Honk", system-ui;
-  text-wrap: balance;
-  line-height: .8;
-}
-h2, h3{
-  font-family: "Titan One", sans-serif;
-  font-weight: 400;
+  background-color: #131313;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
   font-style: normal;
-  font-size: 18px !important;
+  font-variation-settings: "slnt" 0;
 }
 
-
-p {
-  font-family: 'Nanum Gothic Coding', monospace;
-  text-wrap: pretty;
-  line-height: 1.5;
+[x-cloak] {
+  display: none !important;
 }
-nav {
-  position: sticky;
-  top: 0;
-  left: 0;
-  min-height: 3rem;
-  background-color: #1f2020d0;
-  backdrop-filter: blur(.2em);
+
+.logo:hover .logo-svg {
+  transform: rotateY(180deg);
+}
+
+.btn--animateglowPink {
+  --border-size: 6px;
+  --border-angle: 0turn;
+  background-image: conic-gradient(
+      from var(--border-angle),
+      #131313,
+      #131313 50%,
+      #131313
+    ),
+    conic-gradient(
+      from var(--border-angle),
+      transparent 20%,
+      #d33cf2,
+      transparent
+    );
+  background-size: calc(100% - (var(--border-size) * 2))
+      calc(100% - (var(--border-size) * 2)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: 8s linear infinite bg-spin;
+}
+
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-areas: "layer";
+  place-items: center;
+  border-radius: 50%;
+
+  --radius: 250px;
+  width: 100%;
+  min-height: 100%;
+  transition: all 0.3s ease;
+}
+
+.stat {
+  grid-area: layer;
+  --d: calc(var(--i) / var(--total));
+  --r-offset: -0.25turn;
+  --r-amount: 1turn;
+  --r: calc((var(--r-amount) * var(--d)) + var(--r-offset));
+  --transform: rotate(var(--r)) translate(var(--radius))
+    rotate(calc(-1 * var(--r)));
+  transform: var(--transform);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.26) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(9.3px) !important;
+  -webkit-backdrop-filter: blur(9.3px) !important;
+}
+
+@media (max-width: 1280px) {
+  .stat {
+    --radius: 25vmin !important;
+  }
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-5px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+@keyframes floatdown {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(-5px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(0px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(-5px);
+  }
+}
+
+/* ------- */
+/* POPUP */
+
+body.prevent-background-scroll {
+  overflow: hidden;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  overflow: hidden; /* Impede a rolagem dentro do modal */
+  animation: openPopup 0.6s ease-in-out 1 normal;
+}
+
+.popup-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(80vw, 1000px); /* Ajusta a largura do modal */
+  height: min(80vh, 800px); /* Ajusta a altura do modal */
+  padding: 20px;
+  background: rgba(133, 133, 133, 0.2);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  color: #fff;
+  z-index: 30;
+  overflow-y: auto; /* Adiciona rolagem se o conteúdo for maior que o modal */
+  overflow-x: hidden; /* Impede rolagem horizontal no modal */
+  animation: openPopup 0.6s ease-in-out 1 normal;
+}
+
+@keyframes openPopup {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.popup-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0;
-  ul {
-    padding-right: 1em;
-    margin: 0;
-    display: inline-flex;
-    gap: 1rem;
-    li {
-      list-style: none;
-      display: inline-block;
-      cursor: pointer;
-      transition: .5s linear;
-      &:hover {
-        text-decoration: underline #5EB0E5;
-      }
-    }
-  }
-}
-.myHero {
-  min-height: 60vh;
-  background-image:
-    url("https://lh3.googleusercontent.com/pw/AP1GczOOk5wgRvI5RnKt6iz6btSie2asU4F1nBR60PUFUBbyr6KHTgk0SJ-9iUW5ETIjm9CNSznJvO9RvB7fYS9H1q3YgYfSDF6y2ytISTuo-Ilnanc1LkNxgkgP8zyNL7iFe26oBwimAPQKub5d5nzLhC0A=w647-h647-s-no-gm?authuser=0");
-  background-size: 30%;
-  background-repeat: no-repeat;
-  background-position: 100% 50%;
-  mix-blend-mode: lighten;
-  display: grid;
-  align-content: center;
-  container-type: inline-size;
-  h1 {
-    font-size: clamp(2rem, 7cqi, 10rem);
-    font-weight: 100;
-    max-width: 50%;
-    color: hsl(276 84%, 68%);
-  }
-  .btn {
-    display: inline;
-    position: relative;
-    padding: .5em 1em;
-    cursor: pointer;
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: //fallback
-        linear-gradient(45deg,
-            hsl(0, 100%, 70%),
-            hsl(30, 100%, 70%),
-            hsl(60, 100%, 70%),
-            hsl(90, 100%, 70%),
-            hsl(120, 100%, 70%),
-            hsl(150, 100%, 70%),
-            hsl(180, 100%, 70%),
-            hsl(210, 100%, 70%),
-            hsl(240, 100%, 70%),
-            hsl(270, 100%, 70%),
-            hsl(300, 100%, 70%),
-            hsl(330, 100%, 70%),
-            hsl(360, 100%, 70%)
-          );
-      background: linear-gradient(in hsl longer hue 45deg, #f66 0 0);
-      z-index: -1;
-      clip-path: polygon(90% 0, 100% 50%, 90% 99%, 0% 100%, 8% 50%, 0% 0%);
-    }
-    &:after {
-      background: #1f2020;
-      inset: 3px;
-    }
-  }
-}
-nav:after {
-  content: '';
-  position: absolute;
-  opacity: 0;
-  height: .05em;
-  width: 100%;
-  bottom: 0;
-  background: //fallback
-    linear-gradient(90deg,
-        hsl(0, 100%, 70%),
-        hsl(30, 100%, 70%),
-        hsl(60, 100%, 70%),
-        hsl(90, 100%, 70%),
-        hsl(120, 100%, 70%),
-        hsl(150, 100%, 70%),
-        hsl(180, 100%, 70%),
-        hsl(210, 100%, 70%),
-        hsl(240, 100%, 70%),
-        hsl(270, 100%, 70%),
-        hsl(300, 100%, 70%),
-        hsl(330, 100%, 70%),
-        hsl(360, 100%, 70%)
-      );
-  background: linear-gradient(in hsl longer hue 90deg, #f66 0 0);
-}
-.myLogo {
-  font-family: "Titan One", sans-serif;
-  font-weight: 900;
-  font-size: 5cqi;
-  background: //fallback
-      linear-gradient(45deg,
-          hsl(0, 100%, 70%),
-          hsl(30, 100%, 70%),
-          hsl(60, 100%, 70%),
-          hsl(90, 100%, 70%),
-          hsl(120, 100%, 70%),
-          hsl(150, 100%, 70%),
-          hsl(180, 100%, 70%),
-          hsl(210, 100%, 70%),
-          hsl(240, 100%, 70%),
-          hsl(270, 100%, 70%),
-          hsl(300, 100%, 70%),
-          hsl(330, 100%, 70%),
-          hsl(360, 100%, 70%)
-        );
-  background: linear-gradient(in hsl longer hue 40deg, #f66 0 0);
-  background-clip: text;
-  color: #0000;
+  font-weight: 600;
+  padding: 15px 20px;
+  font-size: 1.2rem;
 }
 
-.logoRodape img {
-    width: 150px; /* Ajuste o tamanho do logotipo conforme necessário */
+.popup-body {
+  color: #f7f7f7;
+  padding: 0 20px;
 }
 
-footer {
-    /*background: linear-gradient(to bottom, #1f2020, #bc69f2); /* Define o degradê de preto para lilás */
-    margin-top: 20px;
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;  
+/* Estilo base para os itens do menu */
+.menu-item {
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out; /* Transição suave para a cor */
+  margin-right: 20px; /* Espaçamento entre os itens do menu */
 }
 
-/* Mantenha as regras existentes que não precisam de alterações */
-
-.container {
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  border: 0px solid #ffd60a;
-  background-color: #393b3a;
-  padding: 5px !important;
+.menu-item:last-child {
+  margin-right: 0;
 }
 
-
-nav {
-    flex-grow: 1; /* Ocupa todo o espaço disponível */
+.menu-item:hover {
+  color: #E730CA; /* Cor de destaque ao passar o mouse */
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center; /* Centraliza os itens do menu */
-    padding: 0; /* Remova o preenchimento padrão */
+.menu-item:active {
+  color: #E730CA;
 }
 
-nav li {
-    margin-right: 10px;
+/* --------- */
+/* SCROLLBAR */
+
+.popup-container::-webkit-scrollbar {
+  width: 0.7rem;
 }
 
-nav li:last-child {
-    margin-right: 10; /* margem direita do último item */
+.popup-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.375rem rgb(79, 78, 78);
+  border-radius: 0.8rem;
 }
 
-.label, input, button {
-      display: block !important;
-      margin-bottom: 10px !important;
-      margin-top: 10px !important;
-      border-radius: 8px !important; /* Adiciona bordas arredondadas */
-    }
-
-input {
-  font-size: 16px; /* Ajuste o tamanho da fonte conforme desejado */
+.popup-container::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 0.375rem rgba(238, 238, 238, 0.9);
+  outline: none;
+  border-radius: 0.8rem;
 }
-
-input {
-  width: 80%; /* Define a largura para ocupar toda a largura do container pai */
-  height: 30px; /* Ajuste a altura conforme desejado */
-  padding: 10px; /* Adiciona um preenchimento interno para melhorar a aparência */
-  margin-bottom: 10px;
-  margin-top: 10px;
-  box-sizing: border-box; /* Garante que a largura inclua o padding e a borda */
-}
-button {
-  font-size: 16px; /* Ajuste o tamanho da fonte conforme desejado */
-  padding: 10px 20px; /* Adiciona preenchimento interno para melhorar a aparência */
-  border: none; /* Remove a borda */
-  border-radius: 4px; /* Adiciona cantos arredondados */
-  background-color: #bc69f2; /* Cor de fundo */
-  color: #fff; /* Cor do texto */
-  cursor: pointer; /* Altera o cursor ao passar por cima */
-  transition: background-color 0.3s; /* Adiciona uma transição suave de cor de fundo */
-}
-
-button:hover {
-  background-color: #7209b7; /* Cor de fundo ao passar o mouse */
-}
-
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-family: "Honk", system-ui; /* Aplica a fonte Arturo Outline. Se desejar usar a fonte "Lemonada", basta substituir 'Arturo Outline', sans-serif por 'Lemonada', cursive e vice versa .*/
-    font-size: 20px; /* Define o tamanho da fonte */
-    position: relative; /* Para animação */
-}
-
-nav a:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #fff;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
-}
-
-nav a:hover:before {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
-nav a:hover {
-    color: #e0aaff; /* Cor ao passar o mouse */
-}
-
-
 
 /* Daqui para baixo é apenas a estilização do roadmap */
 
-
 #infographic .roadmapCircle {
-   width: 320px;
-   height: 320px;
-   border-radius: 50%;
-   border: 7px double;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   text-align: center;
-   padding: 40px;
-   position: absolute;
-   left: 50%;
-   margin: 40px 0;
- }
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 7px double;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  position: absolute;
+  left: 50%;
+  margin: 40px 0;
+}
+
 #infographic section:nth-child(odd) .roadmapCircle {
-   transform: translateX(-100%);
+  transform: translateX(-100%);
 }
 
 #infographic article {
-   max-width: 410px;
-   margin-bottom: 20px;
-   cursor: pointer;
-   left: 50%;
-   position: relative;
+  max-width: 410px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  left: 50%;
+  position: relative;
 }
+
 #infographic article header {
-   border-top-right-radius: 30px;
-   border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
+
 #infographic article header i {
-   display: flex;
-   font-size: 2em;
-   border-radius: 50%;
-   background-clip: padding-box;
-   padding: 14px;
-   transition: transform 0.4s;
-   color: #fff;
-   border: 16px solid var(--bs-dark);
-   margin: -16px 0 -16px -20px;
+  display: flex;
+  font-size: 2em;
+  border-radius: 50%;
+  background-clip: padding-box;
+  padding: 14px;
+  transition: transform 0.4s;
+  color: #fff;
+  border: 16px solid var(--bs-dark);
+  margin: -16px 0 -16px -20px;
 }
+
 #infographic article:hover header i {
-   transform: scale(1.2);
+  transform: scale(1.2);
 }
+
 #infographic article.active header i {
-   transform: none;
+  transform: none;
 }
 
 #infographic article .roadmapBody {
-   background: var(--bgColor);
-   padding: 0 20px;
-   border-bottom-right-radius: 30px;
-   border-bottom-left-radius: 30px;
-   max-height: 0;
-   transition: max-height 0.5s, padding 0.5s;
-   overflow: hidden;
+  background: var(--bgColor);
+  padding: 0 20px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  max-height: 0;
+  transition: max-height 0.5s, padding 0.5s;
+  overflow: hidden;
 }
+
 #infographic article .roadmapBody .roadmapBtn {
-   padding: 3px 10px;
-   text-transform: uppercase;
+  padding: 3px 10px;
+  text-transform: uppercase;
 }
+
 #infographic :nth-child(even) article {
-   text-align: right;
-   transform: translateX(-100%);
+  text-align: right;
+  transform: translateX(-100%);
 }
+
 #infographic :nth-child(even) article header {
-   flex-flow: row-reverse;
-   border-top-left-radius: 30px;
-   border-bottom-left-radius: 30px;
+  flex-flow: row-reverse;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
+
 #infographic :nth-child(even) article header i {
-   margin: -16px -20px -16px 0;
+  margin: -16px -20px -16px 0;
 }
 
 #infographic section:nth-child(odd) article.active header {
-   border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
+
 #infographic section:nth-child(even) article.active header {
-   border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 #infographic article.active .roadmapBody {
-   padding: 20px;
-   max-height: 300px;
-   border: 1px solid;
+  padding: 20px;
+  max-height: 700px;
 }
 
-/* 
-   Articles Positioning
-   Uncomment these for debugging article positions
-*/
-/*#infographic .circle {
-   outline: 96px solid yellow;
-}
-#infographic article header i {
-   opacity: 0.5;
-   position: relative;
-}
-#infographic article header i:after {
-   content: "";
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   width: 4px;
-   height: 4px;
-   transform: translate(-2px, -2px);
-   background: blue;
-}*/
-
+/* Ajustes específicos para cada step */
 #infographic article[data-step="1"] {
    margin-left: 6px;
 }
