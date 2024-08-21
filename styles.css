@@ -15,10 +15,12 @@ html, body {
   min-height: 100vh;
 }
 
+/* Ajuste no container principal para compensar a navegação fixa */
 .wrapper {
+  padding-top: 100px;
   width: 100%;
   max-width: 1440px;
-  padding: 20px;
+  margin: 0 auto;
 }
 
 /* Navegação */
@@ -29,16 +31,28 @@ html, body {
   padding: 20px;
   background-color: #1c1c1c;
   border-radius: 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-  max-width: 100%;
+  max-width: 151px;
   height: auto;
 }
 
 /* Menu */
 .menu {
   display: flex;
+  align-items: center;
 }
 
 .menu-item {
@@ -47,6 +61,7 @@ html, body {
   margin-right: 20px;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
+  padding: 10px 15px;
 }
 
 .menu-item:last-child {
@@ -60,6 +75,7 @@ html, body {
 .menu-item:active {
   color: #E730CA;
 }
+
 
 /* Popups */
 .popup {
