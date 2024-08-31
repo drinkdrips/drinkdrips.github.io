@@ -1,0 +1,429 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* estilos personalizados antigos */
+header {
+  padding: 20px;
+  margin: 20px;
+  background-color: #131313;
+  border-radius: 8px;
+  background-image: conic-gradient(
+      from 0deg,
+      #d33cf2,
+      transparent 75%,
+      #d33cf2
+    );
+  background-size: 200% 200%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: rotateBorder 4s linear infinite;
+}
+
+
+@keyframes rotateBorder {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+
+/* Base */
+html,
+body {
+  height: 100%;
+  margin: 0; /* Garantir que não haja margem padrão */
+  /* overflow: hidden;  Impede rolagem global */
+}
+
+body {
+  background-color: #131313;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+.logo:hover .logo-svg {
+  transform: rotateY(180deg);
+}
+
+
+
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-areas: "layer";
+  place-items: center;
+  border-radius: 50%;
+
+  --radius: 250px;
+  width: 100%;
+  min-height: 100%;
+  transition: all 0.3s ease;
+}
+
+.stat {
+  grid-area: layer;
+  --d: calc(var(--i) / var(--total));
+  --r-offset: -0.25turn;
+  --r-amount: 1turn;
+  --r: calc((var(--r-amount) * var(--d)) + var(--r-offset));
+  --transform: rotate(var(--r)) translate(var(--radius))
+    rotate(calc(-1 * var(--r)));
+  transform: var(--transform);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.26) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(9.3px) !important;
+  -webkit-backdrop-filter: blur(9.3px) !important;
+}
+
+@media (max-width: 1280px) {
+  .stat {
+    --radius: 25vmin !important;
+  }
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-5px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+@keyframes floatdown {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(-5px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(0px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(-5px);
+  }
+}
+
+/* ------- */
+/* POPUP */
+
+body.prevent-background-scroll {
+  overflow: hidden;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  overflow: hidden; /* Impede a rolagem dentro do modal */
+  animation: openPopup 0.6s ease-in-out 1 normal;
+}
+
+.popup-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(80vw, 1000px); /* Ajusta a largura do modal */
+  height: min(80vh, 800px); /* Ajusta a altura do modal */
+  padding: 20px;
+  background: rgba(133, 133, 133, 0.2);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  color: #fff;
+  z-index: 30;
+  overflow-y: auto; /* Adiciona rolagem se o conteúdo for maior que o modal */
+  overflow-x: hidden; /* Impede rolagem horizontal no modal */
+  animation: openPopup 0.6s ease-in-out 1 normal;
+}
+
+@keyframes openPopup {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+}
+
+.popup-body {
+  color: #f7f7f7;
+  padding: 0 20px;
+}
+
+/* Estilo base para os itens do menu */
+.menu-item {
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out; /* Transição suave para a cor */
+  margin-right: 20px; /* Espaçamento entre os itens do menu */
+}
+
+.menu-item:last-child {
+  margin-right: 0;
+}
+
+.menu-item:hover {
+  color: #E730CA; /* Cor de destaque ao passar o mouse */
+}
+
+.menu-item:active {
+  color: #E730CA;
+}
+
+/* --------- */
+/* SCROLLBAR */
+
+.popup-container::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+.popup-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.375rem rgb(79, 78, 78);
+  border-radius: 0.8rem;
+}
+
+.popup-container::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 0.375rem rgba(238, 238, 238, 0.9);
+  outline: none;
+  border-radius: 0.8rem;
+}
+
+
+/* tentativa de organização do menu */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaço entre o logo e o menu */
+    padding: 10px 20px; /* Ajuste o padding conforme necessário */
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Alinha o conteúdo do logo verticalmente ao centro */
+}
+
+/*
+.logo img {
+  max-height: 100px; 
+  height: auto;
+  max-width: 100px;
+  width: auto;
+}*/
+
+.menu {
+    display: flex;
+    align-items: center; /* Alinha os itens do menu verticalmente ao centro */
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu ul li {
+    margin-left: 20px; /* Espaço entre os itens do menu */
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #000; /* Cor do texto do menu */
+}
+
+
+/* Daqui para baixo é apenas a estilização do roadmap */
+
+#infographic .roadmapCircle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 7px double;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  position: absolute;
+  left: 50%;
+  margin: 40px 0;
+}
+
+#infographic section:nth-child(odd) .roadmapCircle {
+  transform: translateX(-100%);
+}
+
+#infographic article {
+  max-width: 410px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  left: 50%;
+  position: relative;
+}
+
+#infographic article header {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+#infographic article header i {
+  display: flex;
+  font-size: 2em;
+  border-radius: 50%;
+  background-clip: padding-box;
+  padding: 14px;
+  transition: transform 0.4s;
+  color: #fff;
+  border: 16px solid var(--bs-dark);
+  margin: -16px 0 -16px -20px;
+}
+
+#infographic article:hover header i {
+  transform: scale(1.2);
+}
+
+#infographic article.active header i {
+  transform: none;
+}
+
+#infographic article .roadmapBody {
+  background: var(--bgColor);
+  padding: 0 20px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  max-height: 0;
+  transition: max-height 0.5s, padding 0.5s;
+  overflow: hidden;
+}
+
+#infographic article .roadmapBody .roadmapBtn {
+  padding: 3px 10px;
+  text-transform: uppercase;
+}
+
+#infographic :nth-child(even) article {
+  text-align: right;
+  transform: translateX(-100%);
+}
+
+#infographic :nth-child(even) article header {
+  flex-flow: row-reverse;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+#infographic :nth-child(even) article header i {
+  margin: -16px -20px -16px 0;
+}
+
+#infographic section:nth-child(odd) article.active header {
+  border-bottom-right-radius: 0;
+}
+
+#infographic section:nth-child(even) article.active header {
+  border-bottom-left-radius: 0;
+}
+
+#infographic article.active .roadmapBody {
+  padding: 20px;
+  max-height: 700px;
+}
+
+/* Ajustes específicos para cada step */
+#infographic article[data-step="1"] {
+   margin-left: 6px;
+}
+#infographic article[data-step="2"] {
+   margin-left: 54px;
+}
+#infographic article[data-step="3"] {
+   margin-left: 71px;
+}
+#infographic article[data-step="4"] {
+   margin-left: 61px;
+}
+#infographic article[data-step="5"] {
+   margin-left: 22px;
+}
+#infographic article[data-step="6"] {
+   margin-left: -5px;
+}
+#infographic article[data-step="7"] {
+   margin-left: -54px;
+}
+#infographic article[data-step="8"] {
+   margin-left: -70px;
+}
+#infographic article[data-step="9"] {
+   margin-left: -60px;
+}
+#infographic article[data-step="10"] {
+   margin-left: -21px;
+}
+#infographic article[data-step="11"] {
+   margin-left: 7px;
+}
+#infographic article[data-step="12"] {
+   margin-left: 55px;
+}
+#infographic article[data-step="13"] {
+   margin-left: 73px;
+}
+#infographic article[data-step="14"] {
+   margin-left: 62px;
+}
+#infographic article[data-step="15"] {
+   margin-left: 23px;
+}
+#infographic article[data-step="16"] {
+   margin-left: -102px;
+}

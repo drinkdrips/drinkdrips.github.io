@@ -5,8 +5,8 @@
   "main": "roadmap.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "postcss src/styles.css -o dist/styles.css",
-    "watch:css": "postcss src/styles.css -o dist/styles.css --watch"
+    "build:css": "npx postcss src/styles.css -o dist/styles.css",
+    "watch:css": "npx postcss src/styles.css -o dist/styles.css --watch"
   },
   "keywords": [],
   "author": "",
