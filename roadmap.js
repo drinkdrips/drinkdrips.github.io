@@ -1,22 +1,31 @@
-// Função para abrir o modal e prevenir o rolar do fundo
+// Função para alternar o modal
 function toggleModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
-        modal.style.display = "block";
-        body.classList.add("prevent-background-scroll");
+        // Verifica o estado atual do modal e alterna entre visível e oculto
+        if (modal.style.display === "block") {
+            modal.style.display = "none";
+        } else {
+            modal.style.display = "block";
+        }
     }
 }
 
-// Fechar o modal ao clicar no botão de fechar
+// Seleciona os botões de fechar e adiciona eventos de clique
+const closeBtns = document.querySelectorAll(".close-btn");
+const body = document.querySelector("body");
+
 closeBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
         let modal = btn.closest(".popup");
-        modal.style.display = "none";
-        body.classList.remove("prevent-background-scroll");
+        if (modal) {
+            modal.style.display = "none";
+            body.classList.remove("prevent-background-scroll");
+        }
     });
 });
 
-// Fechar o modal ao clicar fora dele
+// Fecha o modal ao clicar fora dele
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("popup")) {
         e.target.style.display = "none";
@@ -24,37 +33,38 @@ document.addEventListener("click", (e) => {
     }
 });
 
-// Expandir/Colapsar Artigos
+// Expande/Colapsa os artigos
 document.querySelectorAll("#infographic article").forEach((article) => {
-   article.addEventListener("click", () => {
-      article.classList.toggle("active");
-      // Atualiza o atributo aria-expanded
-      article.setAttribute("aria-expanded", article.classList.contains("active"));
-   });
+    article.addEventListener("click", () => {
+        console.log('Artigo clicado:', article); // Adicione este log
+        article.classList.toggle("active");
+    });
 });
 
-// Sempre Colapsar Artigos ao clicar fora
+// Sempre colapsa o artigo ao clicar fora dele
 document.addEventListener("mouseup", (e) => {
-   document.querySelectorAll("article.active").forEach((article) => {
-      if (article.contains(e.target)) return;
-      if (article === e.target) return;
-      article.classList.remove("active");
-      article.setAttribute("aria-expanded", "false");
-   });
+    document.querySelectorAll("article.active").forEach((article) => {
+        if (article.contains(e.target)) return;
+        if (article === e.target) return;
+        article.classList.remove("active");
+    });
 });
 
-// Ativar artigos através das interações de prev/next
+// Ativa os artigos através das interações de prev/next
 document.querySelectorAll("#infographic article .roadmapBtn").forEach((roadmapBtn) => {
-   roadmapBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      var isprev = e.target === e.target.parentElement.firstElementChild;
-      var article = roadmapBtn.closest("article");
-      var step = parseInt(article.getAttribute("data-step"));
-      var next = document.querySelector(`[data-step="${isprev ? step - 1 : step + 1}"]`);
-      if (next) {
-         next.classList.add("active");
-         next.setAttribute("aria-expanded", "true");
-         next.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
-   });
+    roadmapBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log('Botão clicado:', e.target); // Adicione este log
+        const isPrev = e.target === e.target.parentElement.firstElementChild;
+        const article = roadmapBtn.closest("article");
+        const step = parseInt(article.getAttribute("data-step"), 10);
+        const next = document.querySelector(`[data-step="${isPrev ? step - 1 : step + 1}"]`);
+        if (next) {
+            next.classList.add("active");
+            next.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        }
+    });
 });
