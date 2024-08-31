@@ -1,18 +1,4 @@
-  function toggleModal(modalId) {
-    var modal = document.getElementById(modalId);
-    if (modal.style.display === "block") {
-      modal.style.display = "none";
-    } else {
-      modal.style.display = "block";
-    }
-  }
-
-
-
-const iconBoxes = document.querySelectorAll(".menu-item");
-const closeBtns = document.querySelectorAll(".close-btn");
-const body = document.querySelector("body");
-
+// Função para abrir o modal e prevenir o rolar do fundo
 function toggleModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
@@ -21,6 +7,7 @@ function toggleModal(modalId) {
     }
 }
 
+// Fechar o modal ao clicar no botão de fechar
 closeBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
         let modal = btn.closest(".popup");
@@ -29,6 +16,7 @@ closeBtns.forEach((btn) => {
     });
 });
 
+// Fechar o modal ao clicar fora dele
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("popup")) {
         e.target.style.display = "none";
@@ -36,43 +24,37 @@ document.addEventListener("click", (e) => {
     }
 });
 
-// Script ROADMAP
-/*
-   ES6
-   Forget about jQuery
-*/
-
-// Expand/Collapse Article
+// Expandir/Colapsar Artigos
 document.querySelectorAll("#infographic article").forEach((article) => {
    article.addEventListener("click", () => {
       article.classList.toggle("active");
+      // Atualiza o atributo aria-expanded
+      article.setAttribute("aria-expanded", article.classList.contains("active"));
    });
 });
 
-// Always Collapse Article on click outside
+// Sempre Colapsar Artigos ao clicar fora
 document.addEventListener("mouseup", (e) => {
    document.querySelectorAll("article.active").forEach((article) => {
       if (article.contains(e.target)) return;
       if (article === e.target) return;
       article.classList.remove("active");
+      article.setAttribute("aria-expanded", "false");
    });
 });
 
-// Activate artciles through prev/next interactions
+// Ativar artigos através das interações de prev/next
 document.querySelectorAll("#infographic article .roadmapBtn").forEach((roadmapBtn) => {
    roadmapBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      var isprev =
-         e.target === e.target.parentElement.firstElementChild ? true : false;
+      var isprev = e.target === e.target.parentElement.firstElementChild;
       var article = roadmapBtn.closest("article");
       var step = parseInt(article.getAttribute("data-step"));
-      var next = document.querySelector(
-         `[data-step="${isprev ? step - 1 : step + 1}"]`
-      );
-      next.classList.add("active");
-      next.scrollIntoView({
-         behavior: "smooth",
-         block: "nearest"
-      });
+      var next = document.querySelector(`[data-step="${isprev ? step - 1 : step + 1}"]`);
+      if (next) {
+         next.classList.add("active");
+         next.setAttribute("aria-expanded", "true");
+         next.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
    });
 });
