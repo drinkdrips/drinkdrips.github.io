@@ -1,0 +1,20 @@
+{
+  "name": "drinkdrips.github.io",
+  "version": "1.0.0",
+  "description": "Leia-me",
+  "main": "roadmap.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "postcss src/styles.css -o dist/styles.css",
+    "watch:css": "postcss src/styles.css -o dist/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.10"
+  }
+}
