@@ -27,6 +27,9 @@ module.exports = {
         'screen-xl': '1440px',
         'screen-lg': '1240px',
       },
+      colors: {
+        'custom-purple': '#D33CF2',
+      },
     },
   },
   plugins: [],

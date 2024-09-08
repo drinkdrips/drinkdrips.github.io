@@ -28,6 +28,9 @@
 6. Use the user's configured `sans` font-variation-settings by default.
 7. Disable tap highlights on iOS
 */
+.border-custom-purple {
+  border-color: #D33CF2;
+}
 
 html,
 :host {
@@ -631,6 +634,9 @@ video {
 .mt-2 {
   margin-top: 0.5rem;
 }
+.mt-24 {
+  margin-top: 6rem;
+}
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -741,6 +747,9 @@ video {
 }
 .min-w-\[18px\] {
   min-width: 18px;
+}
+.min-w-\[220px\] {
+  min-width: 220px;
 }
 .min-w-\[262px\] {
   min-width: 262px;
@@ -928,6 +937,11 @@ video {
   margin-right: calc(1.75rem * var(--tw-space-x-reverse));
   margin-left: calc(1.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
+.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2rem * var(--tw-space-x-reverse));
+  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
@@ -952,6 +966,9 @@ video {
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.whitespace-nowrap {
   white-space: nowrap;
 }
 .rounded-2xl {
@@ -982,6 +999,10 @@ video {
 .border-\[\#E730CA\] {
   --tw-border-opacity: 1;
   border-color: rgb(231 48 202 / var(--tw-border-opacity));
+}
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 .border-red-500 {
   --tw-border-opacity: 1;
@@ -1357,7 +1378,7 @@ video {
 header {
   padding: 20px;
   margin: 20px;
-  background-color: #131313;
+  background-color: #f7f7f7;
   border-radius: 8px;
   background-image: conic-gradient(
       from 0deg,
@@ -1802,6 +1823,10 @@ header {
 .hover\:border-transparent:hover {
   border-color: transparent;
 }
+.hover\:bg-\[\#D33CF2\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(211 60 242 / var(--tw-bg-opacity));
+}
 .hover\:bg-\[\#E730CA\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(231 48 202 / var(--tw-bg-opacity));
@@ -1897,6 +1922,12 @@ header {
 .disabled\:text-gray-500:disabled {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.group:hover .group-hover\:visible {
+  visibility: visible;
+}
+.group:hover .group-hover\:block {
+  display: block;
 }
 .group:hover .group-hover\:text-gray-300 {
   --tw-text-opacity: 1;
@@ -2051,6 +2082,10 @@ header {
   }
 }
 @media (min-width: 768px) {
+
+  .md\:flex {
+    display: flex;
+  }
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));

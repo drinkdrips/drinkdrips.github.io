@@ -13,25 +13,55 @@
 </head>
 <body>
 
-<div class="relative p-4 m-1 min-h-screen overflow-hidden bg-[#131313] rounded-lg bg-gradient-conic from-[#131313] to-[#d33cf2] bg-[length:200%_200%] animate-rotateBorder">
-   <div class="min-h-screen max-w-screen-xl mx-auto">
-      <nav class="max-w-screen-lg mx-auto">
+<div>
+   <div>
+      <nav>
          <div class="px-4 pt-4 md:pt-9 transition-all">
             <div class="flex justify-between items-center">
-               <div class="flex">
-                  <div class="logo flex items-center text-white hover:text-[#E730CA] transition-colors">
+                <!-- Logo -->
+               <div class="flex items-center">
+                  <div class="logo">
                      <img src="https://lh3.googleusercontent.com/pw/AP1GczOOk5wgRvI5RnKt6iz6btSie2asU4F1nBR60PUFUBbyr6KHTgk0SJ-9iUW5ETIjm9CNSznJvO9RvB7fYS9H1q3YgYfSDF6y2ytISTuo-Ilnanc1LkNxgkgP8zyNL7iFe26oBwimAPQKub5d5nzLhC0A=w647-h647-s-no-gm?authuser=0" alt="DrinkDrips Logo" class="logo-svg" width="151" height="50">
                   </div>
                </div>
-
-               <div class="menu">
+                <!-- Menu Links com Dropdown e Modal -->
+                <div class="menu hidden md:flex space-x-8">
+                    <!-- Dropdown "Sobre" -->
+                    <div class="relative group">
                         <a href="#" onclick="toggleModal('modalSobre')" class="menu-item">Sobre</a>
-                        <a href="#" onclick="toggleModal('modalTokenomics')" class="menu-item">Tokenomics</a>
-                        <a href="#" onclick="toggleModal('modalRoadmap')" class="menu-item">Roadmap</a>
-                        <a href="#" onclick="toggleModal('modalWhitepaper')" class="menu-item">Whitepaper</a>
+                        <div class="absolute hidden group-hover:block group-hover:visible border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-0 z-50 min-w-[220px]">
+                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Nossa Missão</a>
+                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Equipe</a>
+                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">História</a>
+                        </div>
                     </div>
 
-                    <!-- Modal Sobre -->
+                    <!-- Dropdown "Tokenomics" -->
+                    <div class="relative group">
+                        <a href="#" onclick="toggleModal('modalTokenomics')" class="menu-item hover:text-[#E730CA] transition-colors">Tokenomics</a>
+                        <div class="absolute hidden group-hover:block group-hover:visible border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-0 z-50 min-w-[220px]">
+                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Distribuição de Tokens</a>
+                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Economia</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown "Roadmap" -->
+                    <div class="relative group">
+                        <a href="#" onclick="toggleModal('modalRoadmap')" class="menu-item hover:text-[#E730CA] transition-colors">Roadmap</a>
+                        <div class="absolute hidden group-hover:block group-hover:visible border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-0 z-50 min-w-[220px]">
+                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Fase 1</a>
+                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Fase 2</a>
+                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Fase 3</a>
+                        </div>
+                    </div>
+
+                    <!-- Link "Whitepaper" sem Dropdown -->
+                    <a href="#" onclick="toggleModal('modalWhitepaper')" class="menu-item hover:text-[#E730CA] transition-colors">Whitepaper</a>
+                </div>
+
+        
+
+                     <!-- Modal Sobre -->
                     <div id="modalSobre" class="popup">
                         <div class="popup-container">
                             <div class="popup-header">
@@ -593,7 +623,7 @@
                      <h1 class="mt-10 max-w-lg text-4xl sm:text-7xl lg:text-6xl font-semibold text-white xl:text-7xl tracking-tight">Bem vindos a <span class="text-[#FF33DE]">DrinkDrips</span></h1>
                      <p class="mt-6 xl:text-lg font-medium leading-8 text-white max-w-[553px]">Um projeto pessoal em desenvolvimento, com a proposta de ser uma plataforma simples e funcional utilizando segundas camadas da blockchain. Os tokens nativos serão chamados de <span class="text-[#FF33DE]">Drink & Drips.</span></p>
                      <div class="mt-10 flex items-center gap-x-6">
-                        <a href="#" x-on:mouseover="openError = true" class="rounded-xl bg-[#E730CA] w-32 xl:w-40 py-2.5 font-semibold text-sm xl:text-base text-white text-center border border-transparent hover:border-[#E730CA] hover:bg-transparent focus-visible:outline-none focus-visible:outline-0 focus-visible:outline-offset-0 focus-visible:outline-transparent transition-colors">Beta</a>
+                        <a href="https://drinkdrips.github.io/app/" x-on:mouseover="openError = true" class="rounded-xl bg-[#E730CA] w-32 xl:w-40 py-2.5 font-semibold text-sm xl:text-base text-white text-center border border-transparent hover:border-[#E730CA] hover:bg-transparent focus-visible:outline-none focus-visible:outline-0 focus-visible:outline-offset-0 focus-visible:outline-transparent transition-colors">App Beta</a>
                         <a href="#" x-on:mouseover="openError = true" class="border border-[#E730CA] hover:border-[#E730CA]/30 bg-transparent hover:bg-[#E730CA]/30 rounded-xl w-32 xl:w-40 py-2.5 font-semibold leading-6 text-sm xl:text-base text-[#E730CA] hover:text-white text-center transition-colors">Desenvolvedor</a>
                      </div>
                   </div>

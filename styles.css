@@ -232,3 +232,47 @@ html, body {
 }
 
 /* Outros estilos para ajuste de layout */
+
+/* Estilo do Menu */
+.menu-item {
+  position: relative;
+  padding: 10px 15px;
+  font-weight: bold;
+  color: white;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  color: #E730CA;
+}
+
+.group .absolute {
+  display: none;
+}
+
+.group:hover .absolute {
+  display: block;
+}
+
+.absolute {
+  position: absolute;
+  left: 0;
+  background-color: #131313;
+  z-index: 1000;
+  min-width: 150px;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.absolute a {
+  padding: 10px 20px;
+  display: block;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.absolute a:hover {
+  background-color: #E730CA;
+}
