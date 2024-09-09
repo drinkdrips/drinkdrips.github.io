@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <link rel="icon" href="Drink-favicon.ico" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.3.6/dist/web3.min.js"></script>
 </head>
 <body>
 
@@ -470,7 +471,7 @@
                     </div>
 
                <div class="flex items-center space-x-7">
-                  <a class="relative group hidden min-[845px]:flex bg-transparent min-w-44 w-44 h-12 rounded-lg overflow-hidden border border-[#E730CA] font-semibold text-[#E730CA] sm:hover:text-white sm:hover:border-[#561950] transition-all duration-700" style="will-change: transform" id="cta">
+                  <a class="connect-button relative group hidden min-[845px]:flex bg-transparent min-w-44 w-44 h-12 rounded-lg overflow-hidden border border-[#E730CA] font-semibold text-[#E730CA] sm:hover:text-white sm:hover:border-[#561950] transition-all duration-700" style="will-change: transform" id="cta">
                      <span x-on:mouseover="openError = true" class="flex justify-center items-center h-full w-full sm:transform sm:group-hover:-translate-x-3.5 transition-transform cursor-pointer duration-700">Connect Wallet</span>
                      <span class="absolute top-0 -right-8 sm:group-hover:right-0 h-full flex justify-center items-center px-1.5 bg-[#E730CA] transition-all cursor-pointer duration-700">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#131313" class="w-[18px] h-4">
@@ -966,7 +967,7 @@
 				</section>
 
 				<!-- Banner -->
-				<!-- 				<section class="px-6 lg:px-8 relative">
+				<section class="px-6 lg:px-8 relative">
 					<div>
 						<div class="relative isolate pt-14">
 							<div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
@@ -1009,10 +1010,49 @@
 							</div>
 						</div>
 					</div>
+				</section>
 
-				</section> -->
-			</main>
+                <!-- Container principal da seção DashBoard E Formulário de Compras-->
+                <section class="mt-20 px-6 lg:px-8 max-w-screen-lg mx-auto">
+                    <!-- Flex container para dashboard e formulário -->
+                    <div class="lg:flex lg:space-x-8 space-y-8 lg:space-y-0">
+                        <!-- Dashboard -->
+                        <div class="bg-[#202020] text-white rounded-lg shadow-lg p-6 lg:w-1/2 w-full">
+                            <h3 class="text-2xl font-semibold mb-4">Visão Geral</h3>
+                            <div class="space-y-4">
+                                <!-- Conteúdo do Dashboard -->
+                                <div class="bg-[#303030] p-4 rounded-lg">
+                                    <h4 class="text-xl font-semibold">Dashboard DrinkDrips</h4>
+                                    <p>Fornecimento máximo: <span id="maxSupply">Loading...</span> Drinks</p>
+                                    <p>Fornecimento circulante: <span id="totalSupply">Loading...</span> Drinks</p>
+                                    <p>Stakeholders: <span id="stakeHolders">Loading...</span></p>
+                                    <p>Total de Drinks em stake: <span id="totalstakedTokens">Loading...</span> Drinks</p>
+                                    <p>Recompensas (DRIPS) distribuídas: <span id="dripstotalSupply">Loading...</span> Drips</p>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Formulário de compra de Drinks -->
+                        <div class="bg-[#202020] text-white rounded-lg shadow-lg p-6 lg:w-1/2 w-full">
+                            <h3 class="text-2xl font-semibold mb-4">Comprar Drinks</h3>
+                            <form id="buyDrinksForm" class="space-y-4">
+                                <div class="form-group">
+                                    <label for="paymentToken" class="block text-white font-medium mb-1">Token de pagamento:</label>
+                                    <select class="form-control w-full bg-[#303030] text-gray-600 rounded-md border-none p-input" id="paymentToken">
+                                        <option value="usd">USDC</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="usdAmount" class="block text-white font-medium mb-1">Valor:</label>
+                                    <input type="number" class="form-control w-full bg-[#303030] text-gray-600 rounded-md border-none p-input" id="usdAmount" placeholder="Digite apenas números inteiros" step="1" min="0">
+                                </div>
+                                <button type="submit" class="w-full py-2 bg-[#E730CA] text-white rounded-md hover:bg-[#D33CF2] transition-all">Comprar DRINK</button>
+                            </form>                                                                       
+                        </div>
+                    </div>
+                </section>
+            <!-- Fim do container principal da seção DashBoard E Formulário de Compras-->
+ 			</main>     
 		</div>
 	</div>
 
@@ -1069,7 +1109,7 @@
 					</svg>
 				</a>
 			</div>
-			<p class="mt-10 text-center text-xs leading-5 text-gray-500">&copy; 2024 Naida, Inc. All rights reserved.</p>
+			<p class="mt-10 text-center text-xs leading-5 text-gray-500">&copy; 2024 DrinkDrips, Inc. All rights reserved.</p>
 		</div>
 	</footer>
 
@@ -1102,6 +1142,9 @@
 	</div>
 </div>
   </body>
+  <script type="module" src="scripts/connectWallet.js"></script>
+  <script type="module" src="scripts/liquidityPool.js"></script>
+  <script type="module" src="scripts/governance.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script src="roadmap.js"></script>
 </html>

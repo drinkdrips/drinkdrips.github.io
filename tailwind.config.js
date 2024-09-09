@@ -30,9 +30,10 @@ module.exports = {
       colors: {
         'custom-purple': '#D33CF2',
       },
+      padding: {
+        'input': '12px 12px 8px 12px' // Define o padding personalizado
+      },
     },
   },
   plugins: [],
 };
-
-
