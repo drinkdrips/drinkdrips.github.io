@@ -496,19 +496,18 @@ function addProposalToUI(id, description, voteCount = 0) {
     const convertedVoteCount = convertVotes(voteCount); // Converte os votos para uma unidade legível
     const proposalsContainer = document.getElementById('governanceProposals');
     const proposalCard = `
-        <div class="col-md-4" id="proposal-${id}">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Proposta ${id}</h5>
-                    <p class="card-text">${description}</p>
-                    <p class="vote-count">Votos: ${convertedVoteCount}</p>
-                    <button class="btn btn-primary" onclick="voteOnProposal(${id})">Votar</button>
-                </div>
+        <div class="bg-[#202020] text-white rounded-lg shadow-lg p-6" id="proposal-${id}">
+            <div>
+                <h5 class="text-xl font-semibold mb-2">Proposta ${id}</h5>
+                <p class="mb-2">${description}</p>
+                <p class="text-sm mb-4">Votos: ${convertedVoteCount}</p>
+                <button class="bg-[#E730CA] text-white rounded-md py-2 px-4 hover:bg-[#D33CF2] transition-all" onclick="voteOnProposal(${id})">Votar</button>
             </div>
         </div>
     `;
     proposalsContainer.innerHTML += proposalCard;
 }
+
 
 function updateVoteCountUI(proposalId, votes) {
     const convertedVoteCount = convertVotes(votes);
