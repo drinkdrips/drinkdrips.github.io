@@ -1323,6 +1323,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(100 100 100 / var(--tw-text-opacity));
 }
+.text-\[\#CACACA\] {
+  --tw-text-opacity: 1;
+  color: rgb(202 202 202 / var(--tw-text-opacity));
+}
 .text-\[\#E730CA\] {
   --tw-text-opacity: 1;
   color: rgb(231 48 202 / var(--tw-text-opacity));
