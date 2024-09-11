@@ -1095,12 +1095,12 @@
                     <div class="lg:flex lg:space-x-8 space-y-8 lg:space-y-0">
                         <!-- Painel de Informações -->
                         <div class="bg-[#202020] text-white rounded-lg shadow-lg p-6 lg:w-1/3 w-full">
-                            <h3 class="text-2xl font-semibold mb-4">Seu Painel</h3>
-                            <p>Seu saldo de Drinks: <span id="drinkBalance">Loading...</span> Drinks</p>
-                            <p>Seus Drinks em Stake: <span id="stakingBalance">Loading...</span> Drinks</p>
-                            <h4 class="text-xl font-semibold mt-4 mb-2">Suas recompensas</h4>
-                            <p>Seu saldo de Drips: <span id="dripsBalance">Loading...</span></p>
-                            <p>Drips a reivindicar: <span id="claimableDrips">Loading...</span></p>
+                            <h3 class="text-2xl font-semibold mb-4">Painel</h3>
+                            <p>Saldo: <span id="drinkBalance">Loading...</span> Drinks</p>
+                            <p>Em Stake: <span id="stakingBalance">Loading...</span> Drinks</p>
+                            <h4 class="text-xl font-semibold mt-4 mb-2">Recompensas</h4>
+                            <p>Você reivindicou: <span id="dripsBalance">Loading...</span> Drips</p>
+                            <p>A reivindicar: <span id="claimableDrips">Loading...</span> Drips</p>
                         </div>
 
                         <!-- Formulário de Aprovação de Drinks -->
@@ -1125,7 +1125,7 @@
                             <!-- Formulário de Stake -->
                             <div class="bg-[#202020] text-white rounded-lg shadow-lg p-6 lg:w-1/3 w-full flex flex-col">
                                 <h3 class="text-2xl font-semibold mb-4">Stake de Drinks</h3>
-                                <form id="stakeDrinksForm" class="space-y-4 flex-grow">
+                                <form id="stakeDrinksForm" class="space-y-4 flex flex-col justify-between flex-grow">
                                     <div class="form-group">
                                         <label for="stakeAmount" class="block text-white font-medium mb-1">Após a aprovação, insira a quantidade de Drinks e clique em Stake:</label>
                                         <input type="number" class="form-control w-full bg-[#303030] text-gray-600 rounded-md border-none p-input" id="stakeAmount" placeholder="0" step="1" min="1">
@@ -1133,30 +1133,32 @@
                                     <button type="submit" class="w-full py-2 bg-[#E730CA] text-white rounded-md hover:bg-[#D33CF2] transition-all">Stake</button>
                                 </form>
                             </div>
-
+                
                             <!-- Formulário de Unstake -->
                             <div class="bg-[#202020] text-white rounded-lg shadow-lg p-6 lg:w-1/3 w-full flex flex-col">
                                 <h3 class="text-2xl font-semibold mb-4">Remover Stake</h3>
-                                <form id="unstakeDrinksForm" class="space-y-4 flex-grow">
+                                <form id="unstakeDrinksForm" class="space-y-4 flex flex-col justify-between flex-grow">
                                     <div class="form-group">
-                                        <label for="unstakeAmount" class="block text-white font-medium mb-1">Remover Stake:</label>
+                                        <label for="unstakeAmount" class="block text-white font-medium mb-1">Ao remover o stake, suas Drips serão reivindicadas automaticamente.</label>
                                         <input type="number" class="form-control w-full bg-[#303030] text-gray-600 rounded-md border-none p-input" id="unstakeAmount" placeholder="0" step="1" min="0">
                                     </div>
                                     <button type="submit" class="w-full py-2 bg-[#E730CA] text-white rounded-md hover:bg-[#D33CF2] transition-all">Unstake</button>
                                 </form>
                             </div>
-
+                
                             <!-- Formulário de Reivindicação de DRIPS -->
                             <div class="bg-[#202020] text-white rounded-lg shadow-lg p-6 lg:w-1/3 w-full flex flex-col">
                                 <h3 class="text-2xl font-semibold mb-4">Reivindicar DRIPS</h3>
-                                <form id="claimDripsForm" class="flex-grow">
+                                <form id="claimDripsForm" class="flex flex-col justify-between flex-grow">
+                                    <div class="flex-grow"></div>
+                                    <p>Resgate a recompensa por manter seus Drinks em Stake</p><br>
                                     <button type="submit" class="w-full py-2 bg-[#E730CA] text-white rounded-md hover:bg-[#D33CF2] transition-all">Reivindicar DRIPS</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </section>
-            <!-- Fim do container principal da seção de Stake -->
+                
 
                 <!-- DASHBOARD LIQUIDITY -->
                 <section class="mt-20 px-6 lg:px-8 max-w-screen-lg mx-auto">
@@ -1167,7 +1169,7 @@
                             <h3 class="text-2xl font-semibold mb-4">Sua Pool</h3>
                             <div class="space-y-4">
                                 <div class="bg-[#303030] p-4 rounded-lg flex flex-col justify-between h-full">
-                                    <p class="font-semibold">Sua Pool</p>
+                                    <p class="font-semibold"></p>
                                     <div class="mt-4">
                                         <p>Ethers: <span id="yourEthAmount">0</span></p>
                                         <p>Drinks: <span id="yourTokenAmount">0</span></p>
@@ -1183,39 +1185,48 @@
                         <div class="bg-[#202020] text-white rounded-lg shadow-lg p-6 lg:w-1/2 w-full">
                             <h3 class="text-2xl font-semibold mb-4">Liquidity Pool</h3>
                             <div class="tab-container">
-                                <ul class="flex space-x-4">
-                                    <li class="active"><a href="#addLiquidity" class="text-[#E730CA] hover:text-[#D33CF2]" role="tab">Adicionar</a></li>
-                                    <li><a href="#removeLiquidity" class="text-[#E730CA] hover:text-[#D33CF2]" role="tab">Remover</a></li>
-                                </ul>
-                                <div class="tab-content mt-4">
-                                    <!-- Adicionar Liquidez -->
-                                    <div id="addLiquidity" class="tab-pane active">
-                                        <form id="addLiquidityForm" class="space-y-4">
-                                            <div class="form-group">
-                                                <label for="addLiquidityEthAmount" class="block text-white font-medium mb-1">Adicionar Ethereum</label>
-                                                <input type="number" id="addLiquidityEthAmount" class="form-control w-full bg-[#303030] text-gray-600 rounded-md p-input" placeholder="0" step="any" min="0">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="addLiquidityDrinkAmount" class="block text-white font-medium mb-1">Adicionar Drink</label>
-                                                <input type="number" id="addLiquidityDrinkAmount" class="form-control w-full bg-[#303030] text-gray-600 rounded-md p-input" placeholder="0" step="any" min="0">
-                                            </div>
-                                            <button type="submit" class="w-full py-2 bg-[#E730CA] text-white rounded-md hover:bg-[#D33CF2] transition-all">Adicionar Liquidez</button>
-                                        </form>
-                                    </div>
-
-                                    <!-- Remover Liquidez -->
-                                    <div id="removeLiquidity" class="tab-pane">
-                                        <form id="removeLiquidityForm" class="space-y-4">
-                                            <div class="form-group">
-                                                <label for="removeLiquidityEthAmount" class="block text-white font-medium mb-1">Remover Ethereum</label>
-                                                <input type="number" id="removeLiquidityEthAmount" class="form-control w-full bg-[#303030] text-gray-600 rounded-md p-input" placeholder="0" step="any" min="0">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="removeLiquidityDrinkAmount" class="block text-white font-medium mb-1">Remover Drink</label>
-                                                <input type="number" id="removeLiquidityDrinkAmount" class="form-control w-full bg-[#303030] text-gray-600 rounded-md p-input" placeholder="0" step="any" min="0">
-                                            </div>
-                                            <button type="submit" class="w-full py-2 bg-[#E730CA] text-white rounded-md hover:bg-[#D33CF2] transition-all">Remover Liquidez</button>
-                                        </form>
+                                <div class="mt-4">
+                                    <!-- Abas de navegação -->
+                                    <ul class="flex border-b border-[#303030]">
+                                        <li class="-mb-px mr-1">
+                                            <a href="#addLiquidity" class="tab-link bg-[#202020] inline-block py-2 px-4 text-[#E730CA] font-semibold rounded-t-lg active">Adicionar</a>
+                                        </li>
+                                        <li class="mr-1">
+                                            <a href="#removeLiquidity" class="tab-link bg-[#202020] inline-block py-2 px-4 text-white font-semibold rounded-t-lg hover:text-[#E730CA]">Remover</a>
+                                        </li>
+                                    </ul>
+                                
+                                    <!-- Conteúdo das Abas -->
+                                    <div class="tab-content mt-4">
+                                        <!-- Adicionar Liquidez -->
+                                        <div id="addLiquidity" class="tab-pane active">
+                                            <form id="addLiquidityForm" class="space-y-4">
+                                                <div class="form-group">
+                                                    <label for="addLiquidityEthAmount" class="block text-white font-medium mb-1">Adicionar Ethereum</label>
+                                                    <input type="number" id="addLiquidityEthAmount" class="form-control w-full bg-[#303030] text-gray-600 rounded-md p-input" placeholder="0" step="any" min="0">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="addLiquidityDrinkAmount" class="block text-white font-medium mb-1">Adicionar Drink</label>
+                                                    <input type="number" id="addLiquidityDrinkAmount" class="form-control w-full bg-[#303030] text-gray-600 rounded-md p-input" placeholder="0" step="any" min="0">
+                                                </div>
+                                                <button type="submit" class="w-full py-2 bg-[#E730CA] text-white rounded-md hover:bg-[#D33CF2] transition-all">Adicionar Liquidez</button>
+                                            </form>
+                                        </div>
+                                
+                                        <!-- Remover Liquidez -->
+                                        <div id="removeLiquidity" class="tab-pane hidden">
+                                            <form id="removeLiquidityForm" class="space-y-4">
+                                                <div class="form-group">
+                                                    <label for="removeLiquidityEthAmount" class="block text-white font-medium mb-1">Remover Ethereum</label>
+                                                    <input type="number" id="removeLiquidityEthAmount" class="form-control w-full bg-[#303030] text-gray-600 rounded-md p-input" placeholder="0" step="any" min="0">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="removeLiquidityDrinkAmount" class="block text-white font-medium mb-1">Remover Drink</label>
+                                                    <input type="number" id="removeLiquidityDrinkAmount" class="form-control w-full bg-[#303030] text-gray-600 rounded-md p-input" placeholder="0" step="any" min="0">
+                                                </div>
+                                                <button type="submit" class="w-full py-2 bg-[#E730CA] text-white rounded-md hover:bg-[#D33CF2] transition-all">Remover Liquidez</button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1227,7 +1238,7 @@
                 <!-- SWAP Section -->
                 <section class="mt-20 px-6 lg:px-8 max-w-screen-lg mx-auto">
                     <div class="bg-[#202020] text-white rounded-lg shadow-lg p-6">
-                        <h3 class="text-2xl font-semibold mb-4">SWAP</h3>
+                        <h3 class="text-2xl font-semibold mb-4">SWAP (em breve...)</h3>
                         <form id="swapForm" class="space-y-4">
                             <div class="form-group">
                                 <label for="fromToken" class="block text-white font-medium mb-1">De:</label>
@@ -1238,10 +1249,14 @@
                                     <option value="maticToken">MATIC</option>
                                 </select>
                             </div>
-                            <button id="invertButton" type="button" class="w-full py-2 bg-[#E730CA] text-white rounded-md hover:bg-[#D33CF2] transition-all">
-                                <i class="fas fa-arrow-up"></i>
-                                <i class="fas fa-arrow-down"></i>
-                            </button>
+
+                            <!-- Container flex para alinhar o botão centralizado -->
+                            <div class="flex justify-center my-4">
+                                <button id="invertButton" type="button" class="w-10 h-10 bg-[#E730CA] text-white rounded-full hover:bg-[#D33CF2] transition-all flex items-center justify-center text-xl">
+                                    ⇅
+                                </button>
+                            </div>
+
                             <div class="form-group">
                                 <label for="toToken" class="block text-white font-medium mb-1">Para:</label>
                                 <select id="toToken" class="form-control w-full bg-[#303030] text-gray-600 rounded-md p-input">
@@ -1251,15 +1266,17 @@
                                     <option value="maticToken">MATIC</option>
                                 </select>
                             </div>
+
                             <button id="swapButton" type="submit" class="w-full py-2 bg-[#E730CA] text-white rounded-md hover:bg-[#D33CF2] transition-all">Swap</button>
                         </form>
                     </div>
                 </section>
                 <!-- FIM DO SWAP Section -->
 
+
                 <!-- COMUNIDADE Section -->
                 <section class="mt-20 px-6 lg:px-8 max-w-screen-lg mx-auto">
-                    <h3 class="text-center text-3xl font-semibold mb-8">Solta a Voz Comunidade!</h3>
+                    <h3 class="text-center text-3xl text-white font-semibold mb-8">Solta a Voz Comunidade!</h3>
                     <div id="governanceProposals" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                         <!-- Propostas adicionadas dinamicamente -->
                     </div>
@@ -1377,6 +1394,23 @@
 	</div>
 </div>
   </body>
+    <script>
+        // Script para alternar entre abas
+        document.querySelectorAll('.tab-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remover classes ativas das abas e dos conteúdos
+                document.querySelectorAll('.tab-link').forEach(l => l.classList.remove('active', 'text-[#E730CA]'));
+                document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.add('hidden'));
+                
+                // Adicionar classes ativas ao link clicado e mostrar o conteúdo correspondente
+                this.classList.add('active', 'text-[#E730CA]');
+                const target = document.querySelector(this.getAttribute('href'));
+                target.classList.remove('hidden');
+            });
+        });
+    </script>
   <script type="module" src="scripts/connectWallet.js"></script>
   <script type="module" src="scripts/liquidityPool.js"></script>
   <script type="module" src="scripts/governance.js" defer></script>

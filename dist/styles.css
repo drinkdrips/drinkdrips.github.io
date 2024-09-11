@@ -628,8 +628,15 @@ video {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .-mb-6 {
   margin-bottom: -1.5rem;
+}
+.-mb-px {
+  margin-bottom: -1px;
 }
 .-mr-2 {
   margin-right: -0.5rem;
@@ -654,6 +661,9 @@ video {
 }
 .ml-4 {
   margin-left: 1rem;
+}
+.mr-1 {
+  margin-right: 0.25rem;
 }
 .mr-16 {
   margin-right: 4rem;
@@ -709,6 +719,9 @@ video {
 .hidden {
   display: none;
 }
+.h-10 {
+  height: 2.5rem;
+}
 .h-12 {
   height: 3rem;
 }
@@ -750,6 +763,9 @@ video {
 }
 .w-0 {
   width: 0px;
+}
+.w-10 {
+  width: 2.5rem;
 }
 .w-12 {
   width: 3rem;
@@ -980,11 +996,6 @@ video {
   margin-right: calc(2.5rem * var(--tw-space-x-reverse));
   margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
-.space-x-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
-}
 .space-x-7 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.75rem * var(--tw-space-x-reverse));
@@ -1044,8 +1055,15 @@ video {
 .rounded-xl {
   border-radius: 0.75rem;
 }
+.rounded-t-lg {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
 .border {
   border-width: 1px;
+}
+.border-b {
+  border-bottom-width: 1px;
 }
 .border-none {
   border-style: none;
@@ -1929,10 +1947,6 @@ header {
 }
 .hover\:stroke-\[\#e730ca\]:hover {
   stroke: #e730ca;
-}
-.hover\:text-\[\#D33CF2\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(211 60 242 / var(--tw-text-opacity));
 }
 .hover\:text-\[\#E730CA\]:hover {
   --tw-text-opacity: 1;
