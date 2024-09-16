@@ -663,12 +663,70 @@
                   <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
                      <div class="flex">
                         <div x-on:mouseover="openError = true" class="relative flex items-center gap-x-4 rounded-full px-4 py-1 leading-6 text-sm xl:text-base text-white xl:font-semibold border border-[#CACACA]/60 bg-transparent hover:bg-[#E730CA] hover:border-transparent transition-colors">
-                           <a href="#" class="flex items-center gap-x-1">
-                              Packs limitados
+                           <a href="#" onclick="toggleModal('modalPacotes')" class="flex items-center gap-x-1">
+                              Pacotes Especiais
                               <svg class="-mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                  <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
                               </svg>
                            </a>
+                            <!-- Modal Pacotes de Investimento -->
+                            <div id="modalPacotes" class="popup">
+                                <div class="popup-container">
+                                    <div class="popup-header">
+                                        <h2 class="text-2xl font-bold text-custom-purple">Pacotes de Investimento em Drinks</h2>
+                                        <button class="close-btn text-gray-600 hover:text-[#D33CF2]" aria-label="Fechar modal">&times;</button>
+                                    </div>
+                                    <div class="popup-body">
+                                        <p class="text-lg text-gray-700 mb-4">Investir em nossos pacotes de Drinks oferece não só um excelente retorno, mas também descontos progressivos. Confira as vantagens e os preços especiais para cada pacote:</p>
+                                        
+                                        <div class="mb-6 p-4 border rounded-lg bg-gray-100">
+                                            <h3 class="text-xl font-semibold text-[#D33CF2] mb-2">Pack 100.000 Drinks (Ouro)</h3>
+                                            <p class="text-gray-800"><strong>Valor Total:</strong> $10.000 (100.000 Drinks x $0,10 cada)</p>
+                                            <p class="text-gray-800"><strong>Desconto Especial:</strong> 30%</p>
+                                            <p class="text-gray-800"><strong>Preço com Desconto:</strong> $7.000, o que significa um preço por Drink de $0,070.</p>
+                                            <p class="text-gray-800 font-semibold mt-2">Benefícios Exclusivos:</p>
+                                            <ul class="list-disc list-inside text-gray-700 mt-1">
+                                                <li>Acesso a funcionalidades premium</li>
+                                                <li>Eventos exclusivos</li>
+                                                <li>Suporte prioritário</li>
+                                                <li>Reconhecimento como investidor Ouro</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="mb-6 p-4 border rounded-lg bg-gray-100">
+                                            <h3 class="text-xl font-semibold text-[#D33CF2] mb-2">Pack 50.000 Drinks (Prata)</h3>
+                                            <p class="text-gray-800"><strong>Valor Total:</strong> $5.000 (50.000 Drinks x $0,10 cada)</p>
+                                            <p class="text-gray-800"><strong>Desconto Especial:</strong> 15%</p>
+                                            <p class="text-gray-800"><strong>Preço com Desconto:</strong> $4.250, resultando em um preço por Drink de $0,085.</p>
+                                            <p class="text-gray-800 font-semibold mt-2">Benefícios Adicionais:</p>
+                                            <ul class="list-disc list-inside text-gray-700 mt-1">
+                                                <li>Acesso a eventos exclusivos</li>
+                                                <li>Ofertas promocionais para investidores Prata</li>
+                                                <li>Suporte dedicado</li>
+                                                <li>Reconhecimento como investidor Prata</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="mb-6 p-4 border rounded-lg bg-gray-100">
+                                            <h3 class="text-xl font-semibold text-[#D33CF2] mb-2">Pack 25.000 Drinks (Bronze)</h3>
+                                            <p class="text-gray-800"><strong>Valor Total:</strong> $2.500 (25.000 Drinks x $0,10 cada)</p>
+                                            <p class="text-gray-800"><strong>Desconto Especial:</strong> 7,5%</p>
+                                            <p class="text-gray-800"><strong>Preço com Desconto:</strong> $2.312,50, resultando em um preço por Drink de $0,0925.</p>
+                                            <p class="text-gray-800 font-semibold mt-2">Benefícios Especiais:</p>
+                                            <ul class="list-disc list-inside text-gray-700 mt-1">
+                                                <li>Acesso a ofertas e eventos exclusivos para investidores Bronze</li>
+                                                <li>Suporte dedicado</li>
+                                                <li>Reconhecimento como investidor Bronze</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <p class="text-gray-700">Escolha o pacote que melhor atende às suas necessidades e aproveite os descontos exclusivos e benefícios adicionais!</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
                         </div>
                      </div>
                      <h1 class="mt-10 max-w-lg text-4xl sm:text-7xl lg:text-6xl font-semibold text-white xl:text-7xl tracking-tight">Drink<span class="text-[#FF33DE]">Drips</span></h1>
@@ -707,7 +765,7 @@
                                             <rect x="10" y="18" width="12" height="1.5" fill="white" />
                                             
                                             </svg>
-														<span>1000 USDT</span>
+														<span>4250 USDT</span>
 													</span>
 												</div>
 												<div>
@@ -741,7 +799,7 @@
                                                             <rect x="10" y="18" width="12" height="1.5" fill="white" />
                                                             
                                                             </svg>
-														<span>500 USDT</span>
+														<span>2312,50 USDT</span>
 													</span>
 												</div>
 												<div>
@@ -776,7 +834,7 @@
                                                             
                                                             </svg>
                                                           
-														<span>5000 USDT</span>
+														<span>7000 USDT</span>
 													</span>
 												</div>
 												<div>
