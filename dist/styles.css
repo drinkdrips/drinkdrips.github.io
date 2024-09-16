@@ -897,6 +897,16 @@ video {
   --tw-translate-y: 0.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.scale-100 {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-95 {
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .scale-\[0\.6\] {
   --tw-scale-x: 0.6;
   --tw-scale-y: 0.6;
@@ -1172,9 +1182,6 @@ video {
 .bg-no-repeat {
   background-repeat: no-repeat;
 }
-.stroke-transparent {
-  stroke: transparent;
-}
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -1381,9 +1388,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(79 70 229 / var(--tw-text-opacity));
 }
-.text-transparent {
-  color: transparent;
-}
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1458,6 +1462,12 @@ video {
 }
 .duration-100 {
   transition-duration: 100ms;
+}
+.duration-150 {
+  transition-duration: 150ms;
+}
+.duration-200 {
+  transition-duration: 200ms;
 }
 .duration-300 {
   transition-duration: 300ms;
@@ -1945,10 +1955,11 @@ header {
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
-.hover\:stroke-\[\#e730ca\]:hover {
-  stroke: #e730ca;
-}
 .hover\:text-\[\#E730CA\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(231 48 202 / var(--tw-text-opacity));
+}
+.hover\:text-\[\#e730ca\]:hover {
   --tw-text-opacity: 1;
   color: rgb(231 48 202 / var(--tw-text-opacity));
 }
@@ -2032,10 +2043,6 @@ header {
 }
 .group:hover .group-hover\:block {
   display: block;
-}
-.group:hover .group-hover\:text-gray-300 {
-  --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 @media (min-width: 640px) {
 
