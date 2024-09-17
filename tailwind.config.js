@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/**/*.{html,js}',  // Escaneia todos os arquivos .html e .js na pasta src
-    './index.html',          // Inclua também o arquivo index.html na raiz
+    './src/**/*.{html,js}',
+    './index.html',
   ],
   theme: {
     extend: {
@@ -29,11 +29,13 @@ module.exports = {
       },
       colors: {
         'custom-purple': '#D33CF2',
+        'custom-green': '#008000', // You can customize this color as needed
       },
       padding: {
-        'input': '12px 12px 8px 12px' // Define o padding personalizado
+        'input': '12px 12px 8px 12px', // Define the custom padding
       },
     },
   },
+  important: true,
   plugins: [],
 };
