@@ -68,36 +68,120 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="relative inline-block">
+                        <!-- Dropdown "Tokenomics" -->
+                        <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'tokenomicsDropdown')">
+                            Tokenomics
+                            <svg width="24" height="24" class="ml-1 transition-transform duration-200 transform" id="tokenomicsArrow" style="transform: rotate(0deg);">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path d="M0 0h24v24H0z"></path>
+                                    <path fill="currentColor" d="M17.293 8.293a1 1 0 1 1 1.414 1.414l-6 6a1 0 0 1-1.383.03l-6-5.5a1 1 0 1 1 1.352-1.474l5.294 4.853 5.323-5.323Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                        
+                        <div id="tokenomicsDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-2 z-10 w-[500px] left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out bg-gray-900">
+                            <!-- Título e Ícone -->
+                            <div class="flex items-center px-6 py-3 border-b border-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#D33CF2] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0-2.21-1.79-4-4-4S4 8.79 4 11s1.79 4 4 4 4-1.79 4-4zm8 0c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4 4-1.79 4-4z"/>
+                                </svg>
+                                <h3 class="text-lg font-semibold">Comece por aqui</h3>
+                            </div>
                     
-                                                                              
-                
-                    <!-- Dropdown "Tokenomics" -->
-                    <div class="relative">
-                        <a href="#" class="menu-item" onclick="toggleDropdown(event, 'tokenomicsDropdown')">Tokenomics</a>
-                        <div id="tokenomicsDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-0 z-10 min-w-[220px]">
-                            <a href="#" onclick="toggleModal('modalDistribuicao')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Distribuição de Tokens</a>
-                            <a href="#" onclick="toggleModal('modalEconomia')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Economia</a>
+                            <!-- Divisão em duas colunas com flex -->
+                            <div class="flex px-6 py-4">
+                                <!-- Coluna da Esquerda com Submenus -->
+                                <div class="w-1/2 pr-6">
+                                    <a href="#" onclick="toggleModal('modalDistribuicao')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Distribuição de Tokens</a>
+                                    <a href="#" onclick="toggleModal('modalEconomia')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Economia</a>
+                                </div>
+                    
+                                <!-- Coluna da Direita para conteúdo extra -->
+                                <div class="w-1/2 pl-6 border-l border-gray-600">
+                                    <p class="text-sm text-gray-300">Adicione aqui informações adicionais, imagens ou links.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                
-                    <!-- Dropdown "Roadmap" -->
-                    <div class="relative">
-                        <a href="#" class="menu-item" onclick="toggleDropdown(event, 'roadmapDropdown')">Roadmap</a>
-                        <div id="roadmapDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-0 z-10 min-w-[220px]">
-                            <a href="#" onclick="toggleModal('modalFase1')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Fase 1</a>
-                            <a href="#" onclick="toggleModal('modalFase2')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Fase 2</a>
-                            <a href="#" onclick="toggleModal('modalFase3')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Fase 3</a>
+                    
+                    <div class="relative inline-block">
+                        <!-- Dropdown "Roadmap" -->
+                        <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'roadmapDropdown')">
+                            Roadmap
+                            <svg width="24" height="24" class="ml-1 transition-transform duration-200 transform" id="roadmapArrow" style="transform: rotate(0deg);">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path d="M0 0h24v24H0z"></path>
+                                    <path fill="currentColor" d="M17.293 8.293a1 1 0 1 1 1.414 1.414l-6 6a1 1 0 0 1-1.383.03l-6-5.5a1 1 0 1 1 1.352-1.474l5.294 4.853 5.323-5.323Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                        
+                        <div id="roadmapDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-2 z-10 w-[500px] left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out bg-gray-900">
+                            <!-- Título e Ícone -->
+                            <div class="flex items-center px-6 py-3 border-b border-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#D33CF2] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0-2.21-1.79-4-4-4S4 8.79 4 11s1.79 4 4 4 4-1.79 4-4zm8 0c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4 4-1.79 4-4z"/>
+                                </svg>
+                                <h3 class="text-lg font-semibold">Comece por aqui</h3>
+                            </div>
+                    
+                            <!-- Divisão em duas colunas com flex -->
+                            <div class="flex px-6 py-4">
+                                <!-- Coluna da Esquerda com Submenus -->
+                                <div class="w-1/2 pr-6">
+                                    <a href="#" onclick="toggleModal('modalFase1')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Fase 1</a>
+                                    <a href="#" onclick="toggleModal('modalFase2')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Fase 2</a>
+                                    <a href="#" onclick="toggleModal('modalFase3')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Fase 3</a>
+                                </div>
+                    
+                                <!-- Coluna da Direita para conteúdo extra -->
+                                <div class="w-1/2 pl-6 border-l border-gray-600">
+                                    <p class="text-sm text-gray-300">Adicione aqui informações adicionais, imagens ou links.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                
-                    <!-- Link "Whitepaper" sem dropdown -->
-                    <a href="#" onclick="toggleModal('modalWhitepaper')" class="menu-item hover:text-[#E730CA] transition-colors">Whitepaper</a>
-                </div>
-                
-                
-
-        
-
+                    
+                    <div class="relative inline-block">
+                        <!-- Dropdown "Whitepaper" -->
+                        <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'whitepaperDropdown')">
+                            Whitepaper
+                            <svg width="24" height="24" class="ml-1 transition-transform duration-200 transform" id="whitepaperArrow" style="transform: rotate(0deg);">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path d="M0 0h24v24H0z"></path>
+                                    <path fill="currentColor" d="M17.293 8.293a1 1 0 1 1 1.414 1.414l-6 6a1 0 0 1-1.383.03l-6-5.5a1 1 0 1 1 1.352-1.474l5.294 4.853 5.323-5.323Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                        
+                        <div id="whitepaperDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-2 z-10 w-[500px] left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out bg-gray-900">
+                            <!-- Título e Ícone -->
+                            <div class="flex items-center px-6 py-3 border-b border-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#D33CF2] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0-2.21-1.79-4-4-4S4 8.79 4 11s1.79 4 4 4 4-1.79 4-4zm8 0c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4 4-1.79 4-4z"/>
+                                </svg>
+                                <h3 class="text-lg font-semibold">Comece por aqui</h3>
+                            </div>
+                    
+                            <!-- Divisão em duas colunas com flex -->
+                            <div class="flex px-6 py-4">
+                                <!-- Coluna da Esquerda com Submenus -->
+                                <div class="w-1/2 pr-6">
+                                    <a href="#" onclick="toggleModal('modalSecao1')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Seção 1</a>
+                                    <a href="#" onclick="toggleModal('modalSecao2')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Seção 2</a>
+                                    <a href="#" onclick="toggleModal('modalSecao3')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Seção 3</a>
+                                </div>
+                    
+                                <!-- Coluna da Direita para conteúdo extra -->
+                                <div class="w-1/2 pl-6 border-l border-gray-600">
+                                    <p class="text-sm text-gray-300">Adicione aqui informações adicionais, imagens ou links.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+ 
                      <!-- Modal Sobre -->
                     <div id="modalSobre" class="popup z-50">
                         <div class="popup-container">
