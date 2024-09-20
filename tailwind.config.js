@@ -27,6 +27,9 @@ module.exports = {
         'screen-xl': '1440px',
         'screen-lg': '1240px',
       },
+      maxHeight: {
+        '500': '500px',
+      },
       colors: {
         'custom-purple': '#D33CF2',
         'custom-green': '#008000', // You can customize this color as needed

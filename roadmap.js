@@ -1,4 +1,3 @@
-// Função para alternar a visibilidade do dropdown
 function toggleDropdown(event, dropdownId) {
     event.preventDefault(); // Evita o comportamento padrão do link
     
@@ -8,12 +7,36 @@ function toggleDropdown(event, dropdownId) {
     document.querySelectorAll('.menu .absolute').forEach(menu => {
         if (menu !== dropdown) {
             menu.classList.add('hidden'); // Garante que os outros dropdowns sejam fechados
+            menu.style.maxHeight = '0'; // Reseta a altura para 0
         }
     });
 
+    document.querySelectorAll('.menu-item svg').forEach(arrow => {
+        arrow.style.transform = 'rotate(0deg)'; // Reseta as setas para baixo
+    });
+
     // Alterna a visibilidade do dropdown clicado
-    dropdown.classList.toggle('hidden');
+    const isHidden = dropdown.classList.toggle('hidden');
+
+    // Adiciona uma transição de altura
+    if (isHidden) {
+        dropdown.style.maxHeight = '0'; // Fecha o dropdown
+    } else {
+        dropdown.style.maxHeight = dropdown.scrollHeight + 'px'; // Abre o dropdown
     }
+
+    // Identifica a seta SVG no link clicado
+    const arrow = event.target.querySelector('svg');
+
+    // Verifica se o dropdown está visível e rotaciona a seta
+    if (!isHidden) {
+        arrow.style.transform = 'rotate(180deg)'; // Seta para cima
+    } else {
+        arrow.style.transform = 'rotate(0deg)'; // Seta para baixo
+    }
+}
+
+
 
 // Função para alternar o modal
 function toggleModal(modalId) {

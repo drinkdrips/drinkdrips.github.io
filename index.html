@@ -30,18 +30,46 @@
                 <!-- Menu Links com Dropdown e Modal-->
                 <div class="menu hidden md:flex space-x-8">
                     <!-- Dropdown "Sobre" -->
-                    <div class="relative">
+                    <div class="relative inline-block">
                         <!-- Link principal "Sobre" que abre o dropdown ao ser clicado -->
-                        <a href="#" class="menu-item" onclick="toggleDropdown(event, 'sobreDropdown')">Sobre</a>
-                        
+                        <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'sobreDropdown')">
+                            Sobre
+                            <svg width="24" height="24" class="ml-1 transition-transform duration-200 transform" id="sobreArrow" style="transform: rotate(0deg);">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path d="M0 0h24v24H0z"></path>
+                                    <path fill="currentColor" d="M17.293 8.293a1 1 0 1 1 1.414 1.414l-6 6a1 1 0 0 1-1.383.03l-6-5.5a1 1 0 1 1 1.352-1.474l5.294 4.853 5.323-5.323Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    
                         <!-- Dropdown "Sobre" -->
-                        <div id="sobreDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-0 z-10 min-w-[220px]">
-                            <!-- Submenus que abrem modais ao serem clicados -->
-                            <a href="#" onclick="toggleModal('modalMissao')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Nossa Missão</a>
-                            <a href="#" onclick="toggleModal('modalEquipe')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Equipe</a>
-                            <a href="#" onclick="toggleModal('modalHistoria')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">História</a>
+                        <div id="sobreDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-2 z-10 w-[500px] left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out bg-gray-900">
+                            <!-- Título e Ícone -->
+                            <div class="flex items-center px-6 py-3 border-b border-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#D33CF2] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0-2.21-1.79-4-4-4S4 8.79 4 11s1.79 4 4 4 4-1.79 4-4zm8 0c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4 4-1.79 4-4z"/>
+                                </svg>
+                                <h3 class="text-lg font-semibold">Comece por aqui</h3>
+                            </div>
+                    
+                            <!-- Divisão em duas colunas com flex -->
+                            <div class="flex px-6 py-4">
+                                <!-- Coluna da Esquerda com Submenus -->
+                                <div class="w-1/2 pr-6">
+                                    <a href="#" onclick="toggleModal('modalMissao')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Nossa Missão</a>
+                                    <a href="#" onclick="toggleModal('modalEquipe')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Equipe</a>
+                                    <a href="#" onclick="toggleModal('modalHistoria')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">História</a>
+                                </div>
+                    
+                                <!-- Coluna da Direita para conteúdo extra -->
+                                <div class="w-1/2 pl-6 border-l border-gray-600">
+                                    <p class="text-sm text-gray-300">Adicione aqui informações adicionais, imagens ou links.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    
+                                                                              
                 
                     <!-- Dropdown "Tokenomics" -->
                     <div class="relative">
