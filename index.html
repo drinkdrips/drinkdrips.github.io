@@ -30,42 +30,48 @@
                 <!-- Menu Links com Dropdown e Modal-->
                 <div class="menu hidden md:flex space-x-8">
                     <!-- Dropdown "Sobre" -->
-                    <div class="relative group">
-                        <a href="#" onclick="toggleModal('modalSobre')" class="menu-item">Sobre</a>
-                        <div class="absolute hidden group-hover:block group-hover:visible border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-0 z-50 min-w-[220px]">
+                    <div class="relative">
+                        <!-- Link principal "Sobre" que abre o dropdown ao ser clicado -->
+                        <a href="#" class="menu-item" onclick="toggleDropdown(event, 'sobreDropdown')">Sobre</a>
+                        
+                        <!-- Dropdown "Sobre" -->
+                        <div id="sobreDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-0 z-10 min-w-[220px]">
+                            <!-- Submenus que abrem modais ao serem clicados -->
                             <a href="#" onclick="toggleModal('modalMissao')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Nossa Missão</a>
-                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Equipe</a>
-                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">História</a>
+                            <a href="#" onclick="toggleModal('modalEquipe')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Equipe</a>
+                            <a href="#" onclick="toggleModal('modalHistoria')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">História</a>
                         </div>
                     </div>
-
+                
                     <!-- Dropdown "Tokenomics" -->
-                    <div class="relative group">
-                        <a href="#" onclick="toggleModal('modalTokenomics')" class="menu-item hover:text-[#E730CA] transition-colors">Tokenomics</a>
-                        <div class="absolute hidden group-hover:block group-hover:visible border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-0 z-50 min-w-[220px]">
-                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Distribuição de Tokens</a>
-                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Economia</a>
+                    <div class="relative">
+                        <a href="#" class="menu-item" onclick="toggleDropdown(event, 'tokenomicsDropdown')">Tokenomics</a>
+                        <div id="tokenomicsDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-0 z-10 min-w-[220px]">
+                            <a href="#" onclick="toggleModal('modalDistribuicao')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Distribuição de Tokens</a>
+                            <a href="#" onclick="toggleModal('modalEconomia')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Economia</a>
                         </div>
                     </div>
-
+                
                     <!-- Dropdown "Roadmap" -->
-                    <div class="relative group">
-                        <a href="#" onclick="toggleModal('modalRoadmap')" class="menu-item hover:text-[#E730CA] transition-colors">Roadmap</a>
-                        <div class="absolute hidden group-hover:block group-hover:visible border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-0 z-50 min-w-[220px]">
-                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Fase 1</a>
-                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Fase 2</a>
-                            <a href="#" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Fase 3</a>
+                    <div class="relative">
+                        <a href="#" class="menu-item" onclick="toggleDropdown(event, 'roadmapDropdown')">Roadmap</a>
+                        <div id="roadmapDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-0 z-10 min-w-[220px]">
+                            <a href="#" onclick="toggleModal('modalFase1')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Fase 1</a>
+                            <a href="#" onclick="toggleModal('modalFase2')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Fase 2</a>
+                            <a href="#" onclick="toggleModal('modalFase3')" class="block px-6 py-2 hover:bg-[#D33CF2] whitespace-nowrap">Fase 3</a>
                         </div>
                     </div>
-
-                    <!-- Link "Whitepaper" sem Dropdown -->
+                
+                    <!-- Link "Whitepaper" sem dropdown -->
                     <a href="#" onclick="toggleModal('modalWhitepaper')" class="menu-item hover:text-[#E730CA] transition-colors">Whitepaper</a>
                 </div>
+                
+                
 
         
 
                      <!-- Modal Sobre -->
-                    <div id="modalSobre" class="popup">
+                    <div id="modalSobre" class="popup z-50">
                         <div class="popup-container">
                             <div class="popup-header">
                                 <h2>Sobre</h2>
@@ -94,7 +100,7 @@
                     </div>
 
                     <!-- Modal Nossa Missão -->
-                    <div id="modalMissao" class="popup">
+                    <div id="modalMissao" class="popup z-50">
                         <div class="popup-container">
                             <div class="popup-header">
                                 <h2>Diretrizes</h2>
@@ -142,7 +148,7 @@
 
 
                     <!-- Modal Tokenomics -->
-                    <div id="modalTokenomics" class="popup">
+                    <div id="modalTokenomics" class="popup z-50">
                         <div class="popup-container">
                             <div class="popup-header">
                                 <h2>Tokenomics</h2>
@@ -179,7 +185,7 @@
                     </div>
 
                     <!-- Modal Roadmap -->
-                    <div id="modalRoadmap" class="popup">
+                    <div id="modalRoadmap" class="popup z-50">
                         <div class="popup-container">
                             <div class="popup-header">
                                 <h2>Roadmap</h2>
@@ -423,7 +429,7 @@
                     </div>
 
                     <!-- Modal Whitepaper -->
-                    <div id="modalWhitepaper" class="popup">
+                    <div id="modalWhitepaper" class="popup z-50">
                         <div class="popup-container">
                             <div class="popup-header">
                                 <h2>Whitepaper</h2>

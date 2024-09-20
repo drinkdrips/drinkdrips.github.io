@@ -1,7 +1,31 @@
+// Função para alternar a visibilidade do dropdown
+function toggleDropdown(event, dropdownId) {
+    event.preventDefault(); // Evita o comportamento padrão do link
+    
+    const dropdown = document.getElementById(dropdownId);
+
+    // Fecha todos os outros dropdowns abertos
+    document.querySelectorAll('.menu .absolute').forEach(menu => {
+        if (menu !== dropdown) {
+            menu.classList.add('hidden'); // Garante que os outros dropdowns sejam fechados
+        }
+    });
+
+    // Alterna a visibilidade do dropdown clicado
+    dropdown.classList.toggle('hidden');
+    }
+
 // Função para alternar o modal
 function toggleModal(modalId) {
+    // Obtenha o modal que será aberto
     const modal = document.getElementById(modalId);
+
     if (modal) {
+        // Fecha o dropdown somente quando o modal estiver prestes a ser aberto (quando estiver oculto)
+        if (modal.style.display !== "block") {
+            closeAllDropdowns(); // Fecha os dropdowns antes de abrir o modal
+        }
+
         // Verifica o estado atual do modal e alterna entre visível e oculto
         if (modal.style.display === "block") {
             modal.style.display = "none";
@@ -10,6 +34,14 @@ function toggleModal(modalId) {
         }
     }
 }
+
+// Função para fechar todos os dropdowns
+function closeAllDropdowns() {
+    document.querySelectorAll('.menu .absolute').forEach(dropdown => {
+        dropdown.classList.add('hidden'); // Adiciona 'hidden' a todos os dropdowns
+    });
+}
+
 
 // Seleciona os botões de fechar e adiciona eventos de clique
 const closeBtns = document.querySelectorAll(".close-btn");
