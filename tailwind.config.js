@@ -37,6 +37,9 @@ module.exports = {
       padding: {
         'input': '12px 12px 8px 12px', // Define the custom padding
       },
+      margin: {
+        '20': '5rem', // Adiciona ml-20 e mr-20
+      },
     },
   },
   important: true,

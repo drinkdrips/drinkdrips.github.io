@@ -20,36 +20,29 @@
    <div>
       <nav>
          <div class="px-4 pt-4 md:pt-9 transition-all">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-center items-center">
                 <!-- Logo -->
                <div class="flex items-center">
-                  <div class="logo">
+                  <div class="logo" style="margin-right: 5rem !important;">
                      <img src="src/d_logo.png" alt="DrinkDrips Logo" class="logo-svg" width="151" height="50">
                   </div>
                </div>
-                <!-- Menu Links com Dropdown e Modal-->
-                <div class="menu hidden md:flex space-x-8">
+        
+         <!-- Menu Links com Dropdown e Modal -->
+                <div class="menu hidden md:flex space-x-8" style="margin-left: 5rem !important;">
                     <!-- Dropdown "Sobre" -->
                     <div class="relative inline-block">
                         <!-- Link principal "Sobre" que abre o dropdown ao ser clicado -->
                         <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'sobreDropdown')">
                             Sobre
-                            <svg width="24" height="24" class="ml-1 transition-transform duration-200 transform" id="sobreArrow" style="transform: rotate(0deg);">
-                                <g fill="none" fill-rule="evenodd">
-                                    <path d="M0 0h24v24H0z"></path>
-                                    <path fill="currentColor" d="M17.293 8.293a1 1 0 1 1 1.414 1.414l-6 6a1 1 0 0 1-1.383.03l-6-5.5a1 1 0 1 1 1.352-1.474l5.294 4.853 5.323-5.323Z"></path>
-                                </g>
-                            </svg>
                         </a>
                     
                         <!-- Dropdown "Sobre" -->
                         <div id="sobreDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-2 z-10 w-[500px] left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out bg-gray-900">
                             <!-- Título e Ícone -->
                             <div class="flex items-center px-6 py-3 border-b border-gray-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#D33CF2] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0-2.21-1.79-4-4-4S4 8.79 4 11s1.79 4 4 4 4-1.79 4-4zm8 0c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4 4-1.79 4-4z"/>
-                                </svg>
-                                <h3 class="text-lg font-semibold">Comece por aqui</h3>
+                                <i class="fas fa-cocktail"></i>
+                                <h3 class="text-lg font-semibold ml-4">Conheça a DrinkDrips</h3>
                             </div>
                     
                             <!-- Divisão em duas colunas com flex -->
@@ -73,21 +66,14 @@
                         <!-- Dropdown "Tokenomics" -->
                         <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'tokenomicsDropdown')">
                             Tokenomics
-                            <svg width="24" height="24" class="ml-1 transition-transform duration-200 transform" id="tokenomicsArrow" style="transform: rotate(0deg);">
-                                <g fill="none" fill-rule="evenodd">
-                                    <path d="M0 0h24v24H0z"></path>
-                                    <path fill="currentColor" d="M17.293 8.293a1 1 0 1 1 1.414 1.414l-6 6a1 0 0 1-1.383.03l-6-5.5a1 1 0 1 1 1.352-1.474l5.294 4.853 5.323-5.323Z"></path>
-                                </g>
-                            </svg>
+
                         </a>
                         
                         <div id="tokenomicsDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-2 z-10 w-[500px] left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out bg-gray-900">
                             <!-- Título e Ícone -->
                             <div class="flex items-center px-6 py-3 border-b border-gray-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#D33CF2] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0-2.21-1.79-4-4-4S4 8.79 4 11s1.79 4 4 4 4-1.79 4-4zm8 0c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4 4-1.79 4-4z"/>
-                                </svg>
-                                <h3 class="text-lg font-semibold">Comece por aqui</h3>
+                                <i class="fas fa-chart-pie"></i>
+                                <h3 class="text-lg font-semibold ml-4">Distribuição</h3>
                             </div>
                     
                             <!-- Divisão em duas colunas com flex -->
@@ -110,21 +96,14 @@
                         <!-- Dropdown "Roadmap" -->
                         <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'roadmapDropdown')">
                             Roadmap
-                            <svg width="24" height="24" class="ml-1 transition-transform duration-200 transform" id="roadmapArrow" style="transform: rotate(0deg);">
-                                <g fill="none" fill-rule="evenodd">
-                                    <path d="M0 0h24v24H0z"></path>
-                                    <path fill="currentColor" d="M17.293 8.293a1 1 0 1 1 1.414 1.414l-6 6a1 1 0 0 1-1.383.03l-6-5.5a1 1 0 1 1 1.352-1.474l5.294 4.853 5.323-5.323Z"></path>
-                                </g>
-                            </svg>
+
                         </a>
                         
                         <div id="roadmapDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-2 z-10 w-[500px] left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out bg-gray-900">
                             <!-- Título e Ícone -->
                             <div class="flex items-center px-6 py-3 border-b border-gray-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#D33CF2] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0-2.21-1.79-4-4-4S4 8.79 4 11s1.79 4 4 4 4-1.79 4-4zm8 0c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4 4-1.79 4-4z"/>
-                                </svg>
-                                <h3 class="text-lg font-semibold">Comece por aqui</h3>
+                                <i class="fas fa-bullhorn"></i>
+                                <h3 class="text-lg font-semibold ml-4">Metas e Prazos</h3>
                             </div>
                     
                             <!-- Divisão em duas colunas com flex -->
@@ -148,21 +127,14 @@
                         <!-- Dropdown "Whitepaper" -->
                         <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'whitepaperDropdown')">
                             Whitepaper
-                            <svg width="24" height="24" class="ml-1 transition-transform duration-200 transform" id="whitepaperArrow" style="transform: rotate(0deg);">
-                                <g fill="none" fill-rule="evenodd">
-                                    <path d="M0 0h24v24H0z"></path>
-                                    <path fill="currentColor" d="M17.293 8.293a1 1 0 1 1 1.414 1.414l-6 6a1 0 0 1-1.383.03l-6-5.5a1 1 0 1 1 1.352-1.474l5.294 4.853 5.323-5.323Z"></path>
-                                </g>
-                            </svg>
+
                         </a>
                         
                         <div id="whitepaperDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-2 z-10 w-[500px] left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out bg-gray-900">
                             <!-- Título e Ícone -->
                             <div class="flex items-center px-6 py-3 border-b border-gray-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#D33CF2] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0-2.21-1.79-4-4-4S4 8.79 4 11s1.79 4 4 4 4-1.79 4-4zm8 0c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4 4-1.79 4-4z"/>
-                                </svg>
-                                <h3 class="text-lg font-semibold">Comece por aqui</h3>
+                                <i class="fas fa-book-open"></i>
+                                <h3 class="text-lg font-semibold ml-4">Documentação</h3>
                             </div>
                     
                             <!-- Divisão em duas colunas com flex -->

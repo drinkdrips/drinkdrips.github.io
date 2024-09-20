@@ -11,10 +11,6 @@ function toggleDropdown(event, dropdownId) {
         }
     });
 
-    document.querySelectorAll('.menu-item svg').forEach(arrow => {
-        arrow.style.transform = 'rotate(0deg)'; // Reseta as setas para baixo
-    });
-
     // Alterna a visibilidade do dropdown clicado
     const isHidden = dropdown.classList.toggle('hidden');
 
@@ -24,17 +20,9 @@ function toggleDropdown(event, dropdownId) {
     } else {
         dropdown.style.maxHeight = dropdown.scrollHeight + 'px'; // Abre o dropdown
     }
-
-    // Identifica a seta SVG no link clicado
-    const arrow = event.target.querySelector('svg');
-
-    // Verifica se o dropdown está visível e rotaciona a seta
-    if (!isHidden) {
-        arrow.style.transform = 'rotate(180deg)'; // Seta para cima
-    } else {
-        arrow.style.transform = 'rotate(0deg)'; // Seta para baixo
-    }
 }
+
+
 
 
 

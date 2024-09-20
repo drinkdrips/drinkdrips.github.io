@@ -683,9 +683,6 @@ video {
 .mr-\[55px\] {
   margin-right: 55px !important;
 }
-.mt-0 {
-  margin-top: 0px !important;
-}
 .mt-1 {
   margin-top: 0.25rem !important;
 }
@@ -764,9 +761,6 @@ video {
 .h-full {
   height: 100% !important;
 }
-.max-h-0 {
-  max-height: 0px !important;
-}
 .max-h-12 {
   max-height: 3rem !important;
 }
@@ -829,9 +823,6 @@ video {
 }
 .min-w-\[18px\] {
   min-width: 18px !important;
-}
-.min-w-\[220px\] {
-  min-width: 220px !important;
 }
 .min-w-\[262px\] {
   min-width: 262px !important;
