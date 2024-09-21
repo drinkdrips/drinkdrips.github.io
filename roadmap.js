@@ -22,10 +22,6 @@ function toggleDropdown(event, dropdownId) {
     }
 }
 
-
-
-
-
 // Função para alternar o modal
 function toggleModal(modalId) {
     // Obtenha o modal que será aberto
@@ -53,9 +49,9 @@ function closeAllDropdowns() {
     });
 }
 
-
 // Seleciona os botões de fechar e adiciona eventos de clique
 const closeBtns = document.querySelectorAll(".close-btn");
+const maximizeBtns = document.querySelectorAll(".maximize-btn");
 const body = document.querySelector("body");
 
 closeBtns.forEach((btn) => {
@@ -74,6 +70,26 @@ document.addEventListener("click", (e) => {
         e.target.style.display = "none";
         body.classList.remove("prevent-background-scroll");
     }
+});
+maximizeBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        let modal = btn.closest(".popup");
+        let container = modal.querySelector(".popup-container");
+        let body = modal.querySelector(".popup-body");
+
+        if (modal.classList.contains("maximized")) {
+            container.style.width = "min(900px, 90%)";
+            container.style.top = "45%";
+            body.style.height = "70vh";
+        } else {
+            container.style.width = "100%";
+            container.style.top = "50%";
+            body.style.height = "90vh";
+        }
+
+        modal.classList.toggle("maximized");
+        body.classList.toggle("prevent-scroll");
+    });
 });
 
 // Expande/Colapsa os artigos

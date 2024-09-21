@@ -31,24 +31,22 @@
               Fique por dentro de todos os nossos anúncios!
             </text>
         </svg>
-    </div>
-    
-      
+    </div> 
 
 <div>
    <div>
       <nav>
          <div class="px-4 pt-4 md:pt-9 transition-all">
-            <div class="flex justify-center items-center">
-                <!-- Logo -->
+            <div class="flex justify-between items-center">
+               <!-- Logo -->
                <div class="flex items-center">
                   <div class="logo" style="margin-right: 5rem !important;">
                      <img src="src/d_logo.png" alt="DrinkDrips Logo" class="logo-svg" width="151" height="50">
                   </div>
                </div>
         
-         <!-- Menu Links com Dropdown e Modal -->
-                <div class="menu hidden md:flex space-x-8" style="margin-left: 5rem !important;">
+                <!-- Menu Links com Dropdown e Modal -->
+                <div class="menu hidden md:flex space-x-8">
                     <!-- Dropdown "Sobre Nós" -->
                     <div class="relative inline-block">
                         <!-- Link principal "Sobre" que abre o dropdown ao ser clicado -->
@@ -173,11 +171,23 @@
                     </div>
  
                      <!-- Modal Quem Somos -->
-                    <div id="modalQuem" class="popup z-50">
+                    <div id="modalQuem" class="popup z-50">                          
                         <div class="popup-container">
+                            <div class="flex justify-end space-x-2 items-center">
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white transition-transform transform hover:scale-105">
+                                  &times;
+                                </button>
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-white transition-transform transform hover:scale-105">
+                                  &minus;
+                                </button>
+                                <button class="maximize-btn flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white transition-transform transform hover:scale-105">
+                                  &#9633;
+                                </button>
+                            </div>
+                              
+                              
                             <div class="popup-header">
                                 <h2>Quem Somos</h2>
-                                <button class="close-btn" aria-label="Fechar modal">&times;</button>
                             </div>
                             <div class="popup-body">
                                 <p class="text-justify">
@@ -206,11 +216,23 @@
                     <!-- Modal Diretrizes -->
                     <div id="modalDiretrizes" class="popup z-50">
                         <div class="popup-container">
+                            <div class="flex justify-end space-x-2 items-center">
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white transition-transform transform hover:scale-105">
+                                  &times;
+                                </button>
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-white transition-transform transform hover:scale-105">
+                                  &minus;
+                                </button>
+                                <button class="maximize-btn flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white transition-transform transform hover:scale-105">
+                                  &#9633;
+                                </button>
+                            </div>
                             <div class="popup-header">
                                 <h2>Diretrizes</h2>
-                                <button class="close-btn" aria-label="Fechar modal">&times;</button>
+                                
                             </div>
                             <div class="popup-body">
+                                
                                 <div class="mb-6 p-4 border rounded-lg">
                                 <p class="text-justify">
                                     A DrinkDrips nasceu com o propósito de transformar a indústria de entretenimento e eventos, criando um ecossistema disruptivo, 
@@ -247,9 +269,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
 
                     <!-- Modal Tokenomics -->
                     <div id="modalTokenomics" class="popup z-50">
@@ -736,8 +755,8 @@
                      </svg>
                   </button>
                </div>
+                </div>
             </div>
-         </div>
 
          <div x-cloak x-show="openNav" class="relative z-50 lg:hidden" role="dialog" aria-modal="true">
             <div x-cloak x-show="openNav" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-gray-900/80"></div>
