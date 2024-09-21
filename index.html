@@ -82,9 +82,9 @@
                     </div>
 
                     <div class="relative inline-block">
-                        <!-- Dropdown "Tokenomics" -->
+                        <!-- Dropdown "Documentação" -->
                         <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'tokenomicsDropdown')">
-                            Tokenomics
+                            Documentação
                         </a>
                         
                         <div id="tokenomicsDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-2 z-10 w-[500px] left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out bg-gray-900">
@@ -98,7 +98,7 @@
                             <div class="flex px-6 py-4">
                                 <!-- Coluna da Esquerda com Submenus -->
                                 <div class="w-1/2 pr-6">
-                                    <a href="#" onclick="toggleModal('modalDistribuicao')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Distribuição de Tokens</a>
+                                    <a href="#" onclick="toggleModal('modalTokenomics')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Tokenomics</a>
                                     <a href="#" onclick="toggleModal('modalEconomia')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Economia</a>
                                 </div>
                     
@@ -270,8 +270,8 @@
                         </div>
                     </div>
 
-                    <!-- Modal Tokenomics -->
-                    <div id="modalTokenomics" class="popup z-50">
+                    <!-- Modal Tokenomics DESATIVADO-->
+                    <div id="modalTokenomicsOLD" class="popup z-50">
                         <div class="popup-container">
                             <div class="popup-header">
                                 <h2>Tokenomics</h2>
@@ -306,6 +306,126 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Modal Tokenomics -->
+                    <div id="modalTokenomics" class="popup z-50">                          
+                        <div class="popup-container">
+                            <div class="flex justify-end space-x-2 items-center">
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white transition-transform transform hover:scale-105">&times;</button>
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-white transition-transform transform hover:scale-105">&minus;</button>
+                                <button class="maximize-btn flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white transition-transform transform hover:scale-105">&#9633;</button>
+                            </div>
+                            <div class="popup-header">
+                                <h2>Tokenomics</h2>
+                            </div>
+                            <div class="popup-body">
+                                <!-- Conteúdo do Tokenomics e Cálculos -->
+                                <h3 class="p-4">1. DRINK TOKEN</h3>
+                                <ul>
+                                    <li class="rounded-full p-4 text-white transition-transform transform hover:scale-105"><strong>51.000.000</strong> (51 milhões) de Drinks</li>
+                                    
+                                </ul><br>
+                                <hr ><br>
+
+                                <!-- Layout em duas colunas -->
+                                <div class="flex justify-between items-start mt-4">
+                                    <!-- Gráfico à Esquerda -->
+                                    <div class="w-1/2 flex justify-center items-center">
+                                        <svg viewBox="0 0 36 36" class="w-48 h-48">
+                                            <circle class="text-gray-200" stroke-width="3.8" fill="none" cx="18" cy="18" r="15.9155"></circle>
+                                            <circle class="text-red-500" stroke-width="3.8" stroke-dasharray="20, 100" stroke-dashoffset="0" stroke-linecap="round" fill="none" cx="18" cy="18" r="15.9155" stroke="currentColor"></circle>
+                                            <circle class="text-blue-500" stroke-width="3.8" stroke-dasharray="40, 100" stroke-dashoffset="-20" stroke-linecap="round" fill="none" cx="18" cy="18" r="15.9155" stroke="currentColor"></circle>
+                                            <circle class="text-green-500" stroke-width="3.8" stroke-dasharray="25, 100" stroke-dashoffset="-60" stroke-linecap="round" fill="none" cx="18" cy="18" r="15.9155" stroke="currentColor"></circle>
+                                            <circle class="text-yellow-500" stroke-width="3.8" stroke-dasharray="15, 100" stroke-dashoffset="-85" stroke-linecap="round" fill="none" cx="18" cy="18" r="15.9155" stroke="currentColor"></circle>
+                                        </svg>
+                                    </div>
+                    
+                                    <!-- Legendas à Direita -->
+                                    <div class="w-1/2 mt-4">
+                                        <ul class="flex flex-col space-y-2">
+                                            <li class="flex items-center space-x-2">
+                                                <span class="inline-block w-4 h-4 bg-red-500 rounded-full"></span>
+                                                <span>Equipe e Desenvolvedores (20%)</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <span class="inline-block w-4 h-4 bg-blue-500 rounded-full"></span>
+                                                <span>Vendas Públicas e Privadas (40%)</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <span class="inline-block w-4 h-4 bg-green-500 rounded-full"></span>
+                                                <span>Reserva de Ecossistema (25%)</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <span class="inline-block w-4 h-4 bg-yellow-500 rounded-full"></span>
+                                                <span>Incentivos e Staking (15%)</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <br>
+                                <hr ><br>
+                                <h3 class="p-4">2. DRIPS TOKEN</h3>
+                                <ul>
+                                <li class="rounded-full p-4 bg-gray-900 text-white transition-transform transform hover:scale-105"><strong>Emissão ilimitada</strong>, controlada pelo staking de DRINK, com possibilidade de <em>burn</em> de tokens através de mecanismos de gamificação.</li>
+                                </ul>
+                                <p class="p-4">Os tokens <strong>DRIPS</strong> são emitidos com base no staking de <strong>DRINKS</strong> e são distribuídos a uma taxa de <strong>1 DRIPS por hora para cada 10 DRINKS em stake</strong>.</p>
+                                
+                                <h4 class="p-4">Cálculo do Staking de DRINK</h4>
+                                <ul>
+                                    <li>A cada <strong>10 DRINKS em stake</strong>, o usuário recebe <strong>1 DRIP por hora</strong>.</li>
+                                    <li>O número de DRINKS que podem ser colocados em stake será limitado e ajustado conforme a evolução do negócio.</li>
+                                </ul>
+                    
+                                <h5 class="p-4">Exemplo de Cálculo de Staking:</h5>
+                                <ul>
+                                    <li><strong>Usuário A</strong> coloca 100 DRINKS em stake.</li>
+                                    <li>A cada hora, ele ganha <strong>10 DRIPS</strong>.</li>
+                                    <li>Após 24 horas de staking, o usuário terá acumulado <strong>240 DRIPS</strong>.</li>
+                                </ul>
+                    
+                                <h4 class="p-4">Gamificação e Burn de DRIPS</h4>
+                                <p class="p-4">O fornecimento de DRIPS pode ser ajustado através de <strong>mecanismos de burn</strong>, incentivando o uso de DRIPS para consumo dentro da plataforma (produtos, serviços, NFTs, etc.).</p>
+                                <p class="p-4">A <strong>gamificação</strong> pode incluir desafios e conquistas que queimam DRIPS ao completar certas tarefas, equilibrando o fornecimento.</p>
+                                <hr>
+                    
+                                <h3 class="p-4">Quadro do Tokenomics</h3>
+                                <h4 class="p-4">Distribuição Inicial de DRINKS</h4>
+                                <ul>
+                                    <li><strong>Alocação Total</strong>: 51.000.000 DRINKS</li>
+                                    <li class="rounded-lg p-4 bg-red-500 text-white transition-transform transform hover:scale-105"><strong>Equipe e Desenvolvedores</strong>: 20% (10.200.000 DRINKS)</li>
+                                    <li class="rounded-lg p-4 bg-blue-500 text-white transition-transform transform hover:scale-105"><strong>Vendas Públicas e Privadas</strong>: 40% (20.400.000 DRINKS)</li>
+                                    <li class="rounded-lg p-4 bg-green-500 text-white transition-transform transform hover:scale-105"><strong>Reserva de Ecossistema</strong>: 25% (12.750.000 DRINKS)</li>
+                                    <li class="rounded-lg p-4 bg-yellow-500 text-white transition-transform transform hover:scale-105"><strong>Incentivos e Staking</strong>: 15% (7.650.000 DRINKS)</li>
+                                </ul>
+                    
+                                <h4 class="p-4">Ciclo de DRINKS</h4>
+                                <ol>
+                                    <li class="p-4"><strong>Investidores e Organizadores</strong>: Utilizam DRINK para organizar e financiar eventos, podendo realizar staking para emitir DRIPS.</li>
+                                    <li class="p-4"><strong>Profissionais</strong>: Precisam de DRIPS para serem contratados e devem colocar DRINKS em stake para obtê-los.</li>
+                                    <li class="p-4"><strong>Participantes</strong>: Usam DRIPS para consumir produtos e serviços nos eventos, ganhando benefícios e pontos de fidelidade.</li>
+                                </ol><br>
+                                <hr><br>
+                    
+                                <h3 class="p-4">4. Tokenomics do Staking</h3>
+                                <p class="p-4">O staking de DRINK incentiva a retenção de tokens e a emissão contínua de DRIPS. O limite de DRINKS em stake será ajustado conforme o crescimento do ecossistema, permitindo a gestão eficiente da oferta de DRIPS.</p>
+                    
+                                <h4 class="p-4">Benefícios do Staking</h4>
+                                <ul>
+                                    <li><strong>Sustentabilidade Econômica</strong>: Incentiva a participação de longo prazo.</li>
+                                    <li><strong>Controle de Oferta</strong>: A queima de DRIPS através de gamificação ajuda a equilibrar o fornecimento.</li>
+                                </ul>
+                                <br>
+                                <hr>
+                                <br>
+                    
+                                <h3 class="p-4">5. Conclusão</h3>
+                                <p class="p-4">O modelo de <strong>tokenomics</strong> da DrinkDrips cria um ecossistema sustentável para todos os envolvidos. O staking de <strong>DRINK</strong> e o uso de <strong>DRIPS</strong> garantem um ciclo econômico equilibrado, com flexibilidade para evoluir conforme novos usuários ingressam.</p>
+                    
+                                
+                            </div>
+                        </div>
+                    </div>
+                     
+                    
 
                     
 
