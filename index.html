@@ -99,7 +99,7 @@
                                 <!-- Coluna da Esquerda com Submenus -->
                                 <div class="w-1/2 pr-6">
                                     <a href="#" onclick="toggleModal('modalTokenomics')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Tokenomics</a>
-                                    <a href="#" onclick="toggleModal('modalEconomia')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Economia</a>
+                                    <a href="#" onclick="toggleModal('modalRoadmap')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Roadmap</a>
                                 </div>
                     
                                 <!-- Coluna da Direita para conteúdo extra -->
@@ -306,6 +306,7 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- Modal Tokenomics -->
                     <div id="modalTokenomics" class="popup z-50">                          
                         <div class="popup-container">
@@ -423,18 +424,25 @@
                                 
                             </div>
                         </div>
-                    </div>
-                     
-                    
-
-                    
+                    </div>                
 
                     <!-- Modal Roadmap -->
                     <div id="modalRoadmap" class="popup z-50">
                         <div class="popup-container">
+                            <div class="flex justify-end space-x-2 items-center">
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white transition-transform transform hover:scale-105">
+                                  &times;
+                                </button>
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-white transition-transform transform hover:scale-105">
+                                  &minus;
+                                </button>
+                                <button class="maximize-btn flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white transition-transform transform hover:scale-105">
+                                  &#9633;
+                                </button>
+                            </div>
                             <div class="popup-header">
                                 <h2>Roadmap</h2>
-                                <button class="close-btn" aria-label="Fechar modal">&times;</button>
+                                
                             </div>
                             <div class="popup-body">
                                 <main id="infographic" class="d-flex flex-column align-items-center py-5">
