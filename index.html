@@ -81,8 +81,9 @@
                         </div>
                     </div>
 
+                    <!-- Dropdown "Documentação" -->
                     <div class="relative inline-block">
-                        <!-- Dropdown "Documentação" -->
+                        
                         <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'tokenomicsDropdown')">
                             Documentação
                         </a>
@@ -91,20 +92,23 @@
                             <!-- Título e Ícone -->
                             <div class="flex items-center px-6 py-3 border-b border-gray-600">
                                 <i class="fas fa-chart-pie"></i>
-                                <h3 class="text-lg font-semibold ml-4">Distribuição</h3>
+                                <h3 class="text-lg font-semibold ml-4">Informações Técnicas e Funcionais</h3>
                             </div>
                     
                             <!-- Divisão em duas colunas com flex -->
                             <div class="flex px-6 py-4">
                                 <!-- Coluna da Esquerda com Submenus -->
                                 <div class="w-1/2 pr-6">
+                                    <a href="#" onclick="toggleModal('modalDesenhoNegocio')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Proposta DrinkDrips</a>
                                     <a href="#" onclick="toggleModal('modalTokenomics')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Tokenomics</a>
                                     <a href="#" onclick="toggleModal('modalRoadmap')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Roadmap</a>
-                                </div>
+                                    </div>
                     
                                 <!-- Coluna da Direita para conteúdo extra -->
                                 <div class="w-1/2 pl-6 border-l border-gray-600">
-                                    <p class="text-sm text-gray-300">Adicione aqui informações adicionais, imagens ou links.</p>
+                                    <a href="#" onclick="toggleModal('modalCasosUso')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Utilidades Drink</a>
+                                    <a href="#" onclick="toggleModal('modalCicloDRIPS')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Utilidades Drips</a>
+                                
                                 </div>
                             </div>
                         </div>
@@ -745,8 +749,205 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Modal Casos de Uso Drink-->
+                    <div id="modalCasosUso" class="popup z-50">                          
+                        <div class="popup-container">
+                            <div class="flex justify-end space-x-2 items-center">
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white transition-transform transform hover:scale-105">&times;</button>
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-white transition-transform transform hover:scale-105">&minus;</button>
+                                <button class="maximize-btn flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white transition-transform transform hover:scale-105">&#9633;</button>
+                            </div>
+                            <div class="popup-header">
+                                <h2>Utilidades Drink</h2>
+                            </div>
+                            <div class="popup-body">
+                                <h3>Ativo de Investidores e Organizadores</h3>
+                    
+                                <h4 class="mt-4 font-bold">Cenário Abrangente de Entretenimento e Eventos</h4>
+                                <p class="text-justify">
+                                    O token <strong>DRINK</strong> abrange todas as etapas e aspectos da indústria de eventos, oferecendo oportunidades diversificadas para investidores. Aqui está uma visão ampliada:
+                                </p>
+                                <hr class="my-4">
+                    
+                                <h4 class="font-bold">1. Gestão Completa de Eventos</h4>
+                                <ul class="list-disc ml-5">
+                                    <li><strong>Organização e Planejamento:</strong> Os investidores podem utilizar DRINK para cobrir toda a logística do evento, desde a locação de espaços até a coordenação de equipes, tecnologia e audiovisual.</li>
+                                    <li><strong>Contratação de Fornecedores:</strong> Serviços como catering, segurança, som e iluminação podem ser pagos diretamente em DRINK, facilitando negociações e redução de custos com intermediários.</li>
+                                    <li><strong>Telecomunicações e Infraestrutura Digital:</strong> Investidores podem firmar parcerias com empresas de telecomunicações para garantir internet de alta velocidade, streaming, e serviços de comunicação via DRINK.</li>
+                                </ul>
+                    
+                                <h4 class="mt-4 font-bold">2. Programas de Fidelidade e Cashbacks</h4>
+                                <ul class="list-disc ml-5">
+                                    <li><strong>Programa de Pontos:</strong> Ao participar de eventos ou utilizar o token DRINK, investidores e organizadores podem oferecer pontos de fidelidade, recompensando usuários com benefícios e descontos em eventos futuros.</li>
+                                    <li><strong>Cashbacks em DRINK:</strong> Organizações podem criar programas de cashback, devolvendo uma porcentagem dos gastos em DRINK, incentivando maior adesão de participantes e contratantes.</li>
+                                </ul>
+                    
+                                <h4 class="mt-4 font-bold">3. Patrocínios e Networking</h4>
+                                <ul class="list-disc ml-5">
+                                    <li><strong>Parcerias de Marketing e Patrocínios:</strong> Empresas podem utilizar DRINK para patrocinar eventos, recebendo benefícios em troca, como visibilidade em campanhas publicitárias ou durante os eventos.</li>
+                                    <li><strong>Expansão de Negócios e Networking:</strong> Investidores têm a oportunidade de estabelecer networking global e criar oportunidades de negócio no setor de entretenimento, com uma plataforma acessível e segura.</li>
+                                </ul>
+                    
+                                <h4 class="mt-4 font-bold">4. Benefícios Gerais para Investidores</h4>
+                                <ul class="list-disc ml-5">
+                                    <li><strong>Governança e Participação Decisória:</strong> Detentores de DRINK podem participar da governança, propondo e votando em novos projetos e eventos.</li>
+                                    <li><strong>Criação de Novos Produtos e Serviços:</strong> O ecossistema oferece oportunidades para lançar novos serviços dentro dos eventos, como experiências VIP, pacotes exclusivos, e customização de eventos via DRINK.</li>
+                                </ul>
+                    
+                                <h4 class="mt-4 font-bold">5. Incentivo à Sustentabilidade e Inovação</h4>
+                                <ul class="list-disc ml-5">
+                                    <li><strong>Pagamentos Verdes:</strong> Os eventos podem adotar práticas sustentáveis, como soluções de energia limpa e carbono zero, financiadas diretamente por DRINK.</li>
+                                    <li><strong>Inovação Tecnológica:</strong> Investidores podem financiar o uso de tecnologias avançadas como realidade aumentada (AR), inteligência artificial, ou experiências imersivas, atraindo mais público.</li>
+                                </ul>
+                    
+                                <hr class="my-4">
+                                <p class="text-justify">
+                                    Este cenário oferece um ambiente expansivo e lucrativo para investidores que buscam maximizar seu capital dentro da indústria de entretenimento. DRINK não apenas centraliza a criação e gestão de eventos, mas também facilita oportunidades de novos negócios, patrocínios, e parcerias estratégicas em todo o ecossistema.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Modal Casos de Uso Drips-->
+                    <div id="modalCicloDRIPS" class="popup z-50">                          
+                        <div class="popup-container">
+                          <div class="flex justify-end space-x-2 items-center">
+                            <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white transition-transform transform hover:scale-105">&times;</button>
+                            <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-white transition-transform transform hover:scale-105">&minus;</button>
+                            <button class="maximize-btn flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white transition-transform transform hover:scale-105">&#9633;</button>
+                          </div>
+                          
+                          <div class="popup-header">
+                            <h2>DRIPS: Ciclo de Consumo e Funções Vitais no Ecossistema DrinkDrips</h2>
+                          </div>
+                          
+                          <div class="popup-body">
+                            <p class="text-justify">
+                              O token <strong>DRIPS</strong> desempenha um papel fundamental no ciclo econômico do ecossistema DrinkDrips. Ele só pode ser <strong>emitido através de staking de DRINK</strong>, o que cria uma dinâmica exclusiva de acesso e consumo.
+                            </p>
+                      
+                            <hr class="my-4">
+                            
+                            <h4 class="text-[#D33CF2] font-bold">1. Mintagem Exclusiva por Staking</h4>
+                            <p class="text-justify">
+                              Para adquirir DRIPS, os usuários devem realizar staking de DRINK, tornando o token DRINK essencial para acessar benefícios e funcionalidades avançadas. Isso cria uma interdependência entre os dois tokens, incentivando a retenção de DRINK e estimulando o uso de DRIPS.
+                            </p>
+                      
+                            <h4 class="text-[#D33CF2] mt-4 font-bold">2. Consumo no Ecossistema</h4>
+                            <p class="text-justify">Os DRIPS são utilizados para adquirir produtos e serviços durante os eventos. Aqui estão alguns exemplos:</p>
+                      
+                            <!-- Substituindo a lista por divs -->
+                            <div class="pl-5 space-y-2 text-justify">
+                              <div><strong>Bebidas e Alimentos:</strong> DRIPS podem ser usados para comprar consumíveis nos eventos.</div>
+                              <div><strong>Convites VIP e pacotes premium:</strong> Os participantes podem gastar DRIPS em benefícios exclusivos.</div>
+                              <div><strong>Itens de Merchandising e Produtos Exclusivos:</strong> Produtos únicos podem ser adquiridos com DRIPS.</div>
+                              <div><strong>NFTs e Colecionáveis digitais:</strong> DRIPS também são usados para adquirir NFTs e colecionáveis especiais de eventos.</div>
+                            </div>
+                            
+                            <p class="text-justify mt-2">
+                              Além disso, os participantes podem trocar DRIPS por experiências exclusivas, como acesso a áreas restritas, upgrades de ingressos ou encontros com artistas.
+                            </p>
+                      
+                            <h4 class="text-[#D33CF2] mt-4 font-bold">3. Requisitos para Prestação de Serviços</h4>
+                            <p class="text-justify">
+                              Os <strong>profissionais</strong> que desejam prestar serviços em eventos dentro do ecossistema DrinkDrips devem possuir <strong>uma certa quantidade mínima de DRIPS</strong>, implicando que eles também precisam fazer staking de DRINK para mintar esses tokens.
+                            </p>
+                      
+                            <p class="text-justify mt-2">Este modelo cria um ciclo de compromisso onde:</p>
+                      
+                            <!-- Substituindo a lista por divs -->
+                            <div class="pl-5 space-y-2 text-justify">
+                              <div>Profissionais devem garantir um saldo mínimo de DRIPS para se qualificar para contratações, impulsionando a demanda por staking de DRINK.</div>
+                              <div>A cada novo serviço prestado, o profissional permanece envolvido no ecossistema, incentivando a retenção de DRIPS e DRINK.</div>
+                            </div>
+                      
+                            <h4 class="text-[#D33CF2] mt-4 font-bold">4. Ciclo de Recompensas e Fidelidade</h4>
+                      
+                            <!-- Substituindo a lista por divs -->
+                            <div class="pl-5 space-y-2 text-justify">
+                              <div><strong>Cashback e Programa de Pontos:</strong> Participantes que compram produtos com DRIPS podem acumular pontos de fidelidade, resultando em descontos futuros ou acesso antecipado a eventos.</div>
+                              <div><strong>Gamificação e Incentivos:</strong> O ecossistema pode gamificar o uso de DRIPS, recompensando usuários por sua participação ativa, seja comprando produtos, interagindo com o evento ou promovendo atividades nas redes sociais.</div>
+                            </div>
+                      
+                            <hr class="my-4">
+                      
+                            <p class="text-justify">
+                              Este modelo cria um <strong>ciclo de retenção</strong> e valorização dos tokens dentro do ecossistema. O staking de DRINK para gerar DRIPS incentiva a participação contínua, e a exigência de DRIPS para profissionais amplia o valor do token, gerando mais movimentação e oportunidades para todos os envolvidos.
+                            </p>
+                          </div>
+                        </div>
+                    </div>
+                      
+                    <!-- Modal Desenho de Negócio DrinkDrips-->
+                    <div id="modalDesenhoNegocio" class="popup z-50">
+                        <div class="popup-container">
+                          <div class="flex justify-end space-x-2 items-center">
+                            <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white transition-transform transform hover:scale-105">&times;</button>
+                            <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-white transition-transform transform hover:scale-105">&minus;</button>
+                            <button class="maximize-btn flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white transition-transform transform hover:scale-105">&#9633;</button>
+                          </div>
+                          
+                          <div class="popup-header">
+                            <h2 class="text-center font-semibold text-xl">Desenho do Negócio - DrinkDrips</h2>
+                          </div>
+                          
+                          <div class="popup-body">
+                            <p class="text-justify">
+                              A <strong>DrinkDrips</strong> integra o mundo de entretenimento e eventos com tecnologias blockchain, utilizando os tokens <strong>DRINK</strong> e <strong>DRIPS</strong> para criar um ecossistema dinâmico. Cada token desempenha um papel vital, atendendo diferentes públicos — organizadores, profissionais e participantes — e facilitando transações de forma rápida, transparente e segura.
+                            </p>
+                      
+                            <hr class="my-4">
+                      
+                            <h3 class="font-semibold text-lg">1. DRINK como Ativo de Investidores e Organizadores</h3>
+                            <p class="text-justify">
+                              O token <strong>DRINK</strong> é o pilar central do ecossistema, funcionando como o principal ativo para investidores e organizadores de eventos. Sua utilidade se estende a várias áreas:
+                            </p>
+                      
+                            <!-- Substituindo a lista por divs -->
+                            <div class="pl-5 space-y-2 text-justify">
+                              <div><strong>Gestão e Criação de Eventos:</strong> DRINK é utilizado para organizar, planejar e financiar eventos, cobrindo todas as necessidades operacionais.</div>
+                              <div><strong>Contratação de Profissionais:</strong> Somente detentores de DRINK podem contratar profissionais especializados, desde músicos até equipes de suporte.</div>
+                              <div><strong>Logística e Telecomunicações:</strong> DRINK gerencia aspectos de transporte, viagens e infraestrutura digital para eventos.</div>
+                              <div><strong>Patrocínios e Parcerias:</strong> Empresas podem patrocinar eventos com DRINK, ganhando visibilidade em campanhas publicitárias.</div>
+                              <div><strong>Cashbacks e Benefícios:</strong> Programas de fidelidade e cashback em DRINK incentivam a participação em eventos futuros.</div>
+                              <div><strong>Governança:</strong> Detentores de DRINK participam na governança da plataforma, votando em propostas de novos eventos.</div>
+                              <div><strong>Sustentabilidade e Inovação:</strong> Investidores podem usar DRINK em iniciativas verdes e tecnológicas, como eventos carbono zero.</div>
+                            </div>
+                      
+                            <hr class="my-4">
+                      
+                            <h3 class="font-semibold text-lg">2. DRIPS: Ciclo de Consumo e Funções Vitais no Ecossistema DrinkDrips</h3>
+                            <p class="text-justify">
+                              <strong>DRIPS</strong> são tokens mintados exclusivamente através do <strong>staking de DRINK</strong>, criando uma relação simbiótica entre os dois ativos. Eles são essenciais no consumo dentro do ecossistema.
+                            </p>
+                      
+                            <!-- Substituindo a lista por divs -->
+                            <div class="pl-5 space-y-2 text-justify">
+                              <div><strong>Compras e Consumo durante os Eventos:</strong> DRIPS são usados para adquirir produtos e serviços como alimentos, ingressos VIP, e experiências exclusivas.</div>
+                              <div><strong>Requisito para Profissionais:</strong> Profissionais precisam de um saldo mínimo de DRIPS, criando uma demanda por staking de DRINK.</div>
+                              <div><strong>Fidelidade e Cashbacks:</strong> Consumidores recebem pontos de fidelidade e cashbacks em DRIPS, incentivando a participação futura.</div>
+                              <div><strong>Expansão Digital:</strong> DRIPS podem ser usados para comprar produtos digitais e NFTs relacionados a eventos.</div>
+                              <div><strong>Gamificação do Consumo:</strong> O uso de DRIPS pode ser gamificado, oferecendo recompensas para participantes ativos.</div>
+                            </div>
+                      
+                            <hr class="my-4">
+                      
+                            <h3 class="text-center font-semibold text-xl">Conclusão</h3>
+                            <p class="text-justify">
+                              A <strong>DrinkDrips</strong> posiciona os tokens DRINK e DRIPS como elementos chave de um ecossistema disruptivo que conecta investidores, organizadores, profissionais e participantes em um ciclo de valor contínuo. O sistema promove uma economia sustentável, facilitando a participação ativa de todos.
+                            </p>
+                          </div>
+                        </div>
+                    </div>
+                      
 
-               <div class="flex items-center space-x-7">
+                    
+                    
+                    
+                    
+                <!-- Connect-Button -->
+                <div class="flex items-center space-x-7">
                   <a class="connect-button relative group hidden min-[845px]:flex bg-transparent min-w-44 w-44 h-12 rounded-lg overflow-hidden border border-[#E730CA] font-semibold text-[#E730CA] sm:hover:text-white sm:hover:border-[#561950] transition-all duration-700" style="will-change: transform" id="cta">
                      <span x-on:mouseover="openError = true" class="flex justify-center items-center h-full w-full sm:transform sm:group-hover:-translate-x-3.5 transition-transform cursor-pointer duration-700">Connect Wallet</span>
                      <span class="absolute top-0 -right-8 sm:group-hover:right-0 h-full flex justify-center items-center px-1.5 bg-[#E730CA] transition-all cursor-pointer duration-700">
@@ -837,7 +1038,7 @@
                     </div>
                   </div>
                 
-               </div>
+                </div>
 
                <div class="-mr-2 flex items-center min-[845px]:hidden">
                   <button type="button" x-on:click="openNav = true" class="relative inline-flex items-center justify-center p-1 text-white hover:text-[#E730CA] focus:outline-none focus:ring-0 focus:ring-transparent focus:ring-offset-0 transition-colors" aria-controls="mobile-menu" aria-expanded="false">
@@ -848,7 +1049,7 @@
                      </svg>
                   </button>
                </div>
-            </div>
+                </div>
             </div>
       </nav>
 
