@@ -885,60 +885,14 @@
                      </svg>
                   </button>
                </div>
-                </div>
             </div>
-
-         <div x-cloak x-show="openNav" class="relative z-50 lg:hidden" role="dialog" aria-modal="true">
-            <div x-cloak x-show="openNav" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-gray-900/80"></div>
-
-            <div x-cloak x-show="openNav" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="fixed inset-0 flex">
-               <div x-cloak x-show="openNav" x-transition:enter="ease-in-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in-out duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="relative mr-16 flex w-full max-w-xs flex-1">
-
-                  <div class="absolute left-full top-0 flex w-16 justify-center pt-5">
-                     <button type="button" x-on:click="openNav = false" class="-m-2.5 p-2.5">
-                        <span class="sr-only">Fechar barra lateral</span>
-                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                     </button>
-                  </div>
-
-                  <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-[#131313] px-6 pb-2">
-                     <div class="flex h-16 shrink-0 items-center">
-                        <svg width="37" height="31" viewBox="0 0 37 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M16.5639 0L37 20.1712V31H27.4632V24.064L12.6202 9.41322H9.53683V31H0V0H16.5639ZM27.4632 10.758V0H37V10.758H27.4632Z" fill="#FFFFFF" />
-                        </svg>
-                     </div>
-                     <nav class="flex flex-1 flex-col">
-                        <ul role="list" class="flex flex-1 flex-col gap-y-7">
-                           <li>
-                              <ul role="list" class="-mx-2 space-y-1">
-                                 <li>
-                                    <a href="#" onclick="toggleModal('modalSobre')" class="relative text-[#E730CA] hover:text-[#E730CA] inline-flex items-center font-bold">Sobre</a>
-                                 </li>
-                                 <li>
-                                    <a href="#" onclick="toggleModal('modalTokenomics')" class="relative text-white hover:text-[#E730CA] inline-flex items-center font-bold">Tokenomics</a>
-                                 </li>
-                                 <li>
-                                    <a href="#" onclick="toggleModal('modalRoadmap')" class="relative text-white hover:text-[#E730CA] inline-flex items-center font-bold">Roadmap</a>
-                                 </li>
-                                 <li>
-                                    <a href="#" onclick="toggleModal('modalWhitepaper')" class="relative text-white hover:text-[#E730CA] inline-flex items-center font-bold">Whitepaper</a>
-                                 </li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </nav>
-                  </div>
-               </div>
             </div>
-         </div>
       </nav>
 
-      <div class="pt-20 lg:pt-40 xl:pt-60">
+        <div class="pt-20 lg:pt-20 xl:pt-30">
          <!-- header -->
-         <header class="p-5 m-5 bg-[#131313]">
-  <!-- Conteúdo do header -->
+            <header class="p-5 m-5 bg-[#131313]">
+            <!-- Conteúdo do header -->
 
             <div class="relative isolate">
                <div class="mx-auto max-w-7xl px-6 space-y-20 sm:space-y-52 lg:space-y-0 lg:flex lg:items-center lg:gap-x-10 lg:pl-8 lg:pr-20">
@@ -1133,7 +1087,7 @@
 						</div>
 					</div>
 				</div>
-			</header>
+		    </header>
 			<main class="max-w-[1240px] mx-auto pb-32">
                 <!-- Logo cloud (Criptomoedas e Portais) -->
                 <section class="my-20 sm:my-60">
@@ -1710,9 +1664,8 @@
 
 
 
- 			</main>
-                 
-		</div>
+ 			</main>    
+	    </div>
 	</div>
 
 
