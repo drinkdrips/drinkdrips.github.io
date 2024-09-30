@@ -78,13 +78,21 @@ maximizeBtns.forEach((btn) => {
         let body = modal.querySelector(".popup-body");
 
         if (modal.classList.contains("maximized")) {
+            // Reverte para o tamanho normal
             container.style.width = "min(900px, 90%)";
-            container.style.top = "45%";
-            body.style.height = "70vh";
+            container.style.height = "auto";  // Ajusta a altura para conteúdo normal
+            container.style.top = "45%";  // Centraliza verticalmente
+            container.style.left = "50%";  // Centraliza horizontalmente
+            container.style.transform = "translate(-50%, -50%)";  // Mantém o centro na viewport
+            body.style.height = "70vh";  // Ajusta a altura do corpo do modal
         } else {
-            container.style.width = "100%";
-            container.style.top = "50%";
-            body.style.height = "90vh";
+            // Maximiza o modal, sem usar transform
+            container.style.width = "90vw";  // Largura da tela quase completa
+            container.style.height = "90vh";  // Altura da tela quase completa
+            container.style.top = "5vh";  // Distância do topo
+            container.style.left = "5vw";  // Distância da esquerda
+            container.style.transform = "none";  // Remove transform
+            body.style.height = "80vh";  // Ajusta a altura do corpo do modal para caber
         }
 
         modal.classList.toggle("maximized");
