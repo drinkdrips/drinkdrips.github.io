@@ -1746,8 +1746,12 @@ async function refreshBalances() {
 
             const dripsBalanceWei = await window.getDripsBalance(userAccount);
             const dripsBalance = convertWeiToTokens(dripsBalanceWei);
-            console.log('Saldo de DRIPS:', dripsBalance);
-            document.getElementById('dripsBalance').innerText = dripsBalance;
+
+            // Converte dripsBalance para um número e formata para 2 casas decimais
+            const formattedDripsBalance = Number(dripsBalance).toFixed(2);
+
+            console.log('Saldo de DRIPS:', formattedDripsBalance );
+            document.getElementById('dripsBalance').innerText = formattedDripsBalance ;
 
             const stakingBalanceWei = await window.getStakingBalance(userAccount);
             const stakingBalance = convertWeiToTokens(stakingBalanceWei);
@@ -1781,10 +1785,14 @@ async function refreshBalances() {
             console.log('Fornecimento circulante:', totalSupply);
             document.getElementById('totalSupply').innerText = totalSupply;
 
-            const totalstakedTokensWei = await window.getTotalStakedTokens();
-            const totalstakedTokens = convertWeiToTokens(totalstakedTokensWei);
-            console.log('Total de Drinks em stake:', totalstakedTokens);
-            document.getElementById('totalstakedTokens').innerText = totalstakedTokens;
+            const totalStakedTokensWei = await window.getTotalStakedTokens();
+            const totalStakedTokens = convertWeiToTokens(totalStakedTokensWei);
+
+            // Converte totalStakedTokens para um número e formata para 2 casas decimais
+            const formattedTotalStakedTokens = Number(totalStakedTokens).toFixed(2);
+
+            console.log('Total de Drinks em stake:', formattedTotalStakedTokens);
+            document.getElementById('totalstakedTokens').innerText = formattedTotalStakedTokens;
 
             const stakeHolders = await window.getStakerCount();
             console.log('Holders mantendo stake:', stakeHolders);
@@ -1792,8 +1800,13 @@ async function refreshBalances() {
 
             const dripstotalSupplyWei = await window.getDripsTotalSupply();
             const dripstotalSupply = convertWeiToTokens(dripstotalSupplyWei);
-            console.log('Fornecimento circulante de DRIPS:', dripstotalSupply);
-            document.getElementById('dripstotalSupply').innerText = dripstotalSupply;
+
+            // Converte dripstotalSupply para um número e formata para 2 casas decimais
+            const formattedDripsTotalSupply = Number(dripstotalSupply).toFixed(2);
+
+            console.log('Fornecimento circulante de DRIPS:', formattedDripsTotalSupply);
+            document.getElementById('dripstotalSupply').innerText = formattedDripsTotalSupply;
+
             // Continue para outros saldos, se necessário...
         } catch (error) {
             console.error('Erro ao obter os saldos:', error);
