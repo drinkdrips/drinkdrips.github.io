@@ -37,6 +37,7 @@
    <div>
       <nav>
          <div class="px-4 pt-4 md:pt-9 transition-all">
+            <!-- Logo | Dropdowns | Modais -->
             <div class="flex justify-between items-center">
                <!-- Logo -->
                <div class="flex items-center">
@@ -114,27 +115,31 @@
                             </div>
                         </div>
                     </div>
-                    
+
+                    <!-- Dropdown "Soluções" -->
                     <div class="relative inline-block">
-                        <!-- Dropdown "Roadmap" -->
-                        <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'roadmapDropdown')">
-                            Roadmap
+                        
+                        <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'solucoesDropdown')">
+                            Soluções
                         </a>
                         
-                        <div id="roadmapDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-2 z-10 w-[500px] left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out bg-gray-900">
+                        <div id="solucoesDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-2 z-10 w-[500px] left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out bg-gray-900">
                             <!-- Título e Ícone -->
                             <div class="flex items-center px-6 py-3 border-b border-gray-600">
                                 <i class="fas fa-bullhorn"></i>
-                                <h3 class="text-lg font-semibold ml-4">Metas e Prazos</h3>
+                                <h3 class="text-lg font-semibold ml-4">Readme Contratos</h3>
                             </div>
                     
                             <!-- Divisão em duas colunas com flex -->
                             <div class="flex px-6 py-4">
                                 <!-- Coluna da Esquerda com Submenus -->
                                 <div class="w-1/2 pr-6">
-                                    <a href="#" onclick="toggleModal('modalFase1')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Fase 1</a>
-                                    <a href="#" onclick="toggleModal('modalFase2')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Fase 2</a>
-                                    <a href="#" onclick="toggleModal('modalFase3')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Fase 3</a>
+                                    <a href="#" onclick="toggleModal('modalDrink')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Drink</a>
+                                    <a href="#" onclick="toggleModal('modalDrips')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Drips</a>
+                                    <a href="#" onclick="toggleModal('modalStake')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Stake</a>
+                                    <a href="#" onclick="toggleModal('modalLiquidity')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Liquidity</a>
+                                    <a href="#" onclick="toggleModal('modalGovernance')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Governance</a>
+                                    <a href="#" onclick="toggleModal('modalSwap')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Swap</a>
                                 </div>
                     
                                 <!-- Coluna da Direita para conteúdo extra -->
@@ -144,27 +149,28 @@
                             </div>
                         </div>
                     </div>
-                    
+
+                    <!-- Dropdown "Comunidade" -->
                     <div class="relative inline-block">
-                        <!-- Dropdown "Whitepaper" -->
-                        <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'whitepaperDropdown')">
-                            Whitepaper
+                        
+                        <a href="#" class="menu-item inline-flex items-center text-white hover:text-[#D33CF2] focus:outline-none" onclick="toggleDropdown(event, 'comunidadeDropdown')">
+                            Comunidade
                         </a>
                         
-                        <div id="whitepaperDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-2 z-10 w-[500px] left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out bg-gray-900">
+                        <div id="comunidadeDropdown" class="absolute hidden border border-gray-300 text-white py-2 rounded-lg shadow-lg mt-2 z-10 w-[500px] left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out bg-gray-900">
                             <!-- Título e Ícone -->
                             <div class="flex items-center px-6 py-3 border-b border-gray-600">
                                 <i class="fas fa-book-open"></i>
-                                <h3 class="text-lg font-semibold ml-4">Documentação</h3>
+                                <h3 class="text-lg font-semibold ml-4">DrinkDrip-se</h3>
                             </div>
                     
                             <!-- Divisão em duas colunas com flex -->
                             <div class="flex px-6 py-4">
                                 <!-- Coluna da Esquerda com Submenus -->
                                 <div class="w-1/2 pr-6">
-                                    <a href="#" onclick="toggleModal('modalSecao1')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Seção 1</a>
-                                    <a href="#" onclick="toggleModal('modalSecao2')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Seção 2</a>
-                                    <a href="#" onclick="toggleModal('modalSecao3')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Seção 3</a>
+                                    <a href="#" onclick="toggleModal('modalAcontecimentos')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Acontecimentos</a>
+                                    <a href="#" onclick="toggleModal('modalEnvolva')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Envolva-se</a>
+                                    <a href="#" onclick="toggleModal('modalSocial')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Ações Sociais</a>
                                 </div>
                     
                                 <!-- Coluna da Direita para conteúdo extra -->
@@ -1092,9 +1098,8 @@
                 </div>
             </div>
       </nav>
-
-                <div class="pt-20 lg:pt-20 xl:pt-30">
                 <!-- header -->
+                <div class="pt-20 lg:pt-20 xl:pt-30">
                     <header class="p-5 m-5 bg-[#131313]">
                     <!-- Conteúdo do header -->
 
