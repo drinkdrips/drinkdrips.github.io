@@ -1172,6 +1172,17 @@ video {
 .bg-opacity-95 {
   --tw-bg-opacity: 0.95 !important;
 }
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops)) !important;
+}
+.from-\[\#131313\] {
+  --tw-gradient-from: #131313 var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(19 19 19 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.to-\[\#D33CF2\] {
+  --tw-gradient-to: #D33CF2 var(--tw-gradient-to-position) !important;
+}
 .bg-cover {
   background-size: cover !important;
 }
