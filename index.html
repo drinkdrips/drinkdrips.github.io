@@ -30,8 +30,8 @@
             <text x="50%" y="50%" font-family="Orbitron, sans-serif" font-size="20" fill="url(#gradient)" text-anchor="middle" letter-spacing="2" text-transform="uppercase" dominant-baseline="middle">
               Fique por dentro de todos os nossos anúncios!
             </text>
-        </svg>
-    </div> 
+        </svg>        
+    </div>
 
 <div>
    <div>
@@ -1523,8 +1523,7 @@
                             <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1" src="https://cryptologos.cc/logos/polygon-matic-logo.svg" alt="Polygon" width="200" height="60">
                         </a>
                         </div>
-            </section>
-    
+            </section>    
     
             <!-- SEÇÃO GALERIAS E PACKS ATE O BOTAO DISCOVER MORE-->
             <!-- Grid tabs -->
@@ -1794,11 +1793,9 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <h2 class="my-10 text-2xl sm:text-[2.5rem] font-semibold tracking-tight text-white">
-                                            O <span class="text-custom-purple">sucesso</span> de um evento é resultado do trabalho que o antecede.
-                                        </h2>
-                                        <h1 class="mt-10 max-w-lg text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                                            Com a <span class="text-[#FF33DE]">DrinkDrips,</span> você faz acontecer.
+                                        <!-- H1 QUE RECEBE ANIMAÇÃO DIGITAÇÃO-->
+                                        <h1 class="typed-text">
+                                            <span id="typed"></span>
                                         </h1>
                                         <p class="mt-6 text-lg leading-8 text-[#CACACA] text-justify">
                                             Transforme seus eventos com a <span class="text-[#FF33DE]">DrinkDrips</span>, onde a inovação se encontra com a tecnologia. Utilizando a força e a eficiência dos contratos inteligentes na blockchain, pretendemos revolucionar o futuro da indústria de entretenimento e eventos. Da gestão de patrocínios a produções épicas, nossa proposta redefine o que é possível, vamos trabalhar para que os eventos sejam mais do que memoráveis — sejam revolucionários.
@@ -1831,7 +1828,7 @@
                     
             <!-- CONTAINER APPS DRINKDRIPS-->                     
             <div class="bg-gradient-to-r from-[#131313] to-[#D33CF2] rounded-lg shadow-lg p-6 border border-[#303030]">
-                <h1 class="mt-10 max-w-lg text-4xl sm:text-7xl lg:text-6xl font-semibold text-white xl:text-7xl tracking-tight justify-center items-center">Drink<span class="text-[#FF33DE]">Apps</span></h1>
+                <h1 class="mt-10 max-w-lg text-4xl sm:text-7xl lg:text-6xl font-semibold text-white xl:text-7xl tracking-tight justify-center items-center">Drink<span class="text-[#FF33DE]">Apps</span></h1> 
                 <!-- Container principal da seção DashBoard E Formulário de Compras-->
                     <section class="mt-20 px-6 lg:px-8 max-w-screen-lg mx-auto">
                         <!-- Flex container para dashboard e formulário -->
@@ -2144,7 +2141,26 @@
         </footer>
         <!-- FIM FOOTER -->
 </div>
-  </body>
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- Script para animação de digitação -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var options = {
+        strings: [
+          `<h2 class="my-10 text-2xl sm:text-[2.5rem] font-semibold tracking-tight text-white">O <span class="text-custom-purple">sucesso</span> de um evento é resultado do trabalho que o antecede.</h2>`,
+          `<h1 class="mt-10 max-w-lg text-4xl font-bold tracking-tight text-white sm:text-4xl">Escale o potencial de sucesso do seu evento com a <span class="text-[#FF33DE]">DrinkDrips</span>!</h1>`
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 1500,
+        loop: true,
+        showCursor: false,
+      };
+
+      var typed = new Typed("#typed", options);
+    });
+  </script>
     <script>
         // Script para alternar entre abas
         document.querySelectorAll('.tab-link').forEach(link => {
@@ -2162,9 +2178,9 @@
             });
         });
     </script>
-  <script type="module" src="scripts/connectWallet.js"></script>
-  <script type="module" src="scripts/liquidityPool.js"></script>
-  <script type="module" src="scripts/governance.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script type="module" src="scripts/connectWallet.js"></script>
+    <script type="module" src="scripts/liquidityPool.js"></script>
+    <script type="module" src="scripts/governance.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script src="roadmap.js"></script>
 </html>
