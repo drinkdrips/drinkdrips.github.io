@@ -1760,8 +1760,12 @@ async function refreshBalances() {
 
             const claimableDripsWei = await window.getCalculateRewards(userAccount);
             const claimableDrips = convertWeiToTokens(claimableDripsWei);
+
+            // Converte claimableDrips para um número e formata para 2 casas decimais
+            const formattedclaimableDrips = Number(claimableDrips).toFixed(2);
+
             console.log('DRIPS a Reivindicar:', claimableDrips);
-            document.getElementById('claimableDrips').innerText = claimableDrips;
+            document.getElementById('claimableDrips').innerText = formattedclaimableDrips;
 
             const drinkmaxSupplyWei = await window.getMaxSupply();
             const maxSupply = convertWeiToTokens(drinkmaxSupplyWei);
