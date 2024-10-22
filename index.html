@@ -148,7 +148,7 @@
                             <div class="flex px-6 py-4">
                                 <!-- Coluna da Esquerda com Submenus -->
                                 <div class="w-1/2 pr-6">
-                                    <a href="#" onclick="toggleModal('modalDrink')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Drink</a>
+                                    <a href="#" onclick="toggleModal('modalDrinkToken')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Drink</a>
                                     <a href="#" onclick="toggleModal('modalDrips')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Drips</a>
                                     <a href="#" onclick="toggleModal('modalStake')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Stake</a>
                                     <a href="#" onclick="toggleModal('modalLiquidity')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Liquidity</a>
@@ -1240,6 +1240,93 @@
                         </div>
                     </div>
 
+                    <!-- Modal Drink -->
+                    <div id="modalDrinkToken" class="popup z-50">                          
+                        <div class="popup-container">
+                            <div class="flex justify-end space-x-2 items-center">
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white transition-transform transform hover:scale-105">
+                                &times;
+                                </button>
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-white transition-transform transform hover:scale-105">
+                                &minus;
+                                </button>
+                                <button class="maximize-btn flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white transition-transform transform hover:scale-105">
+                                &#9633;
+                                </button>
+                            </div>
+                            <div class="popup-header">
+                                <h2 class="text-xl font-semibold text-center">Explicação do Contrato DrinkToken</h2>
+                            </div>
+                            <div class="popup-body">
+                                <p class="text-justify">
+                                    Este contrato inteligente implementa um token ERC20 chamado <span class="font-semibold">DrinkToken</span>, usando funcionalidades de segurança fornecidas pela OpenZeppelin. Abaixo está uma explicação detalhada de cada parte relevante do contrato.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">1. Importações de OpenZeppelin</h3>
+                                <p class="text-justify">
+                                    O contrato importa várias bibliotecas de OpenZeppelin para garantir segurança e funcionalidades avançadas:
+                                    - <span class="font-semibold">ERC20</span>: Define as funcionalidades padrão do token, como transferência e consulta de saldo.
+                                    - <span class="font-semibold">Ownable</span>: Garante que certas funções só possam ser chamadas pelo proprietário do contrato.
+                                    - <span class="font-semibold">ReentrancyGuard</span>: Previne ataques de reentrada (um tipo de ataque de segurança).
+                                    - <span class="font-semibold">Pausable</span>: Permite que o contrato seja pausado ou retomado, adicionando um controle extra em situações críticas.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">2. Variáveis de Configuração</h3>
+                                <p class="text-justify">
+                                    - <span class="font-semibold">MAX_SUPPLY</span>: Define o suprimento máximo de tokens como 51 milhões de unidades.<br>
+                                    - <span class="font-semibold">PRE_SALE_SUPPLY</span>: Limita o número de tokens disponíveis na pré-venda a 30 milhões.<br>
+                                    - <span class="font-semibold">DRINK_PRICE_USD</span>: Preço de cada token DRINK em USD ($0.10 para público geral).<br>
+                                    - <span class="font-semibold">WHITELIST_DRINK_PRICE_USD</span>: Preço reduzido de $0.05 por token DRINK para usuários na whitelist.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">3. Mapeamentos</h3>
+                                <p class="text-justify">
+                                    - <span class="font-semibold">tokensPurchased</span>: Armazena quantos tokens cada endereço comprou durante a pré-venda, garantindo que o limite de compra por endereço seja respeitado.<br>
+                                    - <span class="font-semibold">whiteList</span>: Controla quem está na whitelist e tem direito ao preço reduzido na compra de tokens.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">4. Função <span class="font-semibold">buyTokensWithUsd()</span></h3>
+                                <p class="text-justify">
+                                    Permite que os usuários comprem tokens DRINK pagando em dólares americanos (USD). A função verifica se o comprador está na whitelist durante a pré-venda e calcula o valor dos tokens com base no preço correspondente. O cálculo do valor dos tokens é feito com base na quantidade de USD enviada.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">5. Função <span class="font-semibold">_handlePurchase()</span></h3>
+                                <p class="text-justify">
+                                    Essa função privada é chamada internamente para concluir a compra de tokens. Ela verifica:
+                                    - Se a compra não excede o suprimento máximo de tokens.<br>
+                                    - Durante a pré-venda, garante que o comprador não exceda o limite de compra por endereço (0,5% da pré-venda).
+                                    Depois de todas as verificações, a função chama <span class="font-semibold">_mint()</span> para criar os tokens e transferi-los para o comprador.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">6. Função <span class="font-semibold">endPresale()</span></h3>
+                                <p class="text-justify">
+                                    Apenas o proprietário do contrato pode chamar essa função para encerrar a pré-venda. A partir desse momento, o preço reduzido da whitelist não será mais aplicado.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">7. Função <span class="font-semibold">mintTokens()</span></h3>
+                                <p class="text-justify">
+                                    O proprietário pode criar novos tokens (até o limite do suprimento máximo) usando essa função. Isso pode ser útil para adicionar liquidez ou recompensar investidores.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">8. Funções de Whitelist</h3>
+                                <p class="text-justify">
+                                    - <span class="font-semibold">addToWhiteList()</span>: Adiciona um endereço à whitelist, permitindo que ele compre tokens a um preço reduzido durante a pré-venda.<br>
+                                    - <span class="font-semibold">removeFromWhiteList()</span>: Remove um endereço da whitelist.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">9. Funções <span class="font-semibold">pause()</span> e <span class="font-semibold">unpause()</span></h3>
+                                <p class="text-justify">
+                                    O proprietário pode pausar e retomar o contrato usando essas funções. Enquanto o contrato estiver pausado, a maioria das operações (como a compra de tokens) estará suspensa, o que pode ser útil em caso de emergência ou manutenção.
+                                </p><br>
+
+                                <p class="text-justify">
+                                    Este contrato foi projetado para ser flexível e seguro, permitindo ao proprietário controlar o fornecimento e a venda de tokens, ao mesmo tempo que oferece uma pré-venda limitada com descontos especiais para membros whitelist.
+                                </p><br>
+                            </div>
+                        </div>
+                    </div>
+
+
                     
                 <!-- Connect-Button -->
                 <div class="flex items-center space-x-7">
@@ -2142,8 +2229,6 @@
     </div>
 
     <!-- FOOTER -->
-
-
 	<footer class="bg-[#22252b]">
 		<div class="mx-auto max-w-7xl overflow-hidden px-6 py-10 sm:py-12 lg:px-8">
 			<nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
