@@ -149,8 +149,8 @@
                                 <!-- Coluna da Esquerda com Submenus -->
                                 <div class="w-1/2 pr-6">
                                     <a href="#" onclick="toggleModal('modalDrinkToken')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Drink</a>
-                                    <a href="#" onclick="toggleModal('modalDrips')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Drips</a>
-                                    <a href="#" onclick="toggleModal('modalStake')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Stake</a>
+                                    <a href="#" onclick="toggleModal('modalDripsToken')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Drips</a>
+                                    <a href="#" onclick="toggleModal('modalStaking')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Stake</a>
                                     <a href="#" onclick="toggleModal('modalLiquidity')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Liquidity</a>
                                     <a href="#" onclick="toggleModal('modalGovernance')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Governance</a>
                                     <a href="#" onclick="toggleModal('modalSwap')" class="block px-4 py-2 hover:bg-[#D33CF2] rounded-lg whitespace-nowrap">Swap</a>
@@ -1325,6 +1325,137 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Modal DripsToken -->
+                    <div id="modalDripsToken" class="popup z-50">                          
+                        <div class="popup-container">
+                            <div class="flex justify-end space-x-2 items-center">
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white transition-transform transform hover:scale-105">
+                                &times;
+                                </button>
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-white transition-transform transform hover:scale-105">
+                                &minus;
+                                </button>
+                                <button class="maximize-btn flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white transition-transform transform hover:scale-105">
+                                &#9633;
+                                </button>
+                            </div>
+                            <div class="popup-header">
+                                <h2 class="text-xl font-semibold text-center">Explicação do Contrato DripsToken</h2>
+                            </div>
+                            <div class="popup-body">
+                                <p class="text-justify">
+                                    O contrato inteligente <span class="font-semibold">DripsToken</span> é um token ERC20 com funcionalidades adicionais para controle e gestão de minting (criação de tokens), burning (queima de tokens), transferências condicionais e aplicação de penalidades. Abaixo está uma explicação detalhada de cada parte relevante do contrato.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">1. Importações de OpenZeppelin</h3>
+                                <p class="text-justify">
+                                    Este contrato usa bibliotecas de OpenZeppelin para adicionar funcionalidades e segurança:
+                                    - <span class="font-semibold">ERC20</span>: Implementa as funcionalidades básicas de um token ERC20, como transferência, saldo e aprovação.
+                                    - <span class="font-semibold">Ownable</span>: Permite que certas funções sejam executadas apenas pelo proprietário do contrato.
+                                    - <span class="font-semibold">Pausable</span>: Permite pausar e retomar o contrato, suspendendo operações enquanto ele estiver pausado.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">2. Eventos</h3>
+                                <p class="text-justify">
+                                    - <span class="font-semibold">TokensMinted</span>: Emitido quando novos tokens são criados (mintados).<br>
+                                    - <span class="font-semibold">TokensBurned</span>: Emitido quando tokens são queimados (retirados de circulação).<br>
+                                    - <span class="font-semibold">ConditionalTransfer</span>: Emitido quando ocorre uma transferência condicional de tokens entre duas contas.<br>
+                                    - <span class="font-semibold">RewardGranted</span>: Emitido quando uma recompensa em tokens é concedida a um endereço.<br>
+                                    - <span class="font-semibold">PenaltyApplied</span>: Emitido quando uma penalidade é aplicada a um endereço, queimando tokens.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">3. Mapeamento <span class="font-semibold">allowedTransfer</span></h3>
+                                <p class="text-justify">
+                                    Este mapeamento controla se um determinado endereço tem permissão para realizar transferências condicionais de tokens. Apenas o proprietário do contrato pode modificar este mapeamento, ativando ou desativando a permissão de transferência.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">4. Staking Contract</h3>
+                                <p class="text-justify">
+                                    O contrato inclui uma variável chamada <span class="font-semibold">stakingContract</span>, que armazena o endereço de um contrato de staking. Apenas esse contrato de staking pode chamar certas funções, como a criação de novos tokens (mint). Isso garante que apenas o contrato de staking possa distribuir tokens como recompensa.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">5. Função <span class="font-semibold">mint()</span> (para Staking Contract)</h3>
+                                <p class="text-justify">
+                                    Permite que o contrato de staking crie novos tokens e os atribua a um endereço específico. A função só pode ser chamada pelo contrato de staking, garantindo que a criação de novos tokens siga uma lógica específica de recompensas. A função também emite o evento <span class="font-semibold">TokensMinted</span>.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">6. Função <span class="font-semibold">ownerMint()</span></h3>
+                                <p class="text-justify">
+                                    O proprietário do contrato pode criar novos tokens a qualquer momento, desde que o contrato não esteja pausado. Esta função permite ao proprietário emitir tokens, seja para distribuição ou como parte de algum ajuste necessário no fornecimento. O evento <span class="font-semibold">TokensMinted</span> também é emitido aqui.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">7. Função <span class="font-semibold">burn()</span></h3>
+                                <p class="text-justify">
+                                    Esta função permite ao proprietário queimar (remover permanentemente de circulação) tokens da sua própria conta. Isso é útil para ajustar o suprimento total de tokens em circulação ou aplicar alguma forma de controle econômico. O evento <span class="font-semibold">TokensBurned</span> é emitido.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">8. Função <span class="font-semibold">conditionalTransfer()</span></h3>
+                                <p class="text-justify">
+                                    Esta função permite que usuários façam transferências de tokens, mas apenas se estiverem autorizados pelo mapeamento <span class="font-semibold">allowedTransfer</span>. Isso adiciona uma camada de controle sobre quem pode realizar transferências condicionais. O evento <span class="font-semibold">ConditionalTransfer</span> é emitido após uma transferência bem-sucedida.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">9. Função <span class="font-semibold">grantReward()</span></h3>
+                                <p class="text-justify">
+                                    O proprietário pode conceder recompensas em tokens a qualquer endereço, criando novos tokens e os atribuindo ao destinatário. Esta função é usada para distribuir recompensas de forma manual, e o evento <span class="font-semibold">RewardGranted</span> é emitido.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">10. Função <span class="font-semibold">applyPenalty()</span></h3>
+                                <p class="text-justify">
+                                    O proprietário pode aplicar uma penalidade a qualquer endereço, queimando tokens da conta desse endereço. Isso pode ser útil em casos de abuso ou violação das regras de uso. O evento <span class="font-semibold">PenaltyApplied</span> é emitido.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">11. Função <span class="font-semibold">toggleConditionalTransfer()</span></h3>
+                                <p class="text-justify">
+                                    O proprietário pode ativar ou desativar a permissão de transferências condicionais para qualquer endereço. Isso é feito modificando o mapeamento <span class="font-semibold">allowedTransfer</span>. Quando a permissão é alterada, o endereço específico pode ou não realizar transferências condicionais.
+                                </p><br>
+
+                                <h3 class="text-lg font-semibold">12. Funções <span class="font-semibold">pause()</span> e <span class="font-semibold">unpause()</span></h3>
+                                <p class="text-justify">
+                                    Estas funções permitem ao proprietário pausar ou retomar todas as operações do contrato. Enquanto o contrato estiver pausado, as funções de transferência, mint e burn não podem ser executadas, garantindo segurança em situações de emergência.
+                                </p><br>
+
+                                <p class="text-justify">
+                                    O contrato <span class="font-semibold">DripsToken</span> oferece um conjunto abrangente de funcionalidades para gerenciamento e controle de tokens, incluindo a criação de novos tokens, queima, recompensas, penalidades e transferências condicionais. Com essas funcionalidades, ele pode ser utilizado em uma variedade de cenários, incluindo staking, distribuições controladas e economias tokenizadas.
+                                </p><br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal StakingContract e StakingFactory -->
+                    <div id="modalStaking" class="popup z-50">
+                        <div class="popup-container">
+                            <div class="flex justify-end space-x-2 items-center">
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white transition-transform transform hover:scale-105">
+                                    &times;
+                                </button>
+                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-white transition-transform transform hover:scale-105">
+                                    &minus;
+                                </button>
+                                <button class="maximize-btn flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white transition-transform transform hover:scale-105">
+                                    &#9633;
+                                </button>
+                            </div>
+                            <div class="popup-header">
+                                <h2>StakingContract e StakingFactory</h2>
+                            </div>
+                            <div class="popup-body">
+                                <h3 class="font-semibold">1. StakingContract</h3>
+                                <p class="text-justify">
+                                    O <strong>StakingContract</strong> permite que os usuários façam stake de tokens DRINK para ganhar recompensas em DRIPS. Este contrato inclui várias funções essenciais:
+                                </p>
+                                <p class="text-justify">
+                                    O construtor recebe os endereços dos contratos de token DRINK e DRIPS, garantindo que ambos sejam válidos. A função <strong>stakeTokens</strong> permite que os usuários façam stake de tokens DRINK, transferindo-os para o contrato e registrando a quantidade staked. A função <strong>unstakeTokens</strong> permite a remoção dos tokens staked, enquanto a função <strong>calculateRewards</strong> calcula as recompensas com base no tempo e na quantidade de tokens staked. Os usuários também podem reivindicar recompensas manualmente com a função <strong>claimRewards</strong>. Além disso, o proprietário do contrato pode distribuir recompensas para todos os stakers com a função <strong>distributeRewards</strong>, e há funções adicionais para pausar e despausar o contrato, bem como para obter o total de tokens staked e o número de stakers.
+                                </p>
+
+                                <h3 class="font-semibold">2. StakingFactory</h3>
+                                <p class="text-justify">
+                                    O <strong>StakingFactory</strong> é um contrato que permite a criação de novas instâncias do <strong>StakingContract</strong>. A função <strong>deployStakingContract</strong> cria um novo contrato de staking, recebendo os endereços dos tokens DRINK e DRIPS. Após a implantação, a propriedade do novo contrato é transferida para quem chamou a função, garantindo que o criador tenha controle sobre o contrato. Cada vez que um novo contrato é criado, um evento <strong>StakingContractDeployed</strong> é emitido, fornecendo o endereço do novo contrato e do proprietário, facilitando o rastreamento das instâncias criadas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
 
 
                     
