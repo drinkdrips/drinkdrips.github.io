@@ -23,8 +23,8 @@
 
 <div>
    <div>
-    <!-- NAV | MENUS | DROPDOWNS | MODAIS -->
-    <nav class="relative flex items-center justify-center mx-auto w-full py-4">
+        <!-- NAV | MENUS | DROPDOWNS | MODAIS -->
+        <nav class="relative flex items-center justify-center mx-auto w-full py-4">
         <!-- 3 circulos superiores -->
         <div class="absolute inset-0 flex justify-center items-center">
             <div class="relative">
@@ -1549,8 +1549,8 @@
                </div>
                 </div>
             </div>
-      </nav>
-              <!-- FIM NAV | MENUS | DROPDOWNS | MODAIS -->
+        </nav>
+        <!-- FIM NAV | MENUS | DROPDOWNS | MODAIS -->
 
 
                 <!-- HEADER -->
@@ -1750,8 +1750,8 @@
                         </div>
                     </header>
                        
-        </div>
-        <!-- FIM HEADER -->
+                </div>
+                <!-- FIM HEADER -->
 
         <!-- MAIN -->
         <main class="max-w-[1240px] mx-auto pb-32">
@@ -1782,11 +1782,11 @@
                     Alpine.data('packsSection', () => ({
                         selectedCategory: 'All', // Categoria inicial
                         packs: [
-                            { id: 1, name: 'Pack Genesis', description: '10 Tokens Drink - O começo de tudo.', price: 10, image: 'https://via.placeholder.com/350x350?text=Genesis', category: 'Clássicos' },
-                            { id: 2, name: 'Pack Blockchain ', description: '50 Tokens Drink – Para uma experiência sólida', price: 50, image: 'https://via.placeholder.com/350x350?text=Blockchain', category: 'Refinados' },
-                            { id: 3, name: 'Pack Validator', description: '100 Tokens Drink – Para quem quer fazer acontecer', price: 100, image: 'https://via.placeholder.com/350x350?text=Validator', category: 'Raros' },
-                            { id: 4, name: 'Pack DAO', description: '500 Tokens Drink – Governança e grandes decisões', price: 500, image: 'https://via.placeholder.com/350x350?text=Dao', category: 'Épicos' },
-                            { id: 5, name: 'Pack HOLD', description: '1000 Tokens Drink – Para quem quer ir além', price: 1000, image: '/src/card_hold.png/350x350?text=HOLD', category: 'Lendários' },
+                            { id: 1, name: 'Pack Genesis', description: '10 Tokens Drink - O começo de tudo.', price: 10, image: '/src/webp/12.webp/', category: 'Clássicos' },
+                            { id: 2, name: 'Pack Blockchain ', description: '50 Tokens Drink – Para uma experiência sólida', price: 50, image: '/src/webp/5.webp/', category: 'Refinados' },
+                            { id: 3, name: 'Pack Validator', description: '100 Tokens Drink – Para quem quer fazer acontecer', price: 100, image: '/src/webp/8.webp/', category: 'Raros' },
+                            { id: 4, name: 'Pack DAO', description: '500 Tokens Drink – Governança e grandes decisões', price: 500, image: '/src/webp/6.webp/', category: 'Épicos' },
+                            { id: 5, name: 'Pack HOLD', description: '1000 Tokens Drink – Para quem quer ir além', price: 1000, image: '/src/webp/hold_pack.webp/', category: 'Lendários' },
                         ],
                         filteredPacks() {
                             return this.selectedCategory === 'All'
@@ -1884,7 +1884,7 @@
                 </div>
                 <!-- BOTÃO DISCOVER MORE -->
                 <div class="flex justify-center">
-                    <a href="#" class="inline-block rounded-xl bg-[#E730CA] px-4 py-2.5 mt-6 font-semibold text-sm xl:text-base text-white text-center border border-transparent hover:border-[#E730CA] hover:bg-transparent focus-visible:outline-none focus-visible:outline-0 focus-visible:outline-offset-0 focus-visible:outline-transparent transition-colors">Discover More!</a>
+                    <a href="#drinkApps" class="inline-block rounded-xl bg-[#E730CA] px-4 py-2.5 mt-6 font-semibold text-sm xl:text-base text-white text-center border border-transparent hover:border-[#E730CA] hover:bg-transparent focus-visible:outline-none focus-visible:outline-0 focus-visible:outline-offset-0 focus-visible:outline-transparent transition-colors">DrinkApps!</a>
                 </div>
                 <!-- FIM BOTÃO DISCOVER MORE -->
             </section>
@@ -1946,7 +1946,7 @@
                     
             <!-- CONTAINER APPS DRINKDRIPS-->                     
             <div class="bg-gradient-to-r from-[#131313] to-[#D33CF2] rounded-lg shadow-lg p-6 border border-[#303030]">
-                <h1 class="mt-10 max-w-lg text-4xl sm:text-7xl lg:text-6xl font-semibold text-white xl:text-7xl tracking-tight justify-center items-center">Drink<span class="text-[#FF33DE]">Apps</span></h1> 
+                <h1 class="mt-10 max-w-lg text-4xl sm:text-7xl lg:text-6xl font-semibold text-white xl:text-7xl tracking-tight justify-center items-center">Drink<span class="text-[#FF33DE]" id="drinkApps">Apps</span></h1> 
                 
 
                     <!-- Container principal da seção DashBoard E Formulário de Compras-->
@@ -2206,7 +2206,7 @@
                     <!-- FIM DO CONTAINER APPS DRINKDRIPS-->
 
         </main>    
-    <!-- FIM MAIN -->
+        <!-- FIM MAIN -->
     </div>
 
     <!-- FOOTER -->
@@ -2264,7 +2264,7 @@
 			<p class="mt-10 text-center text-xs leading-5 text-gray-500">&copy; 2024 DrinkDrips, Inc. All rights reserved.</p>
 		</div>
 	</footer>
-<!-- FIM FOOTER -->
+    <!-- FIM FOOTER -->
 
 </div>
 </body>
