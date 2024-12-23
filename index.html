@@ -1754,6 +1754,137 @@
         <!-- FIM HEADER -->
 
         <!-- MAIN -->
+        <main class="max-w-[1240px] mx-auto pb-32">
+            <!-- Logo cloud (Criptomoedas e Portais) -->
+            <section class="my-20 sm:my-60">
+                        <div class="grid grid-cols-4 items-center gap-x-8 gap-y-12 sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:grid-cols-5">
+                        <a href="https://bitcoin.org" target="_blank">
+                            <img class="lazy col-span-2 max-h-12 w-full object-contain lg:col-span-1" loading="lazy" src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" alt="Bitcoin" width="200" height="60">
+                        </a>
+                        <a href="https://ethereum.org" target="_blank">
+                            <img class="lazy col-span-2 max-h-12 w-full object-contain lg:col-span-1" loading="lazy" src="https://cryptologos.cc/logos/ethereum-eth-logo.svg" alt="Ethereum" width="200" height="60">
+                        </a>
+                        <a href="https://www.binance.com" target="_blank">
+                            <img class="lazy col-span-2 max-h-12 w-full object-contain lg:col-span-1" loading="lazy" src="https://cryptologos.cc/logos/binance-coin-bnb-logo.svg" alt="Binance" width="200" height="60">
+                        </a>
+                        <a href="https://tether.to" target="_blank">
+                            <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1" src="https://cryptologos.cc/logos/tether-usdt-logo.svg" alt="Tether" width="200" height="60">
+                        </a>
+                        <a href="https://polygon.technology" target="_blank">
+                            <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1" src="https://cryptologos.cc/logos/polygon-matic-logo.svg" alt="Polygon" width="200" height="60">
+                        </a>
+                        </div>
+            </section>
+
+            <!-- SEÇÃO DE PACKS -->
+            <script>
+                document.addEventListener('alpine:init', () => {
+                    Alpine.data('packsSection', () => ({
+                        selectedCategory: 'All', // Categoria inicial
+                        packs: [
+                            { id: 1, name: 'Pack Genesis', description: '10 Tokens Drink - O começo de tudo.', price: 10, image: 'https://via.placeholder.com/350x350?text=Genesis', category: 'Clássicos' },
+                            { id: 2, name: 'Pack Blockchain ', description: '50 Tokens Drink – Para uma experiência sólida', price: 50, image: 'https://via.placeholder.com/350x350?text=Blockchain', category: 'Refinados' },
+                            { id: 3, name: 'Pack Validator', description: '100 Tokens Drink – Para quem quer fazer acontecer', price: 100, image: 'https://via.placeholder.com/350x350?text=Validator', category: 'Raros' },
+                            { id: 4, name: 'Pack DAO', description: '500 Tokens Drink – Governança e grandes decisões', price: 500, image: 'https://via.placeholder.com/350x350?text=Dao', category: 'Épicos' },
+                            { id: 5, name: 'Pack HOLD', description: '1000 Tokens Drink – Para quem quer ir além', price: 1000, image: 'https://via.placeholder.com/350x350?text=HOLD', category: 'Lendários' },
+                        ],
+                        filteredPacks() {
+                            return this.selectedCategory === 'All'
+                                ? this.packs
+                                : this.packs.filter(pack => pack.category === this.selectedCategory);
+                        },
+                        selectCategory(category) {
+                            this.selectedCategory = category;
+                        },
+                        buyPack(packId) {
+                            alert(`Comprar o pack ${packId}`);
+                        },
+                        getPriceInDollars(price) {
+                            return (price * 0.10).toFixed(2); // Calcula o valor em dólares
+                        }
+                    }));
+                });
+            </script>
+
+            <section x-data="packsSection" class="px-6 lg:px-8">
+                <h2 class="my-10 text-2xl sm:text-[2.5rem] font-semibold tracking-tight text-white">
+                    Packs de Drinks especialmente <span class="text-[#FF33DE]">Para Você! 🔥</span>
+                </h2>
+
+                <!-- Tab List -->
+                <ul class="mb-6 gap-y-2 gap-x-8 flex flex-wrap max-w-screen-xl mx-auto">
+                    <li>
+                        <button @click="selectCategory('All')" 
+                                :class="selectedCategory === 'All' ? 'bg-[#E730CA] text-white' : 'bg-transparent text-[#E730CA]'" 
+                                class="rounded-xl px-4 py-2 font-semibold text-sm xl:text-base text-center hover:text-white border border-[#E730CA] hover:bg-[#E730CA] transition-colors">
+                            All
+                        </button>
+                    </li>
+                    <li>
+                        <button @click="selectCategory('Clássicos')" 
+                                :class="selectedCategory === 'Clássicos' ? 'bg-[#E730CA] text-white' : 'bg-transparent text-[#E730CA]'" 
+                                class="rounded-xl px-4 py-2 font-semibold text-sm xl:text-base text-center hover:text-white border border-[#E730CA] hover:bg-[#E730CA] transition-colors">
+                            Clássicos
+                        </button>
+                    </li>
+                    <li>
+                        <button @click="selectCategory('Refinados')" 
+                                :class="selectedCategory === 'Refinados' ? 'bg-[#E730CA] text-white' : 'bg-transparent text-[#E730CA]'" 
+                                class="rounded-xl px-4 py-2 font-semibold text-sm xl:text-base text-center hover:text-white border border-[#E730CA] hover:bg-[#E730CA] transition-colors">
+                            Refinados
+                        </button>
+                    </li>
+                    <li>
+                        <button @click="selectCategory('Raros')" 
+                                :class="selectedCategory === 'Raros' ? 'bg-[#E730CA] text-white' : 'bg-transparent text-[#E730CA]'" 
+                                class="rounded-xl px-4 py-2 font-semibold text-sm xl:text-base text-center hover:text-white border border-[#E730CA] hover:bg-[#E730CA] transition-colors">
+                            Raros
+                        </button>
+                    </li>
+                    <li>
+                        <button @click="selectCategory('Épicos')" 
+                                :class="selectedCategory === 'Épicos' ? 'bg-[#E730CA] text-white' : 'bg-transparent text-[#E730CA]'" 
+                                class="rounded-xl px-4 py-2 font-semibold text-sm xl:text-base text-center hover:text-white border border-[#E730CA] hover:bg-[#E730CA] transition-colors">
+                            Épicos
+                        </button>
+                    </li>
+                    <li>
+                        <button @click="selectCategory('Lendários')" 
+                                :class="selectedCategory === 'Lendários' ? 'bg-[#E730CA] text-white' : 'bg-transparent text-[#E730CA]'" 
+                                class="rounded-xl px-4 py-2 font-semibold text-sm xl:text-base text-center hover:text-white border border-[#E730CA] hover:bg-[#E730CA] transition-colors">
+                            Lendários
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Galeria de Packs -->
+                <div role="tabpanel">
+                    <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                        <template x-for="pack in filteredPacks()" :key="pack.id">
+                            <li class="col-span-1 flex flex-col justify-between w-full h-[350px] rounded-2xl bg-center bg-cover bg-no-repeat overflow-hidden transition-transform duration-300 hover:scale-95" 
+                                :style="`background-image: url(${pack.image})`">
+                                <div class="bg-white bg-opacity-90 backdrop-blur-sm p-4 glass h-[120px]">
+                                    <h4 class="text-sm font-bold text-[#161616] truncate" x-text="pack.name"></h4>
+                                    <p class="text-xs text-[#646464] truncate" x-text="pack.description"></p>
+                                    <div class="flex items-center justify-between mt-2 font-bold text-[0.75rem]">
+                                        <div class="flex flex-col text-[#161616]">
+                                            <span x-text="`${pack.price} DRINK`"></span>
+                                            <span x-text="`$${getPriceInDollars(pack.price)}`"></span>
+                                        </div>
+                                        <button type="button" 
+                                                class="text-[#161616] hover:text-white border border-[#161616] hover:bg-[#E730CA] rounded-full px-4 py-1 transition-colors" 
+                                                @click="buyPack(pack.id)">
+                                            Comprar
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </section>
+            <!-- FIM DA SEÇÃO DE PACKS -->
+
                     <main class="max-w-[1240px] mx-auto pb-32">
                         <!-- Logo cloud (Criptomoedas e Portais) -->
                         <section class="my-20 sm:my-60">
