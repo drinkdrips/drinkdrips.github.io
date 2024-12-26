@@ -1564,20 +1564,30 @@
                             <div class="flex">
                                 <div x-on:mouseover="openError = true" class="relative flex items-center gap-x-4 rounded-full px-4 py-1 leading-6 text-sm xl:text-base text-white xl:font-semibold border border-[#CACACA]/60 bg-transparent hover:bg-[#E730CA] hover:border-transparent transition-colors">
                                 <a href="#" onclick="toggleModal('modalPacotes')" class="flex items-center gap-x-1">
-                                    Pacotes Especiais
+                                    Descontos exclusivos comprando nossos Pacotes Especiais
                                     <svg class="-mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"/>
                                     </svg>
                                 </a>
-                                    <!-- Modal Pacotes de Investimento -->
-                                    <div id="modalPacotes" class="popup">
+                                    <!-- Modal Pacotes Especiais -->
+                                    <div id="modalPacotes" class="popup z-50">
                                         <div class="popup-container">
+                                            <div class="flex justify-end space-x-2 items-center">
+                                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white transition-transform transform hover:scale-105">
+                                                  &times;
+                                                </button>
+                                                <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-white transition-transform transform hover:scale-105">
+                                                  &minus;
+                                                </button>
+                                                <button class="maximize-btn flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white transition-transform transform hover:scale-105">
+                                                  &#9633;
+                                                </button>
+                                            </div>
                                             <div class="popup-header">
                                                 <h2 class="text-2xl font-bold text-custom-purple">Pacotes de Investimento em Drinks</h2>
-                                                <button class="close-btn text-gray-600 hover:text-[#D33CF2]" aria-label="Fechar modal">&times;</button>
                                             </div>
                                             <div class="popup-body">
-                                                <p class="text-lg mb-4">Investir em nossos pacotes de Drinks oferece não só um excelente retorno, mas também descontos progressivos. Confira as vantagens e os preços especiais para cada pacote:</p>
+                                                <p>Investir em nossos pacotes de Drinks oferece não só um excelente retorno, mas também descontos progressivos. Confira as vantagens e os preços especiais para cada pacote:</p>
                                                 
                                                 <div class="mb-6 p-4 border rounded-lg">
                                                     <h3 class="text-xl font-semibold text-[#D33CF2] mb-2">Pack Ouro</h3>
@@ -1629,8 +1639,8 @@
                             <h1 class="mt-10 max-w-lg text-4xl sm:text-7xl lg:text-6xl font-semibold text-white xl:text-7xl tracking-tight">Drink<span class="text-[#FF33DE]">Drips</span></h1>
                             <p class="mt-6 xl:text-lg font-medium leading-8 text-white max-w-[553px] text-justify">Um projeto pessoal em desenvolvimento, com a proposta de utilizar a web3 para trazer inovação ao Mercado de Entretenimento e Eventos, desde a mais simples gestão até super produções. Buscamos ser uma plataforma simples e funcional, mas que pode vir a moldar e revolucionar a <span class="text-[#FF33DE]">Indústria de Eventos</span></p>
                             <div class="mt-10 flex items-center gap-x-6">
-                                <a href="#" x-on:mouseover="openError = true" class="rounded-xl bg-[#E730CA] w-32 xl:w-40 py-2.5 font-semibold text-sm xl:text-base text-white text-center border border-transparent hover:border-[#E730CA] hover:bg-transparent focus-visible:outline-none focus-visible:outline-0 focus-visible:outline-offset-0 focus-visible:outline-transparent transition-colors">Comprar</a>
-                                <a href="#" x-on:mouseover="openError = true" class="border border-[#E730CA] hover:border-[#E730CA]/30 bg-transparent hover:bg-[#E730CA]/30 rounded-xl w-32 xl:w-40 py-2.5 font-semibold leading-6 text-sm xl:text-base text-[#E730CA] hover:text-white text-center transition-colors">Marketplace</a>
+                                <a href="#drinkApps" x-on:mouseover="openError = true" class="rounded-xl bg-[#E730CA] w-32 xl:w-40 py-2.5 font-semibold text-sm xl:text-base text-white text-center border border-transparent hover:border-[#E730CA] hover:bg-transparent focus-visible:outline-none focus-visible:outline-0 focus-visible:outline-offset-0 focus-visible:outline-transparent transition-colors">DrinkApps</a>
+                                <a href="#drinkPacks" x-on:mouseover="openError = true" class="border border-[#E730CA] hover:border-[#E730CA]/30 bg-transparent hover:bg-[#E730CA]/30 rounded-xl w-32 xl:w-40 py-2.5 font-semibold leading-6 text-sm xl:text-base text-[#E730CA] hover:text-white text-center transition-colors">DrinkPacks</a>
                             </div>
                         </div>
                         <div class="relative flex justify-center items-center mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
@@ -1833,7 +1843,7 @@
             </script>         
 
             <section x-data="packsSection" class="px-6 lg:px-8">
-                <h2 class="my-10 text-2xl sm:text-[2.5rem] font-semibold tracking-tight text-white">
+                <h2 class="my-10 text-2xl sm:text-[2.5rem] font-semibold tracking-tight text-white" id="drinkPacks">
                     Drink<span class="text-[#FF33DE]">Packs! 🔥</span>
                 </h2>
 
@@ -1926,11 +1936,11 @@
                                         <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
                                             <div class="flex">
                                                 <div class="relative flex items-center gap-x-4 rounded-full px-4 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                                                    <span class="font-semibold text-indigo-600">We’re hiring</span>
+                                                    <span class="font-semibold text-indigo-600">Quer saber mais ?</span>
                                                     <span class="h-4 w-px bg-gray-900/10" aria-hidden="true"></span>
-                                                    <a href="#" class="flex items-center gap-x-1">
+                                                    <a href="#" onclick="toggleModal('modalDesenhoNegocio')" class="flex items-center gap-x-1">
                                                         <span class="absolute inset-0" aria-hidden="true"></span>
-                                                        See open positions
+                                                        Conheça nossa proposta
                                                         <svg class="-mr-2 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                             <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
                                                         </svg>
@@ -2228,8 +2238,8 @@
                         
                         <!-- FIM DA COMUNIDADE Section -->
 
-                    </div>
-                    <!-- FIM DO CONTAINER APPS DRINKDRIPS-->
+            </div>
+            <!-- FIM DO CONTAINER APPS DRINKDRIPS-->
 
         </main>    
         <!-- FIM MAIN -->
@@ -2243,7 +2253,7 @@
 					<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-400">Home</a>
 				</div>
 				<div class="pb-6">
-					<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-400">Marketplace</a>
+					<a href="#drinkPacks" class="text-sm leading-6 text-gray-600 hover:text-gray-400">DrinkPacks</a>
 				</div>
 				<div class="pb-6">
 					<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-400">Collections</a>
