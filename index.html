@@ -1955,9 +1955,117 @@
                                                 Transforme seus eventos com a <span class="text-[#FF33DE]">DrinkDrips</span>, onde a inovação se encontra com a tecnologia. Utilizando a força e a eficiência dos contratos inteligentes na blockchain, pretendemos revolucionar o futuro da indústria de entretenimento e eventos. Da gestão de patrocínios a produções épicas, nossa proposta redefine o que é possível, vamos trabalhar para que os eventos sejam mais do que memoráveis — sejam revolucionários.
                                             </p>
                                             <div class="mt-10 flex items-center gap-x-6">
-                                                <a href="#" x-on:mouseover="openError = true" class="rounded-xl bg-[#E730CA] w-32 xl:w-40 py-2.5 font-semibold text-sm xl:text-base text-white text-center border border-transparent hover:border-[#E730CA] hover:bg-transparent focus-visible:outline-none focus-visible:outline-0 focus-visible:outline-offset-0 focus-visible:outline-transparent transition-colors">Como começar?</a>
-                                                <a href="#" x-on:mouseover="openError = true" class="rounded-xl py-2.5 text-sm font-semibold leading-6 text-white border border-transparent hover:border-[#E730CA] hover:bg-transparent focus-visible:outline-none focus-visible:outline-0 focus-visible:outline-offset-0 focus-visible:outline-transparent transition-colors">Aprenda a testar DrinkDrips <span aria-hidden="true">→</span></a>
+                                                <a href="#" onclick="toggleModal('modalConfigMetamask')" x-on:mouseover="openError = true" class="rounded-xl bg-[#E730CA] w-32 xl:w-40 py-2.5 font-semibold text-sm xl:text-base text-white text-center border border-transparent hover:border-[#E730CA] hover:bg-transparent focus-visible:outline-none focus-visible:outline-0 focus-visible:outline-offset-0 focus-visible:outline-transparent transition-colors">Como começar?</a>
+                                                <a href="#" onclick="toggleModal('modalAdicionarTokens')" x-on:mouseover="openError = true" class="rounded-xl py-2.5 text-sm font-semibold leading-6 text-white border border-transparent hover:border-[#E730CA] hover:bg-transparent focus-visible:outline-none focus-visible:outline-0 focus-visible:outline-offset-0 focus-visible:outline-transparent transition-colors">Aprenda a testar DrinkDrips <span aria-hidden="true">→</span></a>
                                             </div>
+                                            
+                                            <!-- Modal Configuração Metamask -->
+                                            <div id="modalConfigMetamask" class="popup z-50">
+                                                <div class="popup-container">
+                                                    <div class="flex justify-end space-x-2 items-center">
+                                                        <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white transition-transform transform hover:scale-105">&times;</button>
+                                                        <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-white transition-transform transform hover:scale-105">&minus;</button>
+                                                        <button class="maximize-btn flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white transition-transform transform hover:scale-105">&#9633;</button>
+                                                    </div>
+                                                    
+                                                    <div class="popup-header">
+                                                        <h2 class="text-center font-semibold text-xl">Adicione a Rede Amoy e Obtenha Tokens POL</h2>
+                                                    </div>
+                                                    
+                                                    <div class="popup-body">
+                                                        <p class="text-justify">
+                                                            Para começar a testar a <strong>DrinkDrips</strong>, siga este passo a passo para configurar a Metamask e conectar-se à rede Amoy:
+                                                        </p>
+                                                        <hr class="my-4">
+
+                                                        <h3 class="font-semibold">1. Instale a Metamask</h3>
+                                                        <p class="text-justify">
+                                                            Visite o site oficial da Metamask para instalar a extensão no navegador ou aplicativo no celular:
+                                                        </p>
+                                                        <div class="pl-5 space-y-2 text-justify">
+                                                            <div><strong>Link para Metamask:</strong> <a href="https://metamask.io" target="_blank" class="text-blue-500 underline">https://metamask.io</a></div>
+                                                            <div><strong>Lembre-se:</strong> Guarde suas palavras de recuperação em local seguro. Nunca as compartilhe com ninguém!</div>
+                                                        </div>
+                                                        <hr class="my-4">
+
+                                                        <h3 class="font-semibold">2. Adicione a Rede Amoy à Metamask</h3>
+                                                        <p class="text-justify">Siga estas etapas para adicionar a rede Amoy manualmente:</p>
+                                                        <div class="pl-5 space-y-2 text-justify">
+                                                            <div><strong>Nome da Rede:</strong> Amoy</div>
+                                                            <div><strong>URL do RPC:</strong> <code>https://rpc-amoy.polygon.technology/</code></div>
+                                                            <div><strong>ID da Cadeia:</strong> 80002</div>
+                                                            <div><strong>Símbolo da Moeda:</strong> POL</div>
+                                                            <div><strong>Block Explorer:</strong> <a href="https://amoy.polygonscan.com/" target="_blank" class="text-blue-500 underline">https://amoy.polygonscan.com/</a></div>
+                                                        </div>
+
+                                                        <hr class="my-4">
+
+                                                        <h3 class="font-semibold">3. Obtenha Tokens POL no Faucet</h3>
+                                                        <p class="text-justify">
+                                                            Para realizar os testes, você precisará de tokens POL. Acesse o faucet oficial e solicite tokens para sua carteira:
+                                                        </p>
+                                                        <div class="pl-5 space-y-2 text-justify">
+                                                            <div><strong>Faucet:</strong> <a href="https://faucet.polygon.technology/" target="_blank" class="text-blue-500 underline">https://faucet.polygon.technology/</a></div>
+                                                            <div><strong>Dica:</strong> Certifique-se de estar conectado à rede Amoy antes de solicitar os tokens.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Modal Adicionar Tokens -->
+                                            <div id="modalAdicionarTokens" class="popup z-50">
+                                                <div class="popup-container">
+                                                    <div class="flex justify-end space-x-2 items-center">
+                                                        <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white transition-transform transform hover:scale-105">&times;</button>
+                                                        <button class="close-btn flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-white transition-transform transform hover:scale-105">&minus;</button>
+                                                        <button class="maximize-btn flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white transition-transform transform hover:scale-105">&#9633;</button>
+                                                    </div>
+                                                    
+                                                    <div class="popup-header">
+                                                        <h2 class="text-center font-semibold text-xl">Adicione os Tokens Drink e Drips</h2>
+                                                    </div>
+                                                    
+                                                    <div class="popup-body">
+                                                        <p class="text-justify">
+                                                            Depois de configurar a rede Amoy, você precisará adicionar os contratos dos tokens <strong>Drink</strong> e <strong>Drips</strong> para iniciar os testes na <strong>DrinkDrips</strong>.
+                                                        </p>
+                                                        <hr class="my-4">
+
+                                                        <h3 class="font-semibold">1. Abra a Metamask</h3>
+                                                        <p class="text-justify">
+                                                            Na Metamask, selecione a rede Amoy e vá até a aba de "Ativos". Clique em "Adicionar Token".
+                                                        </p>
+                                                        <hr class="my-4">
+
+                                                        <h3 class="font-semibold">2. Adicione os Contratos de Tokens</h3>
+                                                        <p class="text-justify">
+                                                            Insira os seguintes contratos para adicionar os tokens manualmente:
+                                                        </p>
+                                                        <div class="pl-5 space-y-2 text-justify">
+                                                            <div><strong>Token Drink:</strong></div>
+                                                            <div><strong>Contrato: </strong> <code>0x3FC6d60A0360401666aF50162BCDbb3423879c61</code></div>
+                                                            <div><strong>Nome:</strong> Drink</div>
+                                                            <div><strong>Símbolo:</strong> DRK</div>
+                                                            <div><strong>Decimais:</strong> 18</div>
+
+                                                            <div class="mt-4"><strong>Token Drips:</strong></div>
+                                                            <div><strong>Contrato: </strong> <code>0x3720D62bcFb9b55890F5B22bb4C8e0143405437E</code></div>
+                                                            <div><strong>Nome:</strong> Drips</div>
+                                                            <div><strong>Símbolo:</strong> DRP</div>
+                                                            <div><strong>Decimais:</strong> 18</div>
+                                                        </div>
+
+                                                        <hr class="my-4">
+
+                                                        <h3 class="font-semibold">3. Pronto!</h3>
+                                                        <p class="text-justify">
+                                                            Agora você está pronto para testar o sistema DrinkDrips utilizando os tokens Drink e Drips na rede de teste Amoy. Divirta-se explorando as funcionalidades!
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
                                         </div>
                                         <div class="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
                                             <svg viewBox="0 0 366 729" role="img" class="mx-auto w-[22.875rem] max-w-full drop-shadow-xl">
