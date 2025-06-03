@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Segoe UI"', 'Helvetica Neue', 'Helvetica', 'sans-serif'],
+      },
       keyframes: {
         rotateBorder: {
           '0%': { 'background-position': '0% 0%' },
@@ -32,13 +35,13 @@ module.exports = {
       },
       colors: {
         'custom-purple': '#D33CF2',
-        'custom-green': '#008000', // You can customize this color as needed
+        'custom-green': '#008000',
       },
       padding: {
-        'input': '12px 12px 8px 12px', // Define the custom padding
+        'input': '12px 12px 8px 12px',
       },
       margin: {
-        '20': '5rem', // Adiciona ml-20 e mr-20
+        '20': '5rem',
       },
     },
   },
