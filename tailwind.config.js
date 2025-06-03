@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Segoe UI"', 'Helvetica Neue', 'Helvetica', 'sans-serif'],
+        sans: ['"Inter"', 'sans-serif'],
       },
       keyframes: {
         rotateBorder: {
