@@ -2,8 +2,7 @@
 html, body {
   height: 100%;
   margin: 0;
-  font-family: "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
-  /* Anteriormente ---> font-family: "Inter", sans-serif; */
+  font-family: "Inter", sans-serif;
   background-color: #131313;
   color: #fff;
 }
