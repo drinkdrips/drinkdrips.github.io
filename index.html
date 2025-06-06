@@ -20,13 +20,12 @@
     <div id="Notificacoes" class="text-white text-center flex justify-center items-center" style="height: 6vh; background-image: linear-gradient(to right, #131313, #D33CF2); font-family: 'Orbitron', sans-serif; letter-spacing: 2px;">
         <h2 id="typed-notifications" class="text-gradient" style="font-size: 1.25rem; font-weight: bold;"></h2>
     </div> 
-
 <div>
     <div>
             <!-- NAV | MENUS | DROPDOWNS | MODAIS -->
             <nav class="relative flex items-center justify-center mx-auto w-full py-4">
             <!-- 3 circulos superiores -->
-            <div class="absolute inset-0 flex justify-center items-center">
+            <div class="absolute inset-0 flex justify-center items-center z-10">
                 <div class="relative">
                     <!-- Primeiro Circulo -->
                     <div class="w-48 h-48 border-2 border-custom-purple rounded-full opacity-30 bg-transparent"></div>
@@ -36,14 +35,78 @@
                     <div class="absolute left-12 w-48 h-48 border-2 border-custom-purple rounded-full opacity-30 bg-transparent"></div>
                 </div>
             </div>
-    
-            <div class="px-4 pt-4 md:pt-9 transition-all">
+            <canvas id="glcanvas" class="absolute inset-0 w-full h-full -z-10 pointer-events-none"></canvas>
+            <script id="vertex-shader" type="x-shader/x-vertex">
+                attribute vec2 a_position;
+                void main() {
+                gl_Position = vec4(a_position, 0.0, 1.0);
+                }
+            </script>
+            <script id="fragment-shader" type="x-shader/x-fragment">
+            #ifdef GL_ES
+            precision mediump float;
+            #endif
+
+            uniform vec2 u_resolution;
+            uniform vec2 u_mouse;
+            uniform float u_time;
+
+            vec3 palette2(float t, float factor) {
+                vec3 a = vec3(0.5) + 0.3 * sin(vec3(0.1, 0.3, 0.5) * factor);
+                vec3 b = vec3(0.5) + 0.3 * cos(vec3(0.2, 0.4, 0.6) * factor);
+                vec3 c = vec3(1.0) + 0.5 * sin(vec3(0.3, 0.7, 0.9) * factor);
+                vec3 d = vec3(0.25, 0.4, 0.55) + 0.2 * cos(vec3(0.5, 0.6, 0.7) * factor);
+                return a + b * cos(6.28318 * (c * t + d));
+            }
+            float hash(vec2 p) {
+                return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+            }
+
+            float noise(vec2 p) {
+                vec2 i = floor(p);
+                vec2 f = fract(p);
+                vec2 u = f * f * (3.0 - 2.0 * f);
+                
+                return mix(mix(hash(i + vec2(0.0, 0.0)), hash(i + vec2(1.0, 0.0)), u.x),
+                        mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x),
+                        u.y);
+            }
+
+            void main() {
+                vec2 st = gl_FragCoord.xy/u_resolution.xy;
+                st.x *= u_resolution.x/u_resolution.y;
+                vec3 color = vec3(0.0);
+                vec2 uv = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / u_resolution.y;
+                uv.x = abs(uv.x);
+                //float breath = 1.0 + 2.0 * sin(u_time * 0.15) * smoothstep(0.2, 1.5, length(uv));
+                //uv *= breath;
+                uv *= 20.0;
+
+            for (int i = 0; i < 30; i++) {
+                float t = u_time * 0.01 - float(i);
+                uv *= mat2(cos(t), sin(t), -sin(t), cos(t));
+                uv += noise(sin(uv) * 0.6);
+                uv += noise(-cos(uv) * 0.6);
+
+                color += 0.002 / length(uv + sin(t));
+                
+                float intensity = 0.1 / length(uv - (10.3) * sin(t)) * (length(uv) * sin(float(i) + u_time));
+                
+
+                color += palette2(float(i) / u_time, u_time * 0.5) * intensity;
+            }
+
+            gl_FragColor = vec4(color, 1.0);
+            }
+
+            </script>
+
                 <!-- Logo | Dropdowns | Modais -->
-                <div class="flex justify-between items-center">
+                <div class="relative z-10 px-8 py-6 flex justify-between items-center w-full max-w-screen-xl mx-auto">
                 <!-- Logo -->
                 <div class="flex items-center">
                     <div class="logo" style="margin-right: 5rem !important;">
-                        <img src="src/d_logo.png" alt="DrinkDrips Logo" class="logo-svg" width="151" height="50">
+                        <img src="src/DrinkDrips.png" alt="DrinkDrips Logo" class="logo-svg" width="151" height="50">
                     </div>
                 </div>
             
@@ -1547,15 +1610,15 @@
                 </div>
                     </div>
                 </div>
+                
             </nav>
-            <!-- FIM NAV | MENUS | DROPDOWNS | MODAIS -->
+                <!-- FIM NAV | MENUS | DROPDOWNS | MODAIS -->
 
 
                     <!-- HEADER -->
                     <div class="pt-20 lg:pt-20 xl:pt-30">
                         <header class="p-5 m-5 bg-[#131313]">
                         <!-- Conteúdo do header -->
-
                         <div class="relative isolate">
                         <div class="mx-auto max-w-7xl px-6 space-y-20 sm:space-y-52 lg:space-y-0 lg:flex lg:items-center lg:gap-x-10 lg:pl-8 lg:pr-20">
                             <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
@@ -1761,8 +1824,8 @@
                     </div>
                     <!-- FIM HEADER -->
 
-            <!-- MAIN -->
-            <main class="max-w-[1240px] mx-auto pb-32">
+                <!-- MAIN -->
+                <main class="max-w-[1240px] mx-auto pb-32">
                 <!-- Logo cloud (Criptomoedas e Portais) -->
                 <section class="my-20 sm:my-60">
                             <div class="grid grid-cols-4 items-center gap-x-8 gap-y-12 sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:grid-cols-5">
@@ -2347,8 +2410,8 @@
                 </div>
                 <!-- FIM DO CONTAINER APPS DRINKDRIPS-->
 
-            </main>    
-            <!-- FIM MAIN -->
+                </main>    
+                <!-- FIM MAIN -->
     </div>
 
     <!-- FOOTER -->
